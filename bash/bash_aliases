@@ -1,0 +1,37 @@
+#ls
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+#grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+#git
+alias gf='git diff'
+alias gs='git status'
+alias gc='git commit -a'
+alias gp='git push'
+
+#proxychains
+alias pc='proxychains'
+
+#virtualenv
+alias vn='virtualenv'
+
+# rm
+alias rm='rm -I'
+
+# cd
+alias ..='cd ../'
+
+# jobs
+alias j='jobs'
+
+# free
+alias free='free -h'
+
+# use neovim now
+alias vim='nvim'

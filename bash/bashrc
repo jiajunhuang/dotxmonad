@@ -1,0 +1,38 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+if [ -f ~/.xmonad/bash/bash_aliases ]; then
+	. ~/.xmonad/bash/bash_aliases
+fi
+
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+if ! shopt -oq posix; then
+	if [ -f /usr/share/bash-completion/bash_completion ]; then
+		. /usr/share/bash-completion/bash_completion
+	elif [ -f /etc/bash_completion ]; then
+		. /etc/bash_completion
+	fi
+fi
+
+# git prompt
+if [ -f ~/.xmonad/bash/git_prompt.sh ]; then
+    source ~/.xmonad/bash/git_prompt.sh
+fi
+
+# extern bash configuration for diffrent computer
+if [ -f ~/.xmonad/bash/bash_extendrc ]; then
+	. ~/.xmonad/bash/bash_extendrc
+fi
+
+# set default enviroment
+export EDITOR=/usr/bin/nvim
+export TERM=xterm-256color
+
+# PS1
+PS1='\[\e[1;32m\][\u@\h \W]$(__git_ps1 " (%s)")\$\[\e[0m\] '
