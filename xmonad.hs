@@ -4,7 +4,6 @@ import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.ICCCMFocus
 import XMonad.Hooks.EwmhDesktops
-import XMonad.Layout.Spacing
 import XMonad.Layout.NoBorders
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
@@ -45,6 +44,7 @@ main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc.hs"
     xmonad $ ewmh defaultConfig {
     manageHook = myManageHook <+> manageDocks <+> manageHook defaultConfig
+    , handleEventHook = docksEventHook <+> handleEventHook defaultConfig
     , layoutHook = avoidStruts $ smartBorders $ myLayout
     , terminal = myTerminal
     , logHook = do
