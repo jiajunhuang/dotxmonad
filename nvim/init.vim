@@ -3,6 +3,8 @@ call plug#begin('~/.config/nvim/plugged')
 " basic plugins
 Plug 'syntastic'
 Plug 'The-NERD-Commenter'
+Plug 'mileszs/ack.vim'
+Plug 'klen/python-mode'
 Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
@@ -10,6 +12,7 @@ Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/matchit.zip'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-trailing-whitespace'
 
