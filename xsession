@@ -17,8 +17,5 @@ volumeicon &
 # input method
 fcitx &
 
-# dropbox
-dropbox start &
-
 # nm-applet
 nm-applet &
