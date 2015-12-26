@@ -14,5 +14,8 @@ redshift -l 31.2000:121.5000 &
 # volumeicon
 volumeicon &
 
+# input method
+fcitx &
+
 # nm-applet
 nm-applet &
