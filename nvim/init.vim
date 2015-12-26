@@ -93,3 +93,10 @@ set exrc
 if exists(':tnoremap')
     tnoremap <Esc> <C-\><C-n>
 endif
+
+" pymode
+let g:pymode_lint_ignore = 'E501'
+
+" use space to toggle fold
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
