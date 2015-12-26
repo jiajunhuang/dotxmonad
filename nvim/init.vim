@@ -59,9 +59,6 @@ set pastetoggle=<F2>
 set undofile
 set undodir=~/.cache/nvim/undodir
 
-" python pdb
-nnoremap <F10> <Esc>Oimport pdb; pdb.set_trace()<Esc>
-
 " emacs key bindings for vim insert mode
 inoremap <C-d> <Del>
 inoremap <C-a> <Home>
