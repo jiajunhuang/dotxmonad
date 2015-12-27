@@ -95,7 +95,8 @@ if exists(':tnoremap')
 endif
 
 " pymode
-let g:pymode_lint_ignore = 'E501'
+let g:pymode_lint = 0 " shutdown pylint check, I use syntastic
+let g:pymode_rope = 0 " shutdown rope_project
 
 " use space to toggle fold
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
