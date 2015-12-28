@@ -30,6 +30,7 @@ set ruler
 set cursorline cursorcolumn
 "the-80-line is red!
 set cc=80
+set wrap
 "display pairs
 set showmatch
 "history
