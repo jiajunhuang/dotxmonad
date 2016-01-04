@@ -1,6 +1,5 @@
 *.o
 *.hi
 *.errors
-background.png
 xmonad-x86_64-linux
 bash/bash_extendrc
