@@ -1,0 +1,10 @@
+[options]
+font = Code New Roman 14
+font = Incosolata 14
+
+# custom browser to chromium
+browser = chromium
+
+[colors]
+background = #3f3f3f
+foreground = #dcdccc
