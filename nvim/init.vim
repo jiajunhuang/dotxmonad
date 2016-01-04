@@ -17,6 +17,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -82,7 +83,8 @@ let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E225'
 
 " color
-set background=dark
+set background=light
+colorscheme solarized
 
 " newly vimrc
 set showcmd
