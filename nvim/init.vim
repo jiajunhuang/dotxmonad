@@ -4,7 +4,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'syntastic'
 Plug 'The-NERD-Commenter'
 Plug 'mileszs/ack.vim'
-Plug 'klen/python-mode'
 Plug 'bling/vim-airline'
 Plug 'mitsuhiko/vim-rst'
 Plug 'ervandew/supertab'
@@ -15,6 +14,7 @@ Plug 'tshirtman/vim-cython'
 Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/matchit.zip'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'hynek/vim-python-pep8-indent'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-trailing-whitespace'
 
@@ -32,6 +32,7 @@ set cursorline cursorcolumn
 "the-80-line is red!
 set cc=80
 set wrap
+set textwidth=0
 "display pairs
 set showmatch
 "history
@@ -96,10 +97,6 @@ set exrc
 if exists(':tnoremap')
     tnoremap <Esc> <C-\><C-n>
 endif
-
-" pymode
-let g:pymode_lint = 0 " shutdown pylint check, I use syntastic
-let g:pymode_rope = 0 " shutdown rope_project
 
 " use space to toggle fold
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
