@@ -36,8 +36,8 @@ myLayout =  tiled1 ||| Mirror tiled1 ||| Full
           delta = 3/100
 
 -- Define BorderColor
-myNormalBorderColor = "#002b36"
-myFocusedBorderColor = "#fdf6e3"
+myNormalBorderColor = "#353945"
+myFocusedBorderColor = "#ffffff"
 
 main = do
     spawn "feh --bg-scale ~/.xmonad/background.png"
