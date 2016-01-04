@@ -40,7 +40,7 @@ myNormalBorderColor = "#353945"
 myFocusedBorderColor = "#ffffff"
 
 main = do
-    spawn "feh --bg-scale ~/.xmonad/background.png"
+    spawn "feh --bg-fill ~/.xmonad/background.png"
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc.hs"
     xmonad $ ewmh defaultConfig {
     manageHook = myManageHook <+> manageDocks <+> manageHook defaultConfig
