@@ -8,6 +8,7 @@ Plug 'bling/vim-airline'
 Plug 'mitsuhiko/vim-rst'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-fugitive'
+Plug 'sickill/vim-monokai'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tshirtman/vim-cython'
@@ -17,7 +18,6 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'bronson/vim-trailing-whitespace'
-Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -83,8 +83,7 @@ let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E225'
 
 " color
-set background=light
-colorscheme solarized
+colorscheme monokai
 
 " newly vimrc
 set showcmd

@@ -5,33 +5,24 @@ font = Incosolata 14
 # custom browser to chromium
 browser = chromium
 
-# Solarized light color scheme
-# from https://github.com/alpha-omega/termite-colors-solarized/
-
+# monokai theme
 [colors]
-foreground = #657b83
-foreground_bold = #073642
-#foreground_dim = #888888
-background = #fdf6e3
-cursor = #586e75
-
-# if unset, will reverse foreground and background
-#highlight = #839496
-
-# colors from color0 to color254 can be set
-color0 = #073642
-color1 = #dc322f
-color2 = #859900
-color3 = #b58900
-color4 = #268bd2
-color5 = #d33682
-color6 = #2aa198
-color7 = #eee8d5
-color8 = #002b36
-color9 = #cb4b16
-color10 = #586e75
-color11 = #657b83
-color12 = #839496
-color13 = #6c71c4
-color14 = #93a1a1
-color15 = #fdf6e3
+foreground = #F6F5EE
+foreground_bold = #61B8D0
+background = #1D1D19
+color0 = #1C1D19
+color1 = #D01B24
+color2 = #A7D32C
+color3 = #D8CF67
+color4 = #61B8D0
+color5 = #695ABB
+color6 = #D53864
+color7 = #FEFFFE
+color8 = #1C1D19
+color9 = #D12A24
+color10 = #A7D32C
+color11 = #D8CF67
+color12 = #61B8D0
+color13 = #695ABB
+color14 = #D53864
+color15 = #FEFFFE
