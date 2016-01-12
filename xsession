@@ -16,6 +16,7 @@ volumeicon &
 
 # input method
 fcitx &
+sogou-qimpanel &
 
 # dropbox
 dropbox-cli start &
