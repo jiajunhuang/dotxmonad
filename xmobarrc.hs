@@ -28,7 +28,7 @@ Config {
    , "--" -- battery specific options -- discharging status
    , "-o"
    , "<left>%"
-   ] 100
+   ] 10
 
     -- memory usage monitor
     , Run Memory [ "--template" ,"Mem: <usedratio>%"
@@ -37,10 +37,10 @@ Config {
     , "--low"      , "green"
     , "--normal"   , "orange"
     , "--high"     , "red"
-    ] 100
+    ] 10
 
    -- time and date indicator
    --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-   , Run Date "%F (%a) %H:%M" "date" 100
+   , Run Date "%F (%a) %H:%M" "date" 10
    ]
    }
