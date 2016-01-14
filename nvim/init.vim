@@ -98,6 +98,7 @@ set exrc
 " terminal
 if exists(':tnoremap')
     tnoremap <Esc> <C-\><C-n>
+    tnoremap <C-c> <C-\><C-n>
 endif
 
 " use space to toggle fold
@@ -106,3 +107,6 @@ vnoremap <Space> zf
 
 " import pdb
 nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<ENTER>
+
+" open terminal
+nnoremap <C-s> :vs term://bash<CR>A
