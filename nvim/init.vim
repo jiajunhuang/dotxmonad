@@ -98,7 +98,6 @@ set exrc
 " terminal
 if exists(':tnoremap')
     tnoremap <Esc> <C-\><C-n>
-    tnoremap <C-c> <C-\><C-n>
 endif
 
 " use space to toggle fold
