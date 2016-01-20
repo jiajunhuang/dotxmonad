@@ -3,10 +3,14 @@ call plug#begin('~/.config/nvim/plugged')
 " basic plugins
 Plug 'syntastic'
 Plug 'The-NERD-Commenter'
+Plug 'sjl/gundo.vim'
+Plug 'kien/ctrlp.vim'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
 Plug 'mitsuhiko/vim-rst'
 Plug 'ervandew/supertab'
+Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'sickill/vim-monokai'
 Plug 'luochen1990/rainbow'
@@ -14,6 +18,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tshirtman/vim-cython'
 Plug 'kshenoy/vim-signature'
 Plug 'Valloric/YouCompleteMe'
+Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/matchit.zip'
 Plug 'neovimhaskell/haskell-vim'
@@ -110,3 +115,9 @@ nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<ENTER>
 
 " open terminal
 nnoremap <C-s> :vs term://bash<CR>A
+
+" disable preview windows
+autocmd FileType python setlocal completeopt-=preview
+
+" repeat.vim
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
