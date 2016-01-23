@@ -2,28 +2,28 @@ call plug#begin('~/.config/nvim/plugged')
 
 " basic plugins
 Plug 'syntastic'
-Plug 'The-NERD-Commenter'
-Plug 'sjl/gundo.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
 Plug 'mitsuhiko/vim-rst'
 Plug 'ervandew/supertab'
+Plug 'lilydjwg/fcitx.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
 Plug 'sickill/vim-monokai'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tshirtman/vim-cython'
 Plug 'kshenoy/vim-signature'
-Plug 'Valloric/YouCompleteMe'
 Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/matchit.zip'
+Plug 'scrooloose/nerdcommenter'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'bronson/vim-trailing-whitespace'
+Plug 'ntpeters/vim-better-whitespace'
 
 call plug#end()
 
@@ -105,18 +105,23 @@ if exists(':tnoremap')
     tnoremap <Esc> <C-\><C-n>
 endif
 
-" use space to toggle fold
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
-
 " import pdb
 nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<ENTER>
 
 " open terminal
 nnoremap <C-s> :vs term://bash<CR>A
 
-" disable preview windows
-autocmd FileType python setlocal completeopt-=preview
-
 " repeat.vim
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
+
+" fold
+set foldmethod=indent
+set foldnestmax=1
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
+
+" autoremove whitespace(not only show them)
+autocmd BufWritePre * StripWhitespace
+
+" NERDTree
+map <F3> :NERDTreeToggle<CR>
