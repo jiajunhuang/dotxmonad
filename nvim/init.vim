@@ -16,7 +16,6 @@ Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tshirtman/vim-cython'
 Plug 'kshenoy/vim-signature'
-Plug 'airblade/vim-gitgutter'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/matchit.zip'
 Plug 'scrooloose/nerdcommenter'
@@ -114,14 +113,8 @@ nnoremap <C-s> :vs term://bash<CR>A
 " repeat.vim
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
-" fold
-set foldmethod=indent
-set foldnestmax=1
-nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
-vnoremap <Space> zf
-
 " autoremove whitespace(not only show them)
 autocmd BufWritePre * StripWhitespace
 
 " NERDTree
-map <F3> :NERDTreeToggle<CR>
+nnoremap <F3> :NERDTreeToggle<CR>
