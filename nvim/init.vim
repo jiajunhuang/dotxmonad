@@ -1,8 +1,8 @@
 call plug#begin('~/.config/nvim/plugged')
 
 " basic plugins
-Plug 'syntastic'
 Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tshirtman/vim-cython'
+Plug 'scrooloose/syntastic'
 Plug 'kshenoy/vim-signature'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/matchit.zip'
@@ -51,8 +52,6 @@ set cindent
 set shiftround
 "Tab
 set smarttab
-"keywords
-set iskeyword+=_,$,@,%,#,-
 "
 "plug-in settings
 
