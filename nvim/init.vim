@@ -16,6 +16,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tshirtman/vim-cython'
 Plug 'scrooloose/syntastic'
 Plug 'kshenoy/vim-signature'
+Plug 'wlangstroth/vim-racket'
 Plug 'pangloss/vim-javascript'
 Plug 'vim-scripts/matchit.zip'
 Plug 'scrooloose/nerdcommenter'
@@ -23,6 +24,7 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'ntpeters/vim-better-whitespace'
+Plug '~/Code/scheme/vimplug/'
 
 call plug#end()
 
@@ -116,3 +118,9 @@ autocmd BufWritePre * StripWhitespace
 
 " NERDTree
 nnoremap <F3> :NERDTreeToggle<CR>
+
+" scheme
+aug Scheme
+  au!
+  au Filetype scheme setl cindent& lispwords=define
+aug END
