@@ -24,7 +24,6 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'ntpeters/vim-better-whitespace'
-Plug '~/Code/scheme/vimplug/'
 
 call plug#end()
 
@@ -119,7 +118,7 @@ autocmd BufWritePre * StripWhitespace
 " NERDTree
 nnoremap <F3> :NERDTreeToggle<CR>
 
-" scheme
+" scheme, copy from here: http://d.hatena.ne.jp/tanakaBox/20070609/1181382818
 aug Scheme
   au!
   au Filetype scheme setl cindent& lispwords=define
