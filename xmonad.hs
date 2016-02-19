@@ -66,5 +66,5 @@ main = do
         , ((mod4Mask, xK_e), spawn "zathura")
         , ((mod4Mask, xK_b), sendMessage ToggleStruts)
         -- rebind system keyboard, find code in '/usr/include/X11/XF86keysym.h'
-        , ((0, 0x1008FFA9), spawn "touchpad_toggle.sh")
+        , ((mod4Mask, xK_t), spawn "touchpad_toggle.sh")
         ]
