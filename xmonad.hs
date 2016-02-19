@@ -64,7 +64,6 @@ main = do
         , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -20")
         , ((mod4Mask, xK_g), spawn "chromium")
         , ((mod4Mask, xK_e), spawn "zathura")
-        , ((mod4Mask, xK_b), sendMessage ToggleStruts)
-        -- rebind system keyboard, find code in '/usr/include/X11/XF86keysym.h'
         , ((mod4Mask, xK_t), spawn "touchpad_toggle.sh")
+        , ((mod4Mask, xK_b), sendMessage ToggleStruts)
         ]
