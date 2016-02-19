@@ -43,8 +43,6 @@ set wrap
 set textwidth=0
 "display pairs
 set showmatch
-"history
-set history=1000
 "indent
 set expandtab
 set shiftwidth=4
@@ -60,11 +58,6 @@ set smarttab
 " Rainbow
 let g:rainbow_active = 1
 
-" Paste
-nnoremap <F2> :set invpaste paste?<CR>
-imap <F2> <C-O>:set invpaste paste?<CR>
-set pastetoggle=<F2>
-
 " vim undodir
 set undofile
 set undodir=~/.cache/nvim/undodir
@@ -75,10 +68,6 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
-inoremap <C-n> <Down>
-inoremap <C-p> <Up>
-inoremap <C-v> <PageDown>
-inoremap <M-v> <PageUp>
 
 " syntastic
 set statusline+=%#warningmsg#
@@ -96,8 +85,6 @@ set ruler
 set showmode
 " disable mouse
 set mouse=
-" enable .nvimrc in current directory
-set exrc
 
 " terminal
 if exists(':tnoremap')
@@ -118,9 +105,3 @@ autocmd BufWritePre * StripWhitespace
 
 " NERDTree
 nnoremap <F3> :NERDTreeToggle<CR>
-
-" scheme, copy from here: http://d.hatena.ne.jp/tanakaBox/20070609/1181382818
-aug Scheme
-  au!
-  au Filetype scheme setl cindent& lispwords=define
-aug END
