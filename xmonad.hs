@@ -25,7 +25,7 @@ myManageHook = composeAll [
 myWorkspaces = ["1-docs", "2-work", "3-code", "4-other"] ++ map show[5..9]
 
 -- Define Terminal
-myTerminal = "gnome-terminal"
+myTerminal = "sakura"
 
 -- Define Layout
 myLayout =  tiled1 ||| Mirror tiled1 ||| Full
