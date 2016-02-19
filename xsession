@@ -10,3 +10,6 @@ volumeicon &
 
 # input method
 fcitx &
+
+# disable touchpad after login
+touchpad_disable.sh &
