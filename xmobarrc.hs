@@ -1,6 +1,6 @@
 Config {
    -- appearance
-   font = "xft:Source Han Sans CN:size=8"
+   font = "xft:WenQuanYi Micro Hei:size=8"
    , bgColor = "#353945"
    , fgColor = "#ffffff"
    , position = TopW L 100
