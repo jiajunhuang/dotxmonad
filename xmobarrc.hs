@@ -1,6 +1,6 @@
 Config {
    -- appearance
-   font = "xft:WenQuanYi Micro Hei:size=8"
+   font = "xft:WenQuanYi Micro Hei:size=10"
    , bgColor = "#353945"
    , fgColor = "#ffffff"
    , position = TopW L 100
