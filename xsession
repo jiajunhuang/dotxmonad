@@ -10,3 +10,6 @@ volumeicon &
 
 # input method
 fcitx &
+
+# sogou
+sogou-qimpanel &
