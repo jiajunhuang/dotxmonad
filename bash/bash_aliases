@@ -32,9 +32,3 @@ alias j='jobs'
 
 # free
 alias free='free -h'
-
-# use neovim now
-alias vim='nvim'
-
-# mit scheme
-alias mit-scheme='rlwrap mit-scheme'

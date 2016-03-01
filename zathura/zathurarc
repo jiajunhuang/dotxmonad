@@ -1,9 +1,0 @@
-set font "Code New Roman 12"
-
-set default-bg "#1D1D19"
-set default-fg "#F6F5EE"
-set statusbar-bg "#1D1D19"
-set statusbar-fg "#F6F5EE"
-
-# disable selection notification
-set selection-notification false

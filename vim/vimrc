@@ -28,6 +28,16 @@ Plug 'ntpeters/vim-better-whitespace'
 call plug#end()
 
 " basic settings
+" vim settings(neovim has enabled by default)
+set autoindent
+set backspace=indent,eol,start
+set display=lastline
+set encoding=utf-8
+set history=1000
+set hlsearch
+set incsearch
+set laststatus=2
+set wildmenu
 "syntax
 syntax on
 syntax enable
