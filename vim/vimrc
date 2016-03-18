@@ -2,7 +2,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 " basic plugins
 Plug 'kien/ctrlp.vim'
-Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
@@ -10,15 +9,11 @@ Plug 'mitsuhiko/vim-rst'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'sickill/vim-monokai'
-Plug 'scrooloose/nerdtree'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tshirtman/vim-cython'
 Plug 'scrooloose/syntastic'
 Plug 'kshenoy/vim-signature'
-Plug 'wlangstroth/vim-racket'
 Plug 'pangloss/vim-javascript'
-Plug 'vim-scripts/matchit.zip'
 Plug 'scrooloose/nerdcommenter'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'gorodinskiy/vim-coloresque'
@@ -111,6 +106,3 @@ silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
 
 " autoremove whitespace(not only show them)
 autocmd BufWritePre * StripWhitespace
-
-" NERDTree
-nnoremap <F3> :NERDTreeToggle<CR>
