@@ -24,15 +24,17 @@ call plug#end()
 
 " basic settings
 " vim settings(neovim has enabled by default)
-set autoindent
-set backspace=indent,eol,start
-set display=lastline
-set encoding=utf-8
-set history=1000
-set hlsearch
-set incsearch
-set laststatus=2
-set wildmenu
+if !has("nvim")
+    set autoindent
+    set backspace=indent,eol,start
+    set display=lastline
+    set encoding=utf-8
+    set history=1000
+    set hlsearch
+    set incsearch
+    set laststatus=2
+    set wildmenu
+endif
 "syntax
 syntax on
 syntax enable
@@ -83,23 +85,23 @@ let g:syntastic_python_flake8_args='--ignore=E501,E225'
 " color
 colorscheme monokai
 
-" newly vimrc
+" vimrc
 set showcmd
 set ruler
 set showmode
 " disable mouse
 set mouse=
 
-" terminal
-if exists(':tnoremap')
-    tnoremap <Esc> <C-\><C-n>
-endif
-
 " import pdb
-nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<ENTER>
+nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
 
-" open terminal
-nnoremap <C-s> :vs term://bash<CR>A
+" terminal(neovim only)
+if has("nvim")
+    nnoremap <C-s> :vs term://bash<CR>A
+    if exists(':tnoremap')
+        tnoremap <Esc> <C-\><C-n>
+    endif
+endif
 
 " repeat.vim
 silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
