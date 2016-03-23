@@ -22,7 +22,7 @@ Usage
     $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim  # Unix user only
 
-if you're a Windows user, please follow these steps in PowerShell::
+    $ # if you're a Windows user, please follow these steps in PowerShell::
 
     md ~\vimfiles\autoload
     $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -33,7 +33,7 @@ if you're a Windows user, please follow these steps in PowerShell::
     $ ln -s ~/.xmonad/bash/bashrc ~/.bashrc
     $ ln -s ~/.xmonad/vim/vimrc ~/.vimrc
 
-if you're a Windows user, please add a soft-link::
+    $ # if you're a Windows user, please add a soft-link::
 
     $ ln -s ~/vimfiles ~/.vim
 
