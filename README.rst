@@ -20,7 +20,10 @@ Usage
 #. install plug.vim for neovim::
 
     $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim  # Unix user only
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim  # Unix user only(vim on unix)
+
+    $ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim  # neovim on unix
 
     $ # if you're a Windows user, please follow these steps in PowerShell::
 

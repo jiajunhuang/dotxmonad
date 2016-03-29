@@ -1,4 +1,8 @@
-call plug#begin('~/.config/nvim/plugged')
+if has("nvim")
+    call plug#begin('~/.config/nvim/plugged')
+else
+    call plug#begin('~/.vim/plugged')
+endif
 
 " basic plugins
 Plug 'kien/ctrlp.vim'
