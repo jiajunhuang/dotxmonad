@@ -24,12 +24,6 @@ Plug 'gorodinskiy/vim-coloresque'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'ntpeters/vim-better-whitespace'
 
-if has("nvim")
-    " auto completion for neovim only(python3-neovim needed).
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'eagletmt/neco-ghc'
-endif
-
 call plug#end()
 
 " basic settings
@@ -126,12 +120,6 @@ if has("nvim")
     if exists(':tnoremap')
         tnoremap <Esc> <C-\><C-n>
     endif
-    " auto completion for neovim only(python3-neovim needed).
-    let g:deoplete#enable_at_startup = 1
-    " completion for haskell
-    " disable haskell-vim completion first(if you wish to use neco-ghc).
-    let g:haskellmode_completion_ghc = 0
-    autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 endif
 
 " repeat.vim
