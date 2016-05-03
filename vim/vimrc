@@ -9,17 +9,12 @@ else
 endif
 
 " basic plugins
-Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-fugitive'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/syntastic'
-Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
-Plug 'neovimhaskell/haskell-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'ntpeters/vim-better-whitespace'
 if has("win32")
@@ -27,12 +22,10 @@ if has("win32")
 else
     " unix plugs
     Plug 'kien/ctrlp.vim'
-    Plug 'gorodinskiy/vim-coloresque'
-    Plug 'neovimhaskell/haskell-vim'
     Plug 'tpope/vim-fugitive'
     Plug 'scrooloose/syntastic'
+    Plug 'neovimhaskell/haskell-vim'
 endif
-
 call plug#end()
 
 " basic settings
