@@ -12,6 +12,7 @@ endif
 Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
+Plug 'sickill/vim-monokai'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
@@ -105,7 +106,7 @@ let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E225'
 
 " color
-colorscheme ron
+colorscheme monokai
 
 " vimrc
 set showcmd
