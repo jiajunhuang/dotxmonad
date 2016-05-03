@@ -6,21 +6,16 @@ endif
 
 " basic plugins
 Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
 Plug 'ervandew/supertab'
-Plug 'mitsuhiko/vim-rst'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'sickill/vim-monokai'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
-Plug 'kshenoy/vim-signature'
 Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'gorodinskiy/vim-coloresque'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'ntpeters/vim-better-whitespace'
 
@@ -39,6 +34,10 @@ if !has("nvim")
     set laststatus=2
     set wildmenu
     if has("gui_running")
+        set guioptions-=m " remove menubar
+        set guioptions-=T " remove toolbar
+        set guioptions-=L " remove left-hand scroll bar
+        set guioptions-=r " remove right-hand scroll bar
         if has("win32")
             set guifont=Consolas:h14:cANSI
             set fileencoding=utf-8
@@ -46,10 +45,6 @@ if !has("nvim")
             source $VIMRUNTIME/delmenu.vim
             source $VIMRUNTIME/menu.vim
             language messages zh_CN.utf-8
-            set guioptions-=m " remove menubar
-            set guioptions-=T " remove toolbar
-            set guioptions-=L " remove left-hand scroll bar
-            set guioptions-=r " remove right-hand scroll bar
         endif
     endif
 endif
@@ -101,17 +96,20 @@ let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=E501,E225'
 
 " color
-colorscheme monokai
+colorscheme ron
 
 " vimrc
 set showcmd
 set ruler
 set showmode
-" disable mouse
-set mouse=
+" mouse works on visual mode only
+set mouse=v
 
 " import pdb
 nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
+
+" autoremove whitespace(not only show them)
+autocmd BufWritePre * StripWhitespace
 
 " neovim only features
 if has("nvim")
@@ -121,9 +119,3 @@ if has("nvim")
         tnoremap <Esc> <C-\><C-n>
     endif
 endif
-
-" repeat.vim
-silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
-
-" autoremove whitespace(not only show them)
-autocmd BufWritePre * StripWhitespace
