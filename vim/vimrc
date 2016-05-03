@@ -1,7 +1,11 @@
 if has("nvim")
     call plug#begin('~/.config/nvim/plugged')
 else
-    call plug#begin('~/.vim/plugged')
+    if has("win32")
+        call plug#begin('~/vimfiles/plugged')
+    else
+        call plug#begin('~/.vim/plugged')
+    endif
 endif
 
 " basic plugins
@@ -18,6 +22,16 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'ntpeters/vim-better-whitespace'
+if has("win32")
+    " widnows plugs
+else
+    " unix plugs
+    Plug 'kien/ctrlp.vim'
+    Plug 'gorodinskiy/vim-coloresque'
+    Plug 'neovimhaskell/haskell-vim'
+    Plug 'tpope/vim-fugitive'
+    Plug 'scrooloose/syntastic'
+endif
 
 call plug#end()
 
@@ -78,8 +92,10 @@ set smarttab
 let g:rainbow_active = 1
 
 " vim undodir
-set undofile
-set undodir=~/.cache/nvim/undodir
+if has("nvim")
+    set undofile
+    set undodir=~/.cache/nvim/undodir
+endif
 
 " emacs key bindings for vim insert mode
 inoremap <C-d> <Del>
