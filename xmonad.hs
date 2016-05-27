@@ -22,10 +22,10 @@ myManageHook = composeAll [
     ]
 
 -- Define the names of all workspaces
-myWorkspaces = ["1-docs", "2-work", "3-code", "4-other"] ++ map show[5..9]
+myWorkspaces = ["1-docs", "2-code", "3-code", "4-code", "5-mail", "6-music", "7-vm", "8-tmp", "9-others"]
 
 -- Define Terminal
-myTerminal = "sakura"
+myTerminal = "termite"
 
 -- Define Layout
 myLayout =  tiled1 ||| Mirror tiled1 ||| Full

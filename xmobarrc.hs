@@ -1,14 +1,14 @@
 Config {
    -- appearance
-   font = "xft:WenQuanYi Micro Hei:size=10"
+   font = "xft:Source Han Sans CN:size=9"
    , bgColor = "#353945"
    , fgColor = "#ffffff"
-   , position = TopW L 100
+   , position = TopW L 90
 
    -- layout
    , sepChar = "%" -- delineator between plugin names and straight text
    , alignSep = "}{" -- separator between left-right alignment
-   , template = " %StdinReader% }{ %memory% | %battery% | %date% "
+   , template = " %StdinReader% }{ %memory% | %battery% | %date%               "
    , commands = [
    -- read data from xmonad
    Run StdinReader
