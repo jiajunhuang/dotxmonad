@@ -8,6 +8,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Actions.SpawnOn
+import XMonad.Actions.WindowBringer
 import Graphics.X11.ExtraTypes.XF86
 import System.IO
 import System.Exit
@@ -64,9 +65,11 @@ main = do
                                 ((mod4Mask, xK_l), spawn "slock")
       , ((0, xF86XK_MonBrightnessUp), spawn "xbacklight +20")
       , ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -20")
-      , ((mod4Mask, xK_g), spawn "chromium")
+      , ((mod4Mask, xK_c), spawn "chromium")
       , ((mod4Mask, xK_e), spawn "zathura")
       , ((mod4Mask, xK_m), spawn "netease-cloud-music")
       , ((mod4Mask, xK_t), spawn "touchpad_toggle.sh")
       , ((mod4Mask, xK_b), sendMessage ToggleStruts)
+      , ((mod4Mask, xK_g), gotoMenu)
+      , ((mod4Mask, xK_b), bringMenu)
                                                    ]
