@@ -8,7 +8,7 @@ import XMonad.Layout.NoBorders
 import XMonad.Util.Run(spawnPipe)
 import XMonad.Util.EZConfig(additionalKeys)
 import XMonad.Actions.SpawnOn
-import XMonad.Actions.WindowBringer
+import XMonad.Actions.GridSelect
 import Graphics.X11.ExtraTypes.XF86
 import System.IO
 import System.Exit
@@ -70,6 +70,5 @@ main = do
       , ((mod4Mask, xK_m), spawn "netease-cloud-music")
       , ((mod4Mask, xK_t), spawn "touchpad_toggle.sh")
       , ((mod4Mask, xK_b), sendMessage ToggleStruts)
-      , ((mod4Mask, xK_g), gotoMenu)
-      , ((mod4Mask, xK_b), bringMenu)
+      , ((mod4Mask, xK_Tab), goToSelected defaultGSConfig)
                                                    ]
