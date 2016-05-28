@@ -15,5 +15,14 @@ volumeicon &
 fcitx &
 sogou-qimpanel &
 
+# dropbox
+dropbox &
+
+# udiskie
+udiskie &
+
+# touchpad
+synclient touchpadoff=1 &
+
 # nm-applet
 nm-applet &
