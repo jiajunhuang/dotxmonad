@@ -31,12 +31,11 @@ myWorkspaces = ["1-docs", "2-code", "3-code", "4-code", "5-mail", "6-music", "7-
 myTerminal = "termite"
 
 -- Define Layout
-myLayout =  tiled1 ||| Mirror tiled1 ||| Full
-    where tiled1 = Tall nmaster1 delta ratio
-          nmaster1 = 1
-          nmaster2 = 2
-          ratio = 3/5
-          delta = 3/100
+myLayout =  tiled ||| Full
+    where tiled = Tall nmaster delta ratio
+          nmaster = 1 -- default number of windows in master screen
+          delta = 3/100 -- default percent of resizing panes
+          ratio = 3/5 -- default proportion of screen occupied by master pane
 
 -- Define BorderColor
 myNormalBorderColor = "#353945"
