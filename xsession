@@ -19,7 +19,7 @@ sogou-qimpanel &
 dropbox &
 
 # udiskie
-udiskie &
+udiskie -aN &
 
 # touchpad
 synclient touchpadoff=1 &

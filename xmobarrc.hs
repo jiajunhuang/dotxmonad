@@ -14,13 +14,12 @@ Config {
       , "--low", "green"
       , "--normal", "orange"
       , "--high", "red" ] 10
-      , Run Battery [ "--template" , "Bat: <acstatus>"
+      , Run Battery [ "--template" , "Bat: <left>%"
       , "--Low", "30"
       , "--High", "90"
       , "--low" , "red"
       , "--normal" , "orange"
-      , "--high" , "green"
-      , "--", "-o", "<left>%" ] 600
+      , "--high" , "green"] 600
       , Run Com "date" ["+%a %b %_d %H:%M"] "date" 600
     ]
 }
