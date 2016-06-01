@@ -1,6 +1,6 @@
 # UI
 
-set font                      "Source Code Pro:pixelsize=14"
+set font                      "Consolas:pixelsize=14"
 set guioptions                ""
 
 # Colors
@@ -17,8 +17,6 @@ set tabbar-focus-fg           "#ffffff"
 set tabbar-focus-bg           "#101010"
 set statusbar-fg              "#ffffff"
 set statusbar-bg              "#ff0055"
-# set recolor-darkcolor         "#101010"
-# set recolor-lightcolor        "#ffffff"
 set highlight-color           "#ff0055"
 set inputbar-bg               "#ff0055"
 set inputbar-fg               "#ffffff"
@@ -28,8 +26,3 @@ set index-active-fg           "#ffffff"
 set index-active-bg           "#ff0055"
 set notification-fg           "#ff0055"
 set notification-bg           "#ffffff"
-set recolor "true"
-set recolor-darkcolor "#f8f8f2"
-set recolor-lightcolor "#272822"
-
-# vim: set ft=config:
