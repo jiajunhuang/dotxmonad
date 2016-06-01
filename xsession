@@ -13,7 +13,6 @@ volumeicon &
 
 # input method
 fcitx &
-sogou-qimpanel &
 
 # dropbox
 dropbox &
@@ -23,6 +22,9 @@ udiskie -aN &
 
 # touchpad
 synclient touchpadoff=1 &
+
+# aria2
+aria2c -D &
 
 # nm-applet
 nm-applet &

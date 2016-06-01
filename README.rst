@@ -1,47 +1,60 @@
-My configuration files for bash and vim
-========================================
+My configuration files
+=======================
 
-This repo is named ``dotxmonad`` because I was a ``XMonad`` user.
-Now I'm using Windows, with Linux in a vm.
+This repo is named ``dotxmonad`` because I'm a XMonad_ user.
+
+Items:
+
+- Neovim_ : my editor
+
+- Aria2_ : for download
+
+- Bash_ : shell, you know
+
+.. _XMonad: http://xmonad.org/
+.. _Neovim: https://neovim.io/
+.. _Aria2: https://aria2.github.io/
+.. _Bash: https://www.gnu.org/software/bash/
 
 Usage
-------
+--------
 
-1. install bash and vim::
+XMonad, Bash, etc...
+~~~~~~~~~~~~~~~~~~~~~~
 
-    $ sudo apt-get install vim bash  # Unix user only
+# clone::
 
-    if you're a Windows user, please install ``gvim for Windows`` and ``Git for Windows``
+    git clone git@github.com:jiajunhung/dotxmonad ~/.xmonad
 
-#. clone this repository to your gnu/linux and rename it to ``.xmonad``::
+# Install::
 
-    $ git clone https://github.com/jiajunhuang/dotxmonad ~/.xmonad
+    # pacman -S xmonad xmonad-contrib xmobar dmenu trayer xcompmgr feh
 
-#. install plug.vim for neovim::
+# Link::
 
+    $ ln -s ~/.xmonad/bash/bashrc ~/.bashrc # remove it first if it exists
+    $ ln -s ~/.xmonad/bash/bash_aliases ~/.bash_aliases # same as above
+    $ ln -s ~/.xmonad/aria2 ~/.config/aria2
+    $ ln -s ~/.xmonad/zathura ~/.config/zathura
+
+Vim, Neovim
+~~~~~~~~~~~~~
+
+if you're using Vim::
+
+    $ pacman -S vim
     $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim  # Unix user only(vim on unix)
-
-    $ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim  # neovim on unix
-
-    $ # if you're a Windows user, please follow these steps in PowerShell::
-
-    md ~\vimfiles\autoload
-    $uri = 'https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-    (New-Object Net.WebClient).DownloadFile($uri, $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath("~\vimfiles\autoload\plug.vim"))
-
-#. make a soft link with your ``.bashrc``, ``.vimrc``::
-
-    $ ln -s ~/.xmonad/bash/bashrc ~/.bashrc
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     $ ln -s ~/.xmonad/vim/vimrc ~/.vimrc
 
-    $ # if you're a Windows user, please add a soft-link::
+or Neovim::
 
-    $ ln -s ~/vimfiles ~/.vim
+    $ pacman -S neovim
+    $ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    $ ln -s ~/.xmonad/vim/vimrc ~/.config/nvim/init.vim
 
-Note
-----
+then spawn vim and enter ``:PlugInstall``!
 
-- you can set your own bash script in ``.xmonad/bash/bash_extendrc``, and then type ``source ~/.bashrc``, it will be included
-  automatically.
+Enjoy!
+
