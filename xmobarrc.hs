@@ -1,5 +1,5 @@
 Config {
-        font = "xft:Source Han Sans CN:size=8"
+        font = "xft:WenQuanYi Zen Hei:size=10"
       , bgColor = "#353945"
       , fgColor = "#ffffff"
       , position = TopW L 90

@@ -29,7 +29,7 @@ myManageHook = composeAll [
 myWorkspaces = ["1-docs", "2-code", "3-code", "4-code", "5-mail", "6-music", "7-chat", "8-vm", "9-others"]
 
 -- Define Terminal
-myTerminal = "termite"
+myTerminal = "gnome-terminal"
 
 -- Define Layout
 myLayout =  tiled ||| Full
