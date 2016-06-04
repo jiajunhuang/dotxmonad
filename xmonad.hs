@@ -32,7 +32,7 @@ myWorkspaces = ["1-docs", "2-code", "3-code", "4-code", "5-mail", "6-music", "7-
 myTerminal = "gnome-terminal"
 
 -- Define Layout
-myLayout =  tiled ||| Full
+myLayout =  tiled ||| Mirror tiled ||| Full
     where tiled = Tall nmaster delta ratio
           nmaster = 1 -- default number of windows in master screen
           delta = 3/100 -- default percent of resizing panes
