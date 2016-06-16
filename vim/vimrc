@@ -10,11 +10,11 @@ endif
 
 " basic plugins
 Plug 'bling/vim-airline'
-Plug 'ervandew/supertab'
 Plug 'tpope/vim-surround'
 Plug 'sickill/vim-monokai'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'ntpeters/vim-better-whitespace'
@@ -117,9 +117,6 @@ set mouse=v
 
 " import pdb
 nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
-
-" autoremove whitespace(not only show them)
-autocmd BufWritePre * StripWhitespace
 
 " neovim only features
 if has("nvim")
