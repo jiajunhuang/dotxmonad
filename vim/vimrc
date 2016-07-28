@@ -9,6 +9,7 @@ else
 endif
 
 " basic plugins
+Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-surround'
 Plug 'sickill/vim-monokai'
