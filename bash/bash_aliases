@@ -32,3 +32,9 @@ alias j='jobs'
 
 # free
 alias free='free -h'
+
+# work
+alias gweeklog='git log master --author `git config --get user.name` --since "1 week ago" --oneline | tac'
+
+# tmux
+alias ta='tmux attach'
