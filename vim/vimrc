@@ -15,8 +15,6 @@ Plug 'tpope/vim-surround'
 Plug 'sickill/vim-monokai'
 Plug 'luochen1990/rainbow'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tacahiroy/ctrlp-funky'
-Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'ntpeters/vim-better-whitespace'
@@ -24,10 +22,11 @@ if has("win32")
     " widnows plugs
 else
     " unix plugs
-    Plug 'kien/ctrlp.vim'
     Plug 'tpope/vim-fugitive'
     Plug 'scrooloose/syntastic'
     Plug 'itchyny/vim-haskell-indent'
+    Plug 'tacahiroy/ctrlp-funky' | Plug 'kien/ctrlp.vim'
+    Plug 'davidhalter/jedi-vim' | Plug 'ervandew/supertab'
 endif
 call plug#end()
 
