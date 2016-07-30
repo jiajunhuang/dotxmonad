@@ -5,29 +5,34 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-if [ -f ~/.xmonad/bash/bash_aliases ]; then
-	. ~/.xmonad/bash/bash_aliases
+# bash completion
+BASH_COMPLETION=/usr/share/bash-completion/bash_completion
+if [ -f $BASH_COMPLETION ]; then
+    source $BASH_COMPLETION
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-	if [ -f /usr/share/bash-completion/bash_completion ]; then
-		. /usr/share/bash-completion/bash_completion
-	elif [ -f /etc/bash_completion ]; then
-		. /etc/bash_completion
-	fi
-fi
-
-# git prompt
-if [ -f ~/.xmonad/bash/git_prompt.sh ]; then
-    source ~/.xmonad/bash/git_prompt.sh
+# bash aliases
+BASH_ALIASES=~/.xmonad/bash/bash_aliases
+if [ -f $BASH_ALIASES ]; then
+    source $BASH_ALIASES
 fi
 
 # extern bash configuration for diffrent computer
-if [ -f ~/.xmonad/bash/bash_extendrc ]; then
-	. ~/.xmonad/bash/bash_extendrc
+BASH_EXTENDRC=~/.xmonad/bash/bash_extendrc
+if [ -f $BASH_EXTENDRC ]; then
+    source $BASH_EXTENDRC
+fi
+
+# git prompt
+GIT_PROMPT=~/.xmonad/bash/git_prompt.sh
+if [ -f $GIT_PROMPT ]; then
+    source $GIT_PROMPT
+fi
+
+# Autojump
+AUTOJUMP_PROFILE=/etc/profile.d/autojump.bash
+if [ -f $AUTOJUMP_PROFILE ]; then
+	source $AUTOJUMP_PROFILE
 fi
 
 # set default enviroment
@@ -35,6 +40,3 @@ export TERM=xterm-256color
 
 # PS1
 export PS1='\[\e[1;32m\][\u@\h \W$(__git_ps1 " (%s)")]\$\[\e[0m\] '
-
-# mv .nv folder to .config
-export __GL_SHADER_DISK_CACHE_PATH=~/.cache/nv/

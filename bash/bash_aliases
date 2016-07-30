@@ -27,9 +27,6 @@ alias rm='rm -I'
 # cd
 alias ..='cd ../'
 
-# jobs
-alias j='jobs'
-
 # free
 alias free='free -h'
 
