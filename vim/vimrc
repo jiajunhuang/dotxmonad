@@ -83,6 +83,15 @@ set statusline+=%*
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_python_flake8_args='--ignore=I201,E501,E225'
 
+" ctrlp-funky
+nnoremap <Leader>fu :CtrlPFunky<Cr>
+" narrow the list down with a word under cursor
+nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
+let g:ctrlp_funky_matchtype = 'path'
+
+" jedi
+autocmd FileType python setlocal completeopt-=preview
+
 " color
 colorscheme monokai
 
@@ -104,9 +113,3 @@ if has("nvim")
         tnoremap <Esc> <C-\><C-n>
     endif
 endif
-
-" ctrlp-funky
-nnoremap <Leader>fu :CtrlPFunky<Cr>
-" narrow the list down with a word under cursor
-nnoremap <Leader>fU :execute 'CtrlPFunky ' . expand('<cword>')<Cr>
-let g:ctrlp_funky_matchtype = 'path'
