@@ -32,27 +32,8 @@ XMonad, Bash, etc...
 
 # Link::
 
-    $ ln -s ~/.xmonad/bash/bashrc ~/.bashrc # remove it first if it exists
-    $ ln -s ~/.xmonad/bash/bash_aliases ~/.bash_aliases # same as above
-    $ ln -s ~/.xmonad/aria2 ~/.config/aria2
-    $ ln -s ~/.xmonad/zathura ~/.config/zathura
+    # cd ~/.xmonad && ./install.sh neovim # if you're using neovim or replace neovim with vim if you are using it.
 
-Vim, Neovim
-~~~~~~~~~~~~~
-
-if you're using Vim::
-
-    $ pacman -S vim
-    $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    $ ln -s ~/.xmonad/vim/vimrc ~/.vimrc
-
-or Neovim::
-
-    $ pacman -S neovim
-    $ curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    $ ln -s ~/.xmonad/vim/vimrc ~/.config/nvim/init.vim
 
 then spawn vim and enter ``:PlugInstall``!
 
