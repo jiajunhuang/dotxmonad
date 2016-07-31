@@ -1,33 +1,24 @@
 if has("nvim")
     call plug#begin('~/.config/nvim/plugged')
 else
-    if has("win32")
-        call plug#begin('~/vimfiles/plugged')
-    else
-        call plug#begin('~/.vim/plugged')
-    endif
+    call plug#begin('~/.vim/plugged')
 endif
 
 " basic plugins
 Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'sickill/vim-monokai'
 Plug 'luochen1990/rainbow'
+Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/nerdcommenter'
+Plug 'itchyny/vim-haskell-indent'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'ntpeters/vim-better-whitespace'
-if has("win32")
-    " widnows plugs
-else
-    " unix plugs
-    Plug 'tpope/vim-fugitive'
-    Plug 'scrooloose/syntastic'
-    Plug 'itchyny/vim-haskell-indent'
-    Plug 'tacahiroy/ctrlp-funky' | Plug 'kien/ctrlp.vim'
-    Plug 'davidhalter/jedi-vim' | Plug 'ervandew/supertab'
-endif
+Plug 'tacahiroy/ctrlp-funky' | Plug 'kien/ctrlp.vim'
+Plug 'davidhalter/jedi-vim' | Plug 'ervandew/supertab'
 call plug#end()
 
 " basic settings
@@ -42,20 +33,6 @@ if !has("nvim")
     set incsearch
     set laststatus=2
     set wildmenu
-    if has("gui_running")
-        set guioptions-=m " remove menubar
-        set guioptions-=T " remove toolbar
-        set guioptions-=L " remove left-hand scroll bar
-        set guioptions-=r " remove right-hand scroll bar
-        if has("win32")
-            set guifont=Consolas:h14:cANSI
-            set fileencoding=utf-8
-            set termencoding=utf-8
-            source $VIMRUNTIME/delmenu.vim
-            source $VIMRUNTIME/menu.vim
-            language messages zh_CN.utf-8
-        endif
-    endif
 endif
 "syntax
 syntax on
