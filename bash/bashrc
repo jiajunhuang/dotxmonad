@@ -24,7 +24,7 @@ if [ -f $BASH_EXTENDRC ]; then
 fi
 
 # git prompt
-GIT_PROMPT=~/.xmonad/bash/git_prompt.sh
+GIT_PROMPT=/usr/share/git/git-prompt.sh
 if [ -f $GIT_PROMPT ]; then
     source $GIT_PROMPT
 fi

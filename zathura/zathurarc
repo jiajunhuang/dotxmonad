@@ -1,28 +1,43 @@
-# UI
+et first-page-column 2
+set window-title-basename true
+set guioptions ""
 
-set font                      "Consolas:pixelsize=14"
-set guioptions                ""
+set font "Consolas 16"
+set default-bg "#151515" #00
+set default-fg "#E0E0E0" #01
 
-# Colors
+set statusbar-fg "#B0B0B0" #04
+set statusbar-bg "#202020" #01
 
-set completion-fg             "#777777"
-set completion-bg             "#ffffff"
-set completion-highlight-fg   "#101010"
-set completion-highlight-bg   "#ffffff"
-set default-fg                "#ffffff"
-set default-bg                "#252525"
-set tabbar-fg                 "#ffffff"
-set tabbar-bg                 "#101010"
-set tabbar-focus-fg           "#ffffff"
-set tabbar-focus-bg           "#101010"
-set statusbar-fg              "#ffffff"
-set statusbar-bg              "#ff0055"
-set highlight-color           "#ff0055"
-set inputbar-bg               "#ff0055"
-set inputbar-fg               "#ffffff"
-set index-fg                  "#ff0055"
-set index-bg                  "#ffffff"
-set index-active-fg           "#ffffff"
-set index-active-bg           "#ff0055"
-set notification-fg           "#ff0055"
-set notification-bg           "#ffffff"
+set inputbar-bg "#151515" #00 currently not used
+set inputbar-fg "#FFFFFF" #02
+
+set notification-error-bg "#AC4142" #08
+set notification-error-fg "#151515" #00
+
+set notification-warning-bg "#AC4142" #08
+set notification-warning-fg "#151515" #00
+
+set highlight-color "#F4BF75" #0A
+set highlight-active-color "#6A9FB5" #0D
+
+set completion-highlight-fg "#303030" #02
+set completion-highlight-bg "#75B5AA" #0C
+
+set completion-bg "#303030" #02
+set completion-fg "#75B5AA" #0C
+
+set notification-bg "#90A959" #0B
+set notification-fg "#151515" #00
+
+set recolor-lightcolor "#151515" #00
+set recolor-darkcolor "#888a85" #06, was E0E0E0
+set recolor "false"
+
+# setting recolor-keep true will keep any color your pdf has.
+# if it is false, it'll just be black and white
+set recolor-keephue "true"
+
+# set recolor-lightcolor "#2e3436"
+# set recolor-darkcolor "#eeeeec"
+# set recolor "true"
