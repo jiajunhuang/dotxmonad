@@ -15,8 +15,9 @@ alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
 alias gr='git review'
-alias gn='git branch $1 && git checkout $1'
-alias gb='git rebase'
+alias gb='git branch'
+alias gck='git checkout'
+alias grb='git rebase'
 
 #proxychains
 alias pc='proxychains'
