@@ -12,8 +12,11 @@ alias egrep='egrep --color=auto'
 #git
 alias gf='git diff'
 alias gs='git status'
-alias gc='git commit -a'
+alias gc='git commit'
 alias gp='git push'
+alias gr='git review'
+alias gn='git branch $1 && git checkout $1'
+alias gb='git rebase'
 
 #proxychains
 alias pc='proxychains'
@@ -31,7 +34,7 @@ alias ..='cd ../'
 alias free='free -h'
 
 # work
-alias gweeklog='git log master --author `git config --get user.name` --since "1 week ago" --oneline | tac'
+alias gweeklog='git log master --author `git config --get user.name` --since "6 days ago" --oneline | tac'
 
 # tmux
 alias ta='tmux attach'
