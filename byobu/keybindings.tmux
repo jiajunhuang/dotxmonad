@@ -1,7 +1,3 @@
-unbind C-b
-set -g prefix C-x
-bind r source-file ~/.tmux.conf \; display "Reloaded Tmux Configuration!"
-
 # split pane
 unbind '"'
 bind - splitw -v
@@ -44,17 +40,9 @@ bind -t vi-copy v begin-selection
 # copy (y)
 bind -t vi-copy y copy-selection
 
-# status bar
-set-window-option -g status-left "#(whoami)@#(hostname)"
-set-window-option -g status-left-fg black
-set-window-option -g status-left-bg white
-
-set-window-option -g status-right "%H:%M %b/%d/%y"
-set-window-option -g status-right-fg black
-set-window-option -g status-right-bg white
-
-set-window-option -g window-status-format " #I: #W "
-
-set-window-option -g window-status-current-format " #I: #W "
-set-window-option -g window-status-current-fg green
-set-window-option -g window-status-current-bg black
+# set prefix keys
+unbind-key -n C-a
+unbind-key -n C-x
+set -g prefix ^X
+set -g prefix2 ^X
+bind x send-prefix
