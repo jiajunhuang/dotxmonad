@@ -17,6 +17,7 @@ alias gp='git push'
 alias gr='git review'
 alias gb='git branch'
 alias gck='git checkout'
+alias gcp='git cherry-pick'
 alias grb='git rebase'
 
 #proxychains
@@ -35,7 +36,4 @@ alias ..='cd ../'
 alias free='free -h'
 
 # work
-alias gweeklog='git log master --author `git config --get user.name` --since "6 days ago" --oneline | tac'
-
-# tmux
-alias ta='tmux attach'
+alias gweeklog='git log master --author `git config --get user.name` --since "5 days ago" --oneline | tac'
