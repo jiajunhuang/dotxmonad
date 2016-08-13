@@ -10,6 +10,7 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'sickill/vim-monokai'
+Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
@@ -91,6 +92,7 @@ let g:ctrlp_funky_matchtype = 'path'
 autocmd FileType python setlocal completeopt-=preview
 
 " color
+set background=dark
 colorscheme monokai
 
 " vimrc

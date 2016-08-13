@@ -39,3 +39,12 @@ then spawn vim and enter ``:PlugInstall``!
 
 Enjoy!
 
+Python
+~~~~~~~~~~~
+
+If your wanna enable the completion of Python2 interactive shell, just:
+
+.. code:: bash
+
+    $ sudo cp ~/.xmonad/pythonstartup.py ~/.pythonstartup.py
+    $ echo 'export PYTHONSTARTUP=~/.pythonstartup.py' > ~/.xmonad/bash/bash_extendrc
