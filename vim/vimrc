@@ -88,6 +88,9 @@ let g:syntastic_python_flake8_args='--ignore=I201,E501,E225'
 nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 
+" YouCompleteMe
+" jump to definition, or declaration if definition doesn't exist.
+nnoremap <Leader>jd :YcmCompleter GoTo<CR>
 " color
 set background=dark
 colorscheme monokai
