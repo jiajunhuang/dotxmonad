@@ -14,12 +14,12 @@ Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/vim-haskell-indent'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'tacahiroy/ctrlp-funky' | Plug 'kien/ctrlp.vim'
-Plug 'davidhalter/jedi-vim' | Plug 'ervandew/supertab'
 call plug#end()
 
 " basic settings
@@ -87,9 +87,6 @@ let g:syntastic_python_flake8_args='--ignore=I201,E501,E225'
 " ctrlp-funky
 nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
-
-" jedi
-autocmd FileType python setlocal completeopt-=preview
 
 " color
 set background=dark
