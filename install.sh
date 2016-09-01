@@ -3,7 +3,6 @@
 # NOTE:
 # it's for personal use! so this script will remove .bashrc etc.
 
-
 case $1 in
     "neovim")
         curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
@@ -18,17 +17,19 @@ case $1 in
     ;;
 
     *)
-        echo "Usage: ./install.sh neovim|vim --clear"
+        echo "Usage: ./install.sh neovim|vim [--clear-install-bash]"
     ;;
 esac
 
 case $2 in
-    "--clear")
+    "--clear-install-bash")
         rm -f ~/.bash_profile ~/.bashrc ~/.bash_aliases
+        ln -s ~/.xmonad/bash/bash_profile ~/.bash_profile
+        ln -s ~/.xmonad/bash/bashrc ~/.bashrc
+        ln -s ~/.xmonad/bash/bash_aliases ~/.bash_aliases
+    ;;
+
+    *)  # default to use oh-my-zsh instead of bash
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     ;;
 esac
-
-# link bash conf
-ln -s ~/.xmonad/bash/bash_profile ~/.bash_profile
-ln -s ~/.xmonad/bash/bashrc ~/.bashrc
-ln -s ~/.xmonad/bash/bash_aliases ~/.bash_aliases
