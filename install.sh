@@ -18,6 +18,7 @@ case $1 in
 
     *)
         echo "Usage: ./install.sh neovim|vim [--clear-install-bash]"
+        exit 1
     ;;
 esac
 
@@ -31,5 +32,7 @@ case $2 in
 
     *)  # default to use oh-my-zsh instead of bash
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+        rm -f ~/.zshrc
+        ln -s ~/.xmonad/zsh/zshrc ~/.zshrc
     ;;
 esac
