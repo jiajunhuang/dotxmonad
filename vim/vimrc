@@ -5,6 +5,7 @@ else
 endif
 
 " basic plugins
+Plug 'fatih/vim-go'
 Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
@@ -13,6 +14,7 @@ Plug 'sickill/vim-monokai'
 Plug 'luochen1990/rainbow'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tmhedberg/SimpylFold'
 Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdcommenter'
 Plug 'itchyny/vim-haskell-indent'
