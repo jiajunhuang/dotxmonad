@@ -36,6 +36,16 @@ if !has("nvim")
     set laststatus=2
     set wildmenu
 endif
+
+" neovim only features
+if has("nvim")
+    " terminal
+    nnoremap <C-s> :vs term://bash<CR>A
+    if exists(':tnoremap')
+        tnoremap <Esc> <C-\><C-n>
+    endif
+endif
+
 "syntax
 syntax on
 syntax enable
@@ -106,11 +116,5 @@ set mouse=v
 " import pdb
 nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
 
-" neovim only features
-if has("nvim")
-    " terminal
-    nnoremap <C-s> :vs term://bash<CR>A
-    if exists(':tnoremap')
-        tnoremap <Esc> <C-\><C-n>
-    endif
-endif
+" vim-go
+let g:go_template_autocreate = 0
