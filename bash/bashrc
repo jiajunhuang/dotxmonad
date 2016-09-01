@@ -12,7 +12,7 @@ if [ -f $BASH_COMPLETION ]; then
 fi
 
 # bash aliases
-BASH_ALIASES=~/.xmonad/bash/bash_aliases
+BASH_ALIASES=~/.xmonad/shell/aliases
 if [ -f $BASH_ALIASES ]; then
     source $BASH_ALIASES
 fi
