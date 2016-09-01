@@ -24,7 +24,7 @@ esac
 
 case $2 in
     "--clear")
-        rm ~/.bash_profile ~/.bashrc ~/.bash_aliases
+        rm -f ~/.bash_profile ~/.bashrc ~/.bash_aliases
     ;;
 esac
 
@@ -32,7 +32,3 @@ esac
 ln -s ~/.xmonad/bash/bash_profile ~/.bash_profile
 ln -s ~/.xmonad/bash/bashrc ~/.bashrc
 ln -s ~/.xmonad/bash/bash_aliases ~/.bash_aliases
-
-# link conf dir for aria2, zathura
-ln -s ~/.xmonad/aria2 ~/.config/aria2
-ln -s ~/.xmonad/zathura ~/.config/zathura
