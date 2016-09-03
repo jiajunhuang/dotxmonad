@@ -36,7 +36,7 @@ alias ..='cd ../'
 alias free='free -h'
 
 # work
-alias gweeklog='git log master --author `git config --get user.name` --since "5 days ago" --oneline | tac'
+alias gweeklog='git log master --author `git config --get user.name` --since "5 days ago" --oneline | tac | sed "s/^\w*\ *//''"'
 
 # extend rc
 EXTRC=~/.xmonad/shell/extrc.sh
