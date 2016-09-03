@@ -85,7 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # bash aliases
-ZSH_ALIASES=~/.xmonad/shell/aliases
+ZSH_ALIASES=~/.xmonad/shell/aliases.sh
 if [ -f $ZSH_ALIASES ]; then
     source $ZSH_ALIASES
 fi

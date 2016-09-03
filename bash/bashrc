@@ -18,9 +18,9 @@ if [ -f $BASH_ALIASES ]; then
 fi
 
 # extern bash configuration for diffrent computer
-BASH_EXTENDRC=~/.xmonad/bash/bash_extendrc
-if [ -f $BASH_EXTENDRC ]; then
-    source $BASH_EXTENDRC
+EXTRC=~/.xmonad/shell/extrc.sh
+if [ -f $EXTRC ]; then
+    source $EXTRC
 fi
 
 # git prompt
