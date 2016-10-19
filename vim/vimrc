@@ -12,6 +12,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'sickill/vim-monokai'
 Plug 'luochen1990/rainbow'
+Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Valloric/YouCompleteMe'
@@ -117,3 +118,8 @@ nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
 
 " vim-go
 let g:go_template_autocreate = 0
+
+" NERDTree
+autocmd vimenter * NERDTree
+map <Leader>n :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
