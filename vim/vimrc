@@ -120,6 +120,5 @@ nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
 let g:go_template_autocreate = 0
 
 " NERDTree
-autocmd vimenter * NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
