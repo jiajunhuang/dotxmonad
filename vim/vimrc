@@ -5,7 +5,6 @@ else
 endif
 
 " basic plugins
-Plug 'fatih/vim-go'
 Plug 'tpope/vim-repeat'
 Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
@@ -37,15 +36,6 @@ if !has("nvim")
     set wildmenu
 endif
 
-" neovim only features
-if has("nvim")
-    " terminal
-    nnoremap <C-s> :vs term://bash<CR>A
-    if exists(':tnoremap')
-        tnoremap <Esc> <C-\><C-n>
-    endif
-endif
-
 "syntax
 syntax on
 syntax enable
@@ -53,8 +43,9 @@ syntax enable
 set ignorecase
 set number
 set ruler
+set showcmd
+set showmode
 set cursorline cursorcolumn
-"the-80-line is red!
 set cc=80
 set wrap
 set textwidth=0
@@ -76,10 +67,10 @@ set smarttab
 let g:rainbow_active = 1
 
 " vim undodir
-if has("nvim")
-    set undofile
-    set undodir=~/.cache/nvim/undodir
-endif
+set undofile
+let undodir_path="~/.cache/undodir"
+call system("mkdir -p " . undodir_path)
+set undodir=undodir_path
 
 " emacs key bindings for vim insert mode
 inoremap <C-d> <Del>
@@ -99,26 +90,21 @@ let g:syntastic_python_flake8_args='--ignore=I201,E501,E225'
 nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 
-" YouCompleteMe
-" jump to definition, or declaration if definition doesn't exist.
+" YouCompleteMe jump to definition, or declaration if definition doesn't exist.
 nnoremap <Leader>jd :YcmCompleter GoTo<CR>
-" color
-set background=dark
-colorscheme monokai
-
-" vimrc
-set showcmd
-set ruler
-set showmode
-" mouse works on visual mode only
-set mouse=v
+" colorscheme
+try
+    colorscheme monokai
+catch /^Vim\%((\a\+)\)\=:E185/
+    colorscheme desert
+endtry
 
 " import pdb
 nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
 
-" vim-go
-let g:go_template_autocreate = 0
-
 " NERDTree
-map <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" paste mode
+set pastetoggle=<Leader>p
