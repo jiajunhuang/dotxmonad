@@ -38,6 +38,9 @@ alias free='free -h'
 # work
 alias gweeklog='git log master --author `git config --get user.name` --since "5 days ago" --oneline | tac | sed "s/^\w*\ *//''" | cut -d " " -f2-'
 
+# pandoc
+alias pdf='pandoc --latex-engine=xelatex -V mainfont="STSong"'
+
 # extend rc
 EXTRC=~/.xmonad/shell/extrc.sh
 if [ -f $EXTRC ]; then

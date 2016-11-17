@@ -91,7 +91,7 @@ nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 
 " YouCompleteMe jump to definition, or declaration if definition doesn't exist.
-nnoremap <Leader>jd :YcmCompleter GoTo<CR>
+nnoremap <Leader>j :YcmCompleter GoTo<CR>
 " colorscheme
 try
     colorscheme monokai
