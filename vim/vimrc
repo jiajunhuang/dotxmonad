@@ -68,9 +68,7 @@ let g:rainbow_active = 1
 
 " vim undodir
 set undofile
-let undodir_path="~/.cache/undodir"
-call system("mkdir -p " . undodir_path)
-set undodir=undodir_path
+set undodir="~/.cache/undodir"
 
 " emacs key bindings for vim insert mode
 inoremap <C-d> <Del>
@@ -91,7 +89,9 @@ nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 
 " YouCompleteMe jump to definition, or declaration if definition doesn't exist.
-nnoremap <Leader>j :YcmCompleter GoTo<CR>
+nnoremap <Leader>] :YcmCompleter GoTo<CR>
+let g:ycm_autoclose_preview_window_after_completion=1
+
 " colorscheme
 try
     colorscheme monokai
@@ -101,6 +101,7 @@ endtry
 
 " import pdb
 nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
+nnoremap <Leader>u Oimport pudb; pudb.set_trace()  # TODO remove it<Esc>:w<CR>
 
 " NERDTree
 nnoremap <Leader>n :NERDTreeToggle<CR>

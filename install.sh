@@ -21,18 +21,3 @@ case $1 in
         exit 1
     ;;
 esac
-
-case $2 in
-    "--clear-install-bash")
-        rm -f ~/.bash_profile ~/.bashrc ~/.bash_aliases
-        ln -s ~/.xmonad/bash/bash_profile ~/.bash_profile
-        ln -s ~/.xmonad/bash/bashrc ~/.bashrc
-        ln -s ~/.xmonad/bash/bash_aliases ~/.bash_aliases
-    ;;
-
-    *)  # default to use oh-my-zsh instead of bash
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-        rm -f ~/.zshrc
-        ln -s ~/.xmonad/zsh/zshrc ~/.zshrc
-    ;;
-esac
