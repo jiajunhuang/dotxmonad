@@ -109,3 +109,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " paste mode
 set pastetoggle=<Leader>p
+
+" make mouse only works on command line mode
+set mouse=c
