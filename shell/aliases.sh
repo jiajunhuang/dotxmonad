@@ -41,6 +41,11 @@ alias gweeklog='git log master --author `git config --get user.name` --since "5 
 # pandoc
 alias pdf='pandoc --latex-engine=xelatex --template=$HOME/.xmonad/latex/cn_tpl.tex'
 
+# ydcv
+alias y='ydcv'
+alias f='fg'
+alias j='jobs'
+
 # extend rc
 EXTRC=~/.xmonad/shell/extrc.sh
 if [ -f $EXTRC ]; then
