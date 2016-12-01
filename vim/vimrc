@@ -101,6 +101,7 @@ endtry
 
 " import pdb
 nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
+nnoremap <Leader>b Oimport ipdb; ipdb.set_trace()  # TODO remove it<Esc>:w<CR>
 nnoremap <Leader>u Oimport pudb; pudb.set_trace()  # TODO remove it<Esc>:w<CR>
 
 " NERDTree
