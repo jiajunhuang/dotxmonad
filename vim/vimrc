@@ -5,7 +5,7 @@ else
 endif
 
 " plugins
-Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'c', 'cpp'] }
+Plug 'Valloric/YouCompleteMe', { 'for': 'python' }
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'bling/vim-airline'
@@ -66,27 +66,6 @@ set cindent
 set shiftround
 "Tab
 set smarttab
-
-"plug-in settings
-
-" Rainbow
-let g:rainbow_active = 1
-
-" syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_python_flake8_args='--ignore=I201,E501,E225'
-
-" ctrlp-funky
-nnoremap <Leader>\ :CtrlPFunky<Cr>
-let g:ctrlp_funky_matchtype = 'path'
-
-" YouCompleteMe jump to definition, or declaration if definition doesn't exist.
-nnoremap <Leader>] :YcmCompleter GoTo<CR>
-let g:ycm_autoclose_preview_window_after_completion=1
-
 " colorscheme, default to monokai, fallback to desert
 try
     colorscheme monokai
@@ -94,6 +73,7 @@ catch /^Vim\%((\a\+)\)\=:E185/
     colorscheme desert
 endtry
 
+" shortcuts
 " import pdb
 nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
 nnoremap <Leader>b Oimport ipdb; ipdb.set_trace()  # TODO remove it<Esc>:w<CR>
@@ -134,3 +114,22 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
+
+" plugin settings
+
+" Rainbow
+let g:rainbow_active = 1
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_args='--ignore=I201,E501,E225'
+
+" ctrlp-funky
+nnoremap <Leader>\ :CtrlPFunky<Cr>
+let g:ctrlp_funky_matchtype = 'path'
+
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
