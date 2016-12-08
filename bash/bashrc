@@ -12,19 +12,19 @@ if [ -f $BASH_COMPLETION ]; then
 fi
 
 # bash aliases
-BASH_ALIASES=~/.xmonad/shell/aliases.sh
+BASH_ALIASES=~/.xmonad/bash/bash_aliases
 if [ -f $BASH_ALIASES ]; then
     source $BASH_ALIASES
 fi
 
 # extern bash configuration for diffrent computer
-EXTRC=~/.xmonad/shell/extrc.sh
+EXTRC=~/.xmonad/bash/bash_extrc
 if [ -f $EXTRC ]; then
     source $EXTRC
 fi
 
 # git prompt
-GIT_PROMPT=~/.xmonad/git-prompt.sh
+GIT_PROMPT=~/.xmonad/bash/git-prompt.sh
 if [ -f $GIT_PROMPT ]; then
     source $GIT_PROMPT
 fi

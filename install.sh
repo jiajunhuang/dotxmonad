@@ -17,7 +17,7 @@ case $1 in
     ;;
 
     *)
-        echo "Usage: ./install.sh neovim|vim [--clear-install-bash]"
+        echo "Usage: ./install.sh neovim|vim"
         exit 1
     ;;
 esac
