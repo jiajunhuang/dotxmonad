@@ -5,7 +5,7 @@ else
 endif
 
 " plugins
-Plug 'Valloric/YouCompleteMe', { 'for': 'python' }
+Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'haskell', 'c', 'cpp'] }
 Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
