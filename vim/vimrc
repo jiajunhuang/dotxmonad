@@ -14,9 +14,10 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
+Plug 'majutsushi/tagbar'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle'  } | Plug 'jistr/vim-nerdtree-tabs'
+Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 Plug 'scrooloose/syntastic'
 Plug 'sickill/vim-monokai'
 Plug 'terryma/vim-multiple-cursors'
@@ -132,3 +133,6 @@ let g:ctrlp_funky_matchtype = 'path'
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion=1
+
+" Tagbar
+nnoremap <F3> :TagbarToggle<CR>
