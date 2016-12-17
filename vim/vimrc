@@ -46,6 +46,7 @@ if has("win32") || has("win64")
     set guioptions-=T  "remove toolbar
     set guioptions-=r  "remove right-hand scroll bar
     set guioptions-=L  "remove left-hand scroll bar
+    set guioptions+=a  "auto copy mouse selection
 endif
 
 " vim settings(neovim has enabled by default)
