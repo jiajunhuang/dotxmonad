@@ -1,11 +1,12 @@
-if has("nvim")
+if has("win32") || has("win64")
+    call plug#begin('~/vimfiles/plugged')
+elseif has("nvim")
     call plug#begin('~/.config/nvim/plugged')
 else
     call plug#begin('~/.vim/plugged')
 endif
 
 " plugins
-Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'haskell', 'c', 'cpp'] }
 Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
@@ -14,7 +15,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kien/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
-Plug 'majutsushi/tagbar'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
@@ -24,9 +24,30 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+
+"""""""""""""""""""" system specific plugins """"""""""""""""""""""
+if !(has("win32") || has("win64"))
+    Plug 'majutsushi/tagbar'
+    Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'haskell', 'c', 'cpp'] }
+endif
 call plug#end()
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " settings
+" system settings
+if has("win32") || has("win64")
+    set encoding=utf-8
+    set fileencodings=utf-8,chinese,latin-1
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    language messages zh_CN.UTF-8
+    set guifont=Consolas:h14:cANSI
+    set guioptions-=m  "remove menu bar
+    set guioptions-=T  "remove toolbar
+    set guioptions-=r  "remove right-hand scroll bar
+    set guioptions-=L  "remove left-hand scroll bar
+endif
+
 " vim settings(neovim has enabled by default)
 if !has("nvim")
     set nocompatible
@@ -133,8 +154,12 @@ endif
 nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 
-" YouCompleteMe
-let g:ycm_autoclose_preview_window_after_completion=1
+"""""""""""""""""" system specific plugin settings """""""""""""""""
+if !(has("win32") || has("win64"))
+    " YouCompleteMe
+    let g:ycm_autoclose_preview_window_after_completion=1
 
-" Tagbar
-nnoremap <F3> :TagbarToggle<CR>
+    " Tagbar
+    nnoremap <F3> :TagbarToggle<CR>
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
