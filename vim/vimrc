@@ -47,6 +47,8 @@ if has("win32") || has("win64")
     set guioptions-=r  "remove right-hand scroll bar
     set guioptions-=L  "remove left-hand scroll bar
     set guioptions+=a  "auto copy mouse selection
+    autocmd GUIEnter * set vb t_vb= "disable sound
+    let g:nerdtree_tabs_open_on_gui_startup=0 "disable nerdtree tabs auto start
 endif
 
 " vim settings(neovim has enabled by default)
@@ -104,7 +106,7 @@ nnoremap <Leader>u Oimport pudb; pudb.set_trace()  # TODO remove it<Esc>:w<CR>
 " paste mode
 set pastetoggle=<F2>
 " NERDTree
-nnoremap <F1> :NERDTreeToggle<CR>
+nnoremap <F1> :NERDTreeTabsToggle<CR>
 
 " make mouse only works on command line mode
 set mouse=c
