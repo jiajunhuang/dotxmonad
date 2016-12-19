@@ -29,3 +29,5 @@ aria2c -D &
 
 # nm-applet
 nm-applet &
+
+exec xmonad
