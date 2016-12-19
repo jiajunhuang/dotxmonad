@@ -16,7 +16,7 @@ fcitx &
 sogou-qimpanel &
 
 # dropbox
-dropbox &
+dropbox start &
 
 # udiskie
 udiskie -aN &
