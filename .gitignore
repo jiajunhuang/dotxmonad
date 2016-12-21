@@ -2,5 +2,5 @@
 *.hi
 *.errors
 xmonad-x86_64-linux
-bash/bash_extendrc
+bash/bash_extrc
 shell/extrc.sh
