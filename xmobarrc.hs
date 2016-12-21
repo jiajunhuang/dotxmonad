@@ -1,5 +1,5 @@
 Config {
-    font = "xft:YaHei Consolas Hybrid:size=10",
+    font = "xft:WenQuanYi Zen Hei:size=10",
     bgColor = "#353945",
     fgColor = "#ffffff",
     position = TopW L 90,
