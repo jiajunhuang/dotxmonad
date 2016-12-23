@@ -23,7 +23,7 @@ myManageHook = composeAll [
     ]
 
 -- Define the names of all workspaces
-myWorkspaces = ["1-docs", "2-code", "3-code", "4-mail", "5-chat", "6", "7", "8", "9"]
+myWorkspaces = ["1-docs", "2-code", "3-code", "4-mail", "5-chat"] ++ map show [6..9]
 
 -- Define Terminal
 myTerminal = "gnome-terminal"
@@ -38,6 +38,8 @@ myLayout =  tiled ||| Mirror tiled ||| Full
 -- Define BorderColor
 myNormalBorderColor = "#353945"
 myFocusedBorderColor = "#ffffff"
+myXmobarColorfg = "#fdf6e3"
+myXmobarColorbg = ""
 
 main = do
     spawn "feh --bg-scale ~/.xmonad/background.jpg"
@@ -51,7 +53,7 @@ main = do
             takeTopFocus
             dynamicLogWithPP $ xmobarPP {
                 ppOutput = hPutStrLn xmproc,
-                ppTitle = xmobarColor "#fdf6e3" "" . shorten 60,
+                ppTitle = xmobarColor myXmobarColorfg myXmobarColorbg . shorten 60,
                 ppLayout = const "" -- to disable the layout info on xmobar
             },
             borderWidth = 1,
