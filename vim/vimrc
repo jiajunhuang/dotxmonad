@@ -10,7 +10,7 @@ endif
 Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
-Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
 Plug 'kshenoy/vim-signature'
@@ -18,7 +18,7 @@ Plug 'luochen1990/rainbow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
-Plug 'scrooloose/syntastic'
+Plug 'w0rp/ale'
 Plug 'sickill/vim-monokai'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
@@ -143,15 +143,6 @@ inoremap <C-b> <Left>
 
 " Rainbow
 let g:rainbow_active = 1
-
-" syntastic
-if exists(':SyntasticCheck')
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-    let g:syntastic_python_checkers=['flake8']
-    let g:syntastic_python_flake8_args='--ignore=I201,E501,E225'
-endif
 
 " ctrlp-funky
 nnoremap <Leader>\ :CtrlPFunky<Cr>
