@@ -23,7 +23,7 @@ myManageHook = composeAll [
     ]
 
 -- Define the names of all workspaces
-myWorkspaces = ["1-docs", "2-code", "3-code", "4-mail", "5-chat"] ++ map show [6..9]
+myWorkspaces = ["1-docs", "2-code", "3-code", "4-chat", "5-reading"] ++ map show [6..9]
 
 -- Define Terminal
 myTerminal = "gnome-terminal"

@@ -71,8 +71,8 @@ syntax on
 syntax enable
 " display
 set ignorecase
-set number
 set ruler
+set number
 set showcmd
 set showmode
 set cursorline cursorcolumn
@@ -105,6 +105,9 @@ nnoremap <Leader>u Oimport pudb; pudb.set_trace()  # TODO remove it<Esc>:w<CR>
 
 " paste mode
 set pastetoggle=<F2>
+" toggle number
+noremap <F4> :set invnumber<CR>
+inoremap <F4> <C-O>:set invnumber<CR>
 " NERDTree
 nnoremap <F1> :NERDTreeTabsToggle<CR>
 
