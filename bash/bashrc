@@ -11,6 +11,12 @@ if [ -f $BASH_COMPLETION ]; then
     source $BASH_COMPLETION
 fi
 
+# autojump
+AUTO_JUMP=/usr/share/autojump/autojump.sh
+if [ -f $AUTO_JUMP ]; then
+    source $AUTO_JUMP
+fi
+
 # bash aliases
 BASH_ALIASES=~/.xmonad/bash/bash_aliases
 if [ -f $BASH_ALIASES ]; then
@@ -27,12 +33,6 @@ fi
 GIT_PROMPT=~/.xmonad/bash/git-prompt.sh
 if [ -f $GIT_PROMPT ]; then
     source $GIT_PROMPT
-fi
-
-# Autojump
-AUTOJUMP_PROFILE=/etc/profile.d/autojump.bash
-if [ -f $AUTOJUMP_PROFILE ]; then
-	source $AUTOJUMP_PROFILE
 fi
 
 # set default enviroment

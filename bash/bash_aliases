@@ -43,8 +43,6 @@ alias pdf='pandoc --latex-engine=xelatex --template=$HOME/.xmonad/latex/cn_tpl.t
 
 # ydcv
 alias y='ydcv'
-alias f='fg'
-alias j='jobs'
 
 # extend rc
 EXTRC=~/.xmonad/shell/extrc.sh
