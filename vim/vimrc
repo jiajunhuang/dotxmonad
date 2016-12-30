@@ -28,7 +28,6 @@ Plug 'w0rp/ale'
 """""""""""""""""""" system specific plugins """"""""""""""""""""""
 if !(has("win32") || has("win64"))
     Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'haskell', 'c', 'cpp'] }
-    Plug 'majutsushi/tagbar'
 endif
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -155,8 +154,5 @@ let g:ctrlp_funky_matchtype = 'path'
 if !(has("win32") || has("win64"))
     " YouCompleteMe
     let g:ycm_autoclose_preview_window_after_completion=1
-
-    " Tagbar
-    nnoremap <F3> :TagbarToggle<CR>
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
