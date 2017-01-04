@@ -141,6 +141,17 @@ inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
+" clipboard(install xsel first)
+" Copy to clipboard
+vnoremap  <leader>y  "+y
+nnoremap  <leader>y  "+y
+
+" Paste from clipboard
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+
 " plugin settings
 
 " Rainbow
