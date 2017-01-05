@@ -14,7 +14,6 @@ Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
-Plug 'matze/vim-move'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
@@ -162,13 +161,6 @@ let g:rainbow_active = 1
 " ctrlp-funky
 nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
-
-" vim-move
-let g:move_key_modifier = 0
-vmap <C-up> <Plug>MoveBlockUp
-vmap <C-down> <Plug>MoveBlockDown
-nmap <C-up> <Plug>MoveLineUp
-nmap <C-down> <Plug>MoveLineDown
 
 """""""""""""""""" system specific plugin settings """""""""""""""""
 if !(has("win32") || has("win64"))
