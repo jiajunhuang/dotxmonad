@@ -14,6 +14,7 @@ Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
+Plug 'matze/vim-move'
 Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
@@ -28,6 +29,7 @@ Plug 'w0rp/ale'
 """""""""""""""""""" system specific plugins """"""""""""""""""""""
 if !(has("win32") || has("win64"))
     Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'haskell', 'c', 'cpp'] }
+    Plug 'ludovicchabant/vim-gutentags'  " auto (re) generate and manage tags
 endif
 call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -161,9 +163,17 @@ let g:rainbow_active = 1
 nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 
+" vim-move
+let g:move_key_modifier = 'C'
+
 """""""""""""""""" system specific plugin settings """""""""""""""""
 if !(has("win32") || has("win64"))
     " YouCompleteMe
     let g:ycm_autoclose_preview_window_after_completion=1
+    let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
+    let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
+    let g:ycm_complete_in_comments = 1 " Completion in comments
+    let g:ycm_complete_in_strings = 1 " Completion in string
+    nnoremap <leader>j :YcmCompleter GoTo<CR>
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
