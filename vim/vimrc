@@ -163,6 +163,13 @@ let g:rainbow_active = 1
 nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 
+" vim-move
+let g:move_key_modifier = 0
+vmap <C-up> <Plug>MoveBlockUp
+vmap <C-down> <Plug>MoveBlockDown
+nmap <C-up> <Plug>MoveLineUp
+nmap <C-down> <Plug>MoveLineDown
+
 """""""""""""""""" system specific plugin settings """""""""""""""""
 if !(has("win32") || has("win64"))
     " YouCompleteMe
