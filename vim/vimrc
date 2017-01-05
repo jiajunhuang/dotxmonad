@@ -163,9 +163,6 @@ let g:rainbow_active = 1
 nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 
-" vim-move
-let g:move_key_modifier = 'C'
-
 """""""""""""""""" system specific plugin settings """""""""""""""""
 if !(has("win32") || has("win64"))
     " YouCompleteMe

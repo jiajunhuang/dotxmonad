@@ -28,6 +28,9 @@ myWorkspaces = ["1-docs", "2-code", "3-code", "4-chat", "5-reading"] ++ map show
 -- Define Terminal
 myTerminal = "gnome-terminal"
 
+-- Define modMask to Windows key
+myModMask = mod4Mask
+
 -- Define Layout
 myLayout =  tiled ||| Mirror tiled ||| Full
     where tiled = Tall nmaster delta ratio
@@ -49,6 +52,7 @@ main = do
         handleEventHook = docksEventHook <+> handleEventHook defaultConfig,
         layoutHook = avoidStruts $ smartBorders $ myLayout,
         terminal = myTerminal,
+        modMask = myModMask,
         logHook = do
             takeTopFocus
             dynamicLogWithPP $ xmobarPP {
@@ -61,12 +65,12 @@ main = do
             normalBorderColor = myNormalBorderColor,
             focusedBorderColor = myFocusedBorderColor
             } `additionalKeys` [
-                ((mod4Mask, xK_l), spawn "slock"),
+                ((myModMask, xK_l), spawn "slock"),
                 ((0, xF86XK_MonBrightnessUp), spawn "xbacklight +20"),
                 ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -20"),
-                ((mod4Mask, xK_c), spawn "chromium"),
-                ((mod4Mask, xK_e), spawn "zathura"),
-                ((mod4Mask, xK_t), spawn "touchpad_toggle.sh"),
-                ((mod4Mask, xK_b), sendMessage ToggleStruts),
-                ((mod4Mask, xK_Tab), goToSelected defaultGSConfig)
+                ((myModMask, xK_c), spawn "chromium"),
+                ((myModMask, xK_e), spawn "zathura"),
+                ((myModMask, xK_t), spawn "touchpad_toggle.sh"),
+                ((myModMask, xK_b), sendMessage ToggleStruts),
+                ((myModMask, xK_Tab), goToSelected defaultGSConfig)
                 ]
