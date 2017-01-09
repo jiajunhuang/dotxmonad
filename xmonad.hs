@@ -66,6 +66,7 @@ main = do
                 ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -20"),
                 ((mod4Mask, xK_c), spawn "chromium"),
                 ((mod4Mask, xK_e), spawn "zathura"),
+                ((mod4Mask, xK_a), spawn "gnome-screenshot --interactive"),
                 ((mod4Mask, xK_t), spawn "touchpad_toggle.sh"),
                 ((mod4Mask, xK_b), sendMessage ToggleStruts),
                 ((mod4Mask, xK_Tab), goToSelected defaultGSConfig)
