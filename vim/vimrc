@@ -23,6 +23,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tshirtman/vim-cython', { 'for': 'pyrex' }
 Plug 'w0rp/ale'
 
 """""""""""""""""""" system specific plugins """"""""""""""""""""""
