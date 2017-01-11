@@ -23,7 +23,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'tshirtman/vim-cython', { 'for': 'pyrex' }
+Plug 'tshirtman/vim-cython', { 'for': 'cython' }
 Plug 'w0rp/ale'
 
 """""""""""""""""""" system specific plugins """"""""""""""""""""""
@@ -174,3 +174,7 @@ if !(has("win32") || has("win64"))
     nnoremap <leader>j :YcmCompleter GoTo<CR>
 endif
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" additional filetypes
+au BufRead,BufNewFile *.pyx set filetype=cython
+au BufRead,BufNewFile *.pxd set filetype=cython
