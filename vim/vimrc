@@ -28,7 +28,7 @@ Plug 'w0rp/ale'
 
 """""""""""""""""""" system specific plugins """"""""""""""""""""""
 if !(has("win32") || has("win64"))
-    Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'haskell', 'c', 'cpp'] }
+    Plug 'Valloric/YouCompleteMe'
     Plug 'ludovicchabant/vim-gutentags'  " auto (re) generate and manage tags
 endif
 call plug#end()
