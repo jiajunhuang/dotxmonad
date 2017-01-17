@@ -9,33 +9,37 @@ endif
 " plugins
 Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
+Plug 'cohama/agit.vim'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
-Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'gioele/vim-autoswap'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'jiajunhuang/vim-cython'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
-Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'mileszs/ack.vim'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
+Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'sickill/vim-monokai'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'jiajunhuang/vim-cython', { 'for': 'cython' }
 Plug 'w0rp/ale'
 
-"""""""""""""""""""" system specific plugins """"""""""""""""""""""
+" Linux only
 if !(has("win32") || has("win64"))
     Plug 'Valloric/YouCompleteMe'
     Plug 'ludovicchabant/vim-gutentags'  " auto (re) generate and manage tags
 endif
+
 call plug#end()
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " settings
-" system settings
+
+" Windows only
 if has("win32") || has("win64")
     set encoding=utf-8
     set fileencodings=utf-8,chinese,latin-1
@@ -52,7 +56,7 @@ if has("win32") || has("win64")
     let g:nerdtree_tabs_open_on_gui_startup=0 "disable nerdtree tabs auto start
 endif
 
-" vim settings(neovim has enabled by default)
+" Regular vim only
 if !has("nvim")
     set nocompatible
     set autoindent
@@ -100,9 +104,7 @@ endtry
 
 " shortcuts
 " import pdb
-nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
-nnoremap <Leader>i Oimport ipdb; ipdb.set_trace()  # TODO remove it<Esc>:w<CR>
-nnoremap <Leader>u Oimport pudb; pudb.set_trace()  # TODO remove it<Esc>:w<CR>
+nnoremap <Leader>b Oimport ipdb; ipdb.set_trace()  # TODO remove it<Esc>:w<CR>
 
 " paste mode
 set pastetoggle=<F2>
@@ -163,7 +165,7 @@ let g:rainbow_active = 1
 nnoremap <Leader>\ :CtrlPFunky<Cr>
 let g:ctrlp_funky_matchtype = 'path'
 
-"""""""""""""""""" system specific plugin settings """""""""""""""""
+" Linux only
 if !(has("win32") || has("win64"))
     " YouCompleteMe
     let g:ycm_autoclose_preview_window_after_completion=1
@@ -172,9 +174,8 @@ if !(has("win32") || has("win64"))
     let g:ycm_complete_in_comments = 1 " Completion in comments
     let g:ycm_complete_in_strings = 1 " Completion in string
     nnoremap <leader>j :YcmCompleter GoTo<CR>
-endif
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" additional filetypes
-au BufRead,BufNewFile *.pyx set filetype=cython
-au BufRead,BufNewFile *.pxd set filetype=cython
+    if executable('ag')
+        let g:ackprg = 'ag --vimgrep'
+    endif
+endif
