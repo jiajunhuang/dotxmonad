@@ -7,7 +7,6 @@ else
 endif
 
 " plugins
-Plug 'Yggdroot/indentLine'
 Plug 'bling/vim-airline'
 Plug 'cohama/agit.vim'
 Plug 'ctrlpvim/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
