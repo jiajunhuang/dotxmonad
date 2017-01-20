@@ -9,29 +9,31 @@ endif
 " plugins
 Plug 'bling/vim-airline'
 Plug 'cohama/agit.vim'
-Plug 'ctrlpvim/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
-Plug 'gioele/vim-autoswap'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'jiajunhuang/vim-cython'
 Plug 'jiangmiao/auto-pairs'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
-Plug 'mileszs/ack.vim'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'sickill/vim-monokai'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+Plug 'junegunn/vim-easy-align'
+Plug 'terryma/vim-expand-region'
 
 " Linux only
 if !(has("win32") || has("win64"))
+    Plug 'easymotion/vim-easymotion'
     Plug 'Valloric/YouCompleteMe'
+    Plug 'ctrlpvim/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
     Plug 'ludovicchabant/vim-gutentags'  " auto (re) generate and manage tags
+    Plug 'mileszs/ack.vim'
+    Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'tpope/vim-fugitive'
+    Plug 'w0rp/ale'
 endif
 
 call plug#end()
@@ -52,7 +54,6 @@ if has("win32") || has("win64")
     set guioptions-=L  "remove left-hand scroll bar
     set guioptions+=a  "auto copy mouse selection
     autocmd GUIEnter * set vb t_vb= "disable sound
-    let g:nerdtree_tabs_open_on_gui_startup=0 "disable nerdtree tabs auto start
 endif
 
 " Regular vim only
@@ -94,6 +95,8 @@ set cindent
 set shiftround
 "Tab
 set smarttab
+"clipboard
+set clipboard+=unnamedplus
 " colorscheme, default to monokai, fallback to desert
 try
     colorscheme monokai
@@ -110,9 +113,6 @@ set pastetoggle=<F2>
 " toggle number
 noremap <F4> :set invnumber<CR>
 inoremap <F4> <C-O>:set invnumber<CR>
-" NERDTree
-nnoremap <F1> :NERDTreeTabsToggle<CR>
-
 " make mouse only works on command line mode
 set mouse=c
 
@@ -144,37 +144,35 @@ inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
-" clipboard(install xsel first)
-" Copy to clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>y  "+y
-
-" Paste from clipboard
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
-
 " plugin settings
 
 " Rainbow
 let g:rainbow_active = 1
 
-" ctrlp-funky
-nnoremap <Leader>\ :CtrlPFunky<Cr>
-let g:ctrlp_funky_matchtype = 'path'
-
 " Linux only
 if !(has("win32") || has("win64"))
+    " NERDTree
+    nnoremap <F1> :NERDTreeTabsToggle<CR>
+
+    "easymotion
+    nmap s <Plug>(easymotion-bd-f)
+    nmap S <Plug>(easymotion-overwin-line)
+
+    " ctrlp-funky
+    "nnoremap <Leader>\ :CtrlPFunky<Cr>
+    nnoremap ff :CtrlPFunky<Cr>
+    let g:ctrlp_funky_matchtype = 'path'
+
     " YouCompleteMe
-    let g:ycm_autoclose_preview_window_after_completion=1
+    "let g:ycm_autoclose_preview_window_after_completion=1
     let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
     let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
     let g:ycm_complete_in_comments = 1 " Completion in comments
     let g:ycm_complete_in_strings = 1 " Completion in string
-    nnoremap <leader>j :YcmCompleter GoTo<CR>
+    nnoremap <leader><leader> :YcmCompleter GoTo<CR>
 
     if executable('ag')
         let g:ackprg = 'ag --vimgrep'
+        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
     endif
 endif
