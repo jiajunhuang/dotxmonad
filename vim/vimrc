@@ -7,29 +7,30 @@ else
 endif
 
 " plugins
-Plug 'bling/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'cohama/agit.vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'jiajunhuang/vim-cython'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-easy-align'
+Plug 'othree/eregex.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'scrooloose/nerdcommenter'
 Plug 'sickill/vim-monokai'
+Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'junegunn/vim-easy-align'
-Plug 'terryma/vim-expand-region'
 
 " Linux only
 if !(has("win32") || has("win64"))
     Plug 'easymotion/vim-easymotion'
     Plug 'Valloric/YouCompleteMe'
     Plug 'ctrlpvim/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
-    Plug 'ludovicchabant/vim-gutentags'  " auto (re) generate and manage tags
+    Plug 'ludovicchabant/vim-gutentags' | Plug 'majutsushi/tagbar'
     Plug 'mileszs/ack.vim'
     Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'tpope/vim-fugitive'
@@ -145,12 +146,14 @@ inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
 " plugin settings
-
 " Rainbow
 let g:rainbow_active = 1
 
 " Linux only
 if !(has("win32") || has("win64"))
+    "Ack
+    nnoremap <Leader>a  :Ack!<Space>
+
     " NERDTree
     nnoremap <F1> :NERDTreeTabsToggle<CR>
 
@@ -163,8 +166,10 @@ if !(has("win32") || has("win64"))
     nnoremap ff :CtrlPFunky<Cr>
     let g:ctrlp_funky_matchtype = 'path'
 
+    " Tagbar
+    nnoremap <F3> :TagbarToggle<CR>
+
     " YouCompleteMe
-    "let g:ycm_autoclose_preview_window_after_completion=1
     let g:ycm_collect_identifiers_from_tags_files = 1 " Let YCM read tags from Ctags file
     let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
     let g:ycm_complete_in_comments = 1 " Completion in comments
