@@ -1,16 +1,21 @@
 if has("win32") || has("win64")
-    call plug#begin('~/vimfiles/plugged')
-elseif has("nvim")
-    call plug#begin('~/.config/nvim/plugged')
+    let UNIX = 0
 else
-    call plug#begin('~/.vim/plugged')
+    let UNIX = 1
 endif
+
+if UNIX
+    let VIM_PLUG_HOME= '~/.vim/plugged'
+else
+    let VIM_PLUG_HOME = '~\vimfiles\plugged'
+endif
+
+call plug#begin(VIM_PLUG_HOME)
 
 " plugins
 Plug 'cohama/agit.vim'
 Plug 'danro/rename.vim'
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'itchyny/lightline.vim'
 Plug 'jiajunhuang/vim-cython'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
@@ -25,9 +30,10 @@ Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline'
 
-" Linux only
-if !(has("win32") || has("win64"))
+" UNIX only
+if UNIX
     Plug 'Valloric/YouCompleteMe'
     Plug 'ctrlpvim/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
     Plug 'easymotion/vim-easymotion'
@@ -43,7 +49,7 @@ call plug#end()
 " settings
 
 " Windows only
-if has("win32") || has("win64")
+if !UNIX
     set encoding=utf-8
     set fileencodings=utf-8,chinese,latin-1
     source $VIMRUNTIME/delmenu.vim
@@ -59,19 +65,17 @@ if has("win32") || has("win64")
 endif
 
 " Regular vim only
-if !has("nvim")
-    set nocompatible
-    set autoindent
-    set autoread
-    set backspace=indent,eol,start
-    set display=lastline
-    set encoding=utf-8
-    set history=10000
-    set hlsearch
-    set incsearch
-    set laststatus=2
-    set wildmenu
-endif
+set nocompatible
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set display=lastline
+set encoding=utf-8
+set history=10000
+set hlsearch
+set incsearch
+set laststatus=2
+set wildmenu
 
 "syntax
 syntax on
@@ -120,24 +124,10 @@ set mouse=c
 
 " move between windows
 " normal, visual, select mode
-if has("nvim")
-    " it's for avoiding a neovim bug --- c-h doesn't work:
-    " https://github.com/neovim/neovim/issues/2048
-    nnoremap <BS> <C-W>h
-endif
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-if has("nvim")
-    " terminal mode
-    nnoremap <C-s> :vs term://bash<CR>A
-    tnoremap <Esc> <C-\><C-n>
-    tnoremap <C-h> <C-\><C-n><C-w>h
-    tnoremap <C-j> <C-\><C-n><C-w>j
-    tnoremap <C-k> <C-\><C-n><C-w>k
-    tnoremap <C-l> <C-\><C-n><C-w>l
-endif
 
 " emacs key bindings for vim insert mode
 inoremap <C-d> <Del>
@@ -150,8 +140,8 @@ inoremap <C-b> <Left>
 " Rainbow
 let g:rainbow_active = 1
 
-" Linux only
-if !(has("win32") || has("win64"))
+" UNIX only
+if UNIX
     "Ack
     nnoremap <Leader>a  :Ack!<Space>
 
@@ -179,6 +169,11 @@ if !(has("win32") || has("win64"))
 
     if executable('ag')
         let g:ackprg = 'ag --vimgrep'
+        " Use ag over grep
+        set grepprg=ag\ --nogroup\ --nocolor
+        " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
         let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+        " ag is fast enough that CtrlP doesn't need to cache
+        let g:ctrlp_use_caching = 0
     endif
 endif
