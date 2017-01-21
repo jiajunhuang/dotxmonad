@@ -49,3 +49,6 @@ EXTRC=~/.xmonad/shell/extrc.sh
 if [ -f $EXTRC ]; then
     source $EXTRC
 fi
+
+# vim
+alias v='vim'
