@@ -4,6 +4,12 @@ else
     let UNIX = 1
 endif
 
+if v:version > 800
+    let ASYNC = 1
+else
+    let ASYNC = 0
+endif
+
 if UNIX
     let VIM_PLUG_HOME= '~/.vim/plugged'
 else
@@ -41,7 +47,11 @@ if UNIX
     Plug 'mileszs/ack.vim'
     Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'tpope/vim-fugitive'
-    Plug 'w0rp/ale'
+    if ASYNC
+        Plug 'w0rp/ale'
+    else
+        Plug 'vim-syntastic/syntastic'
+    endif
 endif
 
 call plug#end()
