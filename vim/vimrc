@@ -4,7 +4,7 @@ else
     let UNIX = 1
 endif
 
-if v:version > 800
+if v:version >= 800
     let ASYNC = 1
 else
     let ASYNC = 0
