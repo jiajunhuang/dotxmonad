@@ -112,8 +112,6 @@ set cindent
 set shiftround
 "Tab
 set smarttab
-"clipboard
-set clipboard+=unnamedplus
 " colorscheme, default to monokai, fallback to desert
 try
     colorscheme monokai
