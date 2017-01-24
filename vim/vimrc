@@ -62,6 +62,7 @@ call plug#end()
 " Windows only
 if s:WINDOWS()
     set encoding=utf-8
+    set backup=nobackup
     set fileencodings=utf-8,chinese,latin-1
     source $VIMRUNTIME/delmenu.vim
     source $VIMRUNTIME/menu.vim
