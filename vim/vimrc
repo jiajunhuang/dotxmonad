@@ -74,6 +74,7 @@ if s:WINDOWS()
     set guioptions-=L  "remove left-hand scroll bar
     set guioptions+=a  "auto copy mouse selection
     autocmd GUIEnter * set vb t_vb= "disable sound
+    autocmd GUIEnter * simalt ~x " auto maximized window
 endif
 
 " Regular vim only
