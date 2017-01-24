@@ -13,7 +13,6 @@ volumeicon &
 
 # input method
 fcitx &
-sogou-qimpanel &
 
 # dropbox
 dropbox start &
@@ -21,7 +20,7 @@ dropbox start &
 # udiskie
 udiskie -aN &
 
-# touchpad
+# disable touchpad
 xinput disable `xinput list | grep SynPS | sed 's/.*id\=\([0-9]\+\).*/\1/g'` &
 
 # aria2
