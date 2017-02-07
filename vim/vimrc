@@ -80,6 +80,7 @@ endif
 " Regular vim only
 set nocompatible
 set autoindent
+set noundofile
 set autoread
 set backspace=indent,eol,start
 set display=lastline
