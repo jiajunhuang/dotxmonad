@@ -6,12 +6,20 @@ silent function! s:LINUX()
     return (has('unix') && !has('macunix') && !has('win32unix'))
 endfunction
 
+silent function! s:NVIM()
+    return (has('nvim'))
+endfunction
+
 silent function! s:ASYNC()
-    return (v:version >= 800)
+    return ((v:version >= 800) || s:NVIM())
 endfunction
 
 if s:LINUX()
-    let VIM_PLUG_HOME= '~/.vim/plugged'
+    if s:NVIM()
+        let VIM_PLUG_HOME = '~/.config/nvim/plugged'
+    else
+        let VIM_PLUG_HOME = '~/.vim/plugged'
+    endif
 else
     let VIM_PLUG_HOME = '~\vimfiles\plugged'
 endif
