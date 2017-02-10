@@ -203,4 +203,9 @@ if s:LINUX()
     if executable('ag')
         let g:ackprg = 'ag --vimgrep'
     endif
+
+    if s:ASYNC()
+        nmap <leader>p <Plug>(ale_previous_wrap)
+        nmap <leader>n <Plug>(ale_next_wrap)
+    endif
 endif
