@@ -142,13 +142,6 @@ inoremap <F4> <C-O>:set invnumber<CR>
 " make mouse only works on command line mode
 set mouse=c
 
-" move between windows
-" normal, visual, select mode
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
 " emacs key bindings for vim insert mode
 inoremap <C-d> <Del>
 inoremap <C-a> <Home>
