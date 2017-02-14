@@ -6,3 +6,4 @@ bash/bash_extrc
 shell/extrc.sh
 tags
 xmonad.state
+prompt-history
