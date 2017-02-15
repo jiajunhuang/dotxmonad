@@ -35,6 +35,10 @@ if [ -f $GIT_PROMPT ]; then
     source $GIT_PROMPT
 fi
 
+# golang
+export GOPATH=$HOME/golang
+export PATH=$PATH:$GOPATH/bin
+
 # set default enviroment
 export TERM=xterm-256color
 export EDITOR=vim
