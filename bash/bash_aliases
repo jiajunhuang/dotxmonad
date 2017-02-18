@@ -51,7 +51,7 @@ if [ -f $EXTRC ]; then
 fi
 
 # vim
-alias v='vim'
+alias e='nvim'  # e means edit
 
 # go use proxy by default
-alias go='http_proxy=127.0.01:8123 go'
+alias go='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 go'
