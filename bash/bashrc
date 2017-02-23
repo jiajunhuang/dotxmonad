@@ -18,13 +18,13 @@ if [ -f $AUTO_JUMP ]; then
 fi
 
 # bash aliases
-BASH_ALIASES=~/.xmonad/bash/bash_aliases
+BASH_ALIASES=~/.xmonad/bash/bash_aliases.sh
 if [ -f $BASH_ALIASES ]; then
     source $BASH_ALIASES
 fi
 
 # extern bash configuration for diffrent computer
-EXTRC=~/.xmonad/bash/bash_extrc
+EXTRC=~/.xmonad/bash/bash_extrc.sh
 if [ -f $EXTRC ]; then
     source $EXTRC
 fi

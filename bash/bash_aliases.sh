@@ -55,3 +55,15 @@ alias e='nvim'  # e means edit
 
 # go use proxy by default
 alias go='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 go'
+
+# rsync
+function syncto {
+    if [ $# -eq 0 ]
+    then
+        echo "Usage: syncto [from] [to]"
+        echo "Example: syncto . root@my_remote_host:/tmp/"
+    else
+        rsync -a --delete $@
+    fi
+}
+alias st='syncto'
