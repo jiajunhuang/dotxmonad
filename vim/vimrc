@@ -63,6 +63,10 @@ if s:LINUX()
     endif
 endif
 
+if s:WINDOWS()
+    Plug 'mhinz/vim-startify'
+endif
+
 call plug#end()
 
 " settings
