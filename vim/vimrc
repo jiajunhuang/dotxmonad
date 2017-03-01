@@ -45,7 +45,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 
 " Linux only
 if s:LINUX()
