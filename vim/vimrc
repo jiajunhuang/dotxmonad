@@ -29,7 +29,9 @@ call plug#begin(VIM_PLUG_HOME)
 " plugins
 Plug 'cohama/agit.vim'
 Plug 'danro/rename.vim'
+Plug 'hdima/python-syntax'
 Plug 'hynek/vim-python-pep8-indent'
+Plug 'itchyny/lightline.vim'
 Plug 'jiajunhuang/vim-cython'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-easy-align'
@@ -45,7 +47,6 @@ Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'itchyny/lightline.vim'
 
 " Linux only
 if s:LINUX()
