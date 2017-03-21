@@ -2,8 +2,7 @@
 *.hi
 *.errors
 xmonad-x86_64-linux
-bash/bash_extrc
-shell/extrc.sh
+bash/extrc.sh
 tags
 xmonad.state
 prompt-history
