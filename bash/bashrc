@@ -17,22 +17,28 @@ if [ -f $AUTO_JUMP ]; then
     source $AUTO_JUMP
 fi
 
-# bash aliases
-BASH_ALIASES=~/.xmonad/bash/bash_aliases.sh
-if [ -f $BASH_ALIASES ]; then
-    source $BASH_ALIASES
-fi
-
 # extern bash configuration for diffrent computer
 EXTRC=~/.xmonad/bash/extrc.sh
 if [ -f $EXTRC ]; then
     source $EXTRC
 fi
 
+# git completion
+GIT_COMPLETE=~/.xmonad/bash/git-completion.sh
+if [ -f $GIT_COMPLETE ]; then
+    source $GIT_COMPLETE
+fi
+
 # git prompt
 GIT_PROMPT=~/.xmonad/bash/git-prompt.sh
 if [ -f $GIT_PROMPT ]; then
     source $GIT_PROMPT
+fi
+
+# bash aliases
+BASH_ALIASES=~/.xmonad/bash/bash_aliases.sh
+if [ -f $BASH_ALIASES ]; then
+    source $BASH_ALIASES
 fi
 
 # golang

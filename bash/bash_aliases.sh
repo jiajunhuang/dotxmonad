@@ -14,14 +14,19 @@ alias gf='git diff'
 alias gs='git status'
 alias gc='git commit'
 alias gp='git push'
-alias gr='git review'
-alias gb='git branch'
 alias gck='git checkout'
 alias gcp='git cherry-pick'
 alias grb='git rebase'
 
+__git_complete gf _git_diff
+__git_complete gc _git_commit
+__git_complete gp _git_push
+__git_complete gck _git_checkout
+__git_complete gcp _git_cherry_pick
+
 #proxychains
 alias pc='proxychains'
+alias pcq='proxychains -q'
 
 #virtualenv
 alias vn='virtualenv'
