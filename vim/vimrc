@@ -57,7 +57,9 @@ if s:LINUX()
     Plug 'mileszs/ack.vim'
     Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
     Plug 'tpope/vim-fugitive'
+    Plug 'vim-jp/vim-go-extra'
     if s:ASYNC()
+        " Go: golint(https://github.com/golang/lint)
         Plug 'w0rp/ale'
     else
         Plug 'vim-syntastic/syntastic'
@@ -160,6 +162,9 @@ let g:rainbow_active = 1
 
 " Linux only
 if s:LINUX()
+    " Go
+    autocmd FileType go autocmd BufWritePre <buffer> Fmt
+
     "Ack
     nnoremap <Leader>a  :Ack!<Space>
 
