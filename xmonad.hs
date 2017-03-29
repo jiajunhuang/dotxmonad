@@ -11,6 +11,7 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.NoBorders
 import XMonad.Prompt
 import XMonad.Prompt.Shell
@@ -24,20 +25,26 @@ import qualified XMonad.StackSet as W
 myManageHook = composeAll [
     isFullscreen --> (doF W.focusDown <+> doFullFloat),
     isDialog --> doCenterFloat,
-    appName =? "desktop_window" --> doIgnore
+    appName =? "desktop_window" --> doIgnore,
+    className =? "panel" --> doIgnore, -- panel/trayer
+    className =? "Virtualbox" --> doShift "9:vm",
+    className =? "Thunderbird" --> doShift "8:mail",
+    className =? "mysql-workbench-bin" --> doShift "7:sql"
     ]
 
 -- Define StartupHook
 myStartupHook = do
+    setWMName "LG3D"
     spawnOnce "xcompmgr"
-    spawnOnce " trayer --edge top --align right --widthtype percent --width 11 --tint 0x353945 --height 21 --transparent true --alpha 0"
+    spawnOnce "trayer --edge top --align right --widthtype percent --width 11 --tint 0x353945 --height 21 --transparent true --alpha 0"
     spawnOnce "volumeicon"
     spawnOnce "fcitx"
     spawnOnce "udiskie -aN"
     spawnOnce "nm-applet"
+    spawnOnce "sogou-qimpanel"
 
 -- Define the names of all workspaces
-myWorkspaces = ["1-docs", "2-code", "3-code", "4-chat", "5-reading"] ++ map show [6..9]
+myWorkspaces = ["1-docs", "2-code", "3-code", "4-test", "5-test", "6-chat", "7:sql", "8:mail", "9:vm"]
 
 -- Define Terminal
 myTerminal = "gnome-terminal"
