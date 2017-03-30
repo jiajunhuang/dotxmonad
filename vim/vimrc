@@ -27,36 +27,42 @@ endif
 call plug#begin(VIM_PLUG_HOME)
 
 " plugins
-Plug 'cohama/agit.vim'
-Plug 'danro/rename.vim'
+" language specific: syntax, or indent or something else
 Plug 'hdima/python-syntax'
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'itchyny/lightline.vim'
 Plug 'jiajunhuang/vim-cython'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/vim-easy-align'
-Plug 'kshenoy/vim-signature'
-Plug 'luochen1990/rainbow'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'ntpeters/vim-better-whitespace'
+
+" utils
+Plug 'cohama/agit.vim'
+Plug 'danro/rename.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'othree/eregex.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'sessionman.vim'
-Plug 'sickill/vim-monokai'
-Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
+" look and feel
+Plug 'itchyny/lightline.vim'
+Plug 'kshenoy/vim-signature'
+Plug 'luochen1990/rainbow'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'sickill/vim-monokai'
+
 " Linux only
 if s:LINUX()
+    " utils
     Plug 'Valloric/YouCompleteMe'
-    Plug 'ctrlpvim/ctrlp.vim' | Plug 'tacahiroy/ctrlp-funky'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
     Plug 'easymotion/vim-easymotion'
-    Plug 'mileszs/ack.vim'
-    Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs' | Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'scrooloose/nerdtree'
     Plug 'tpope/vim-fugitive'
+
+    " language specific
     Plug 'vim-jp/vim-go-extra'
+
+    " syntax check
     if s:ASYNC()
         " Go: golint(https://github.com/golang/lint)
         Plug 'w0rp/ale'
@@ -92,22 +98,25 @@ if s:WINDOWS()
 endif
 
 " Regular vim only
-set nocompatible
-set autoindent
-set noundofile
-set autoread
-set backspace=indent,eol,start
-set display=lastline
-set encoding=utf-8
-set history=10000
-set hlsearch
-set incsearch
-set laststatus=2
-set wildmenu
+if !s:NVIM()
+    set nocompatible
+    set autoindent
+    set noundofile
+    set autoread
+    set backspace=indent,eol,start
+    set display=lastline
+    set encoding=utf-8
+    set history=10000
+    set hlsearch
+    set incsearch
+    set laststatus=2
+    set wildmenu
+endif
 
 "syntax
 syntax on
 syntax enable
+
 " display
 set ignorecase
 set ruler
@@ -118,8 +127,10 @@ set cursorline cursorcolumn
 set cc=80
 set wrap
 set textwidth=0
+
 "display pairs
 set showmatch
+
 "indent
 set expandtab
 set shiftwidth=4
@@ -127,8 +138,10 @@ set tabstop=4
 set softtabstop=4
 set cindent
 set shiftround
+
 "Tab
 set smarttab
+
 " colorscheme, default to monokai, fallback to desert
 try
     colorscheme monokai
@@ -137,14 +150,13 @@ catch /^Vim\%((\a\+)\)\=:E185/
 endtry
 
 " shortcuts
-" import pdb
-nnoremap <Leader>b Oimport pdb; pdb.set_trace()  # TODO remove it<Esc>:w<CR>
-
 " paste mode
 set pastetoggle=<F2>
+
 " toggle number
 noremap <F4> :set invnumber<CR>
 inoremap <F4> <C-O>:set invnumber<CR>
+
 " make mouse only works on command line mode
 set mouse=c
 
@@ -161,11 +173,11 @@ let g:rainbow_active = 1
 
 " Linux only
 if s:LINUX()
-    " Go
-    autocmd FileType go autocmd BufWritePre <buffer> Fmt
-
-    "Ack
-    nnoremap <Leader>a  :Ack!<Space>
+    " fzf
+    nnoremap <C-p> :Files<CR>
+    nnoremap <Leader>b :Buffers<CR>
+    nnoremap <Leader>m :Marks<CR>
+    nnoremap <Leader>a :Ag<CR>
 
     " NERDTree
     nnoremap <F3> :NERDTreeTabsToggle<CR>
@@ -175,31 +187,9 @@ if s:LINUX()
     nmap s <Plug>(easymotion-bd-f)
     nmap S <Plug>(easymotion-overwin-line)
 
-    " ctrlp && ctrlp-funky
-    nnoremap ff :CtrlPFunky<Cr>
-    let g:ctrlp_funky_matchtype = 'path'
-    let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-        \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$'
-        \ }
-    if executable("ag")
-        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-        let g:ctrlp_use_caching = 0
-    elseif executable("ack")
-        let s:ctrlp_user_command= 'ack %s --nocolor -f'
-        let g:ctrlp_use_caching = 0
-    endif
-
     " YouCompleteMe
     let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
-    let g:ycm_complete_in_comments = 1 " Completion in comments
-    let g:ycm_complete_in_strings = 1 " Completion in string
     nnoremap <leader>\ :YcmCompleter GoTo<CR>
-
-    " Ack.vim
-    if executable('ag')
-        let g:ackprg = 'ag --vimgrep'
-    endif
 
     if s:ASYNC()
         nmap <leader>p <Plug>(ale_previous_wrap)
