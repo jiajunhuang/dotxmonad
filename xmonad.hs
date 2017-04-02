@@ -47,7 +47,7 @@ myStartupHook = do
 myWorkspaces = ["1-docs", "2-code", "3-code", "4-test", "5-test", "6-chat", "7:sql", "8:mail", "9:vm"]
 
 -- Define Terminal
-myTerminal = "gnome-terminal"
+myTerminal = "sakura"
 
 -- Define Layout
 myLayout =  tiled ||| Mirror tiled ||| Full
