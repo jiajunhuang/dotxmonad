@@ -40,6 +40,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'othree/eregex.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
@@ -57,7 +58,6 @@ if s:LINUX()
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin'  } | Plug 'junegunn/fzf.vim'
     Plug 'easymotion/vim-easymotion'
     Plug 'scrooloose/nerdtree'
-    Plug 'tpope/vim-fugitive'
 
     " language specific
     Plug 'vim-jp/vim-go-extra'
