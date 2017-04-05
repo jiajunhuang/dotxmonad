@@ -27,7 +27,6 @@ myManageHook = composeAll [
     isDialog --> doCenterFloat,
     appName =? "desktop_window" --> doIgnore,
     className =? "panel" --> doIgnore, -- panel/trayer
-    className =? "Virtualbox" --> doShift "9:vm",
     className =? "Thunderbird" --> doShift "8:mail",
     className =? "mysql-workbench-bin" --> doShift "7:sql"
     ]
