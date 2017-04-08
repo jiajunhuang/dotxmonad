@@ -1,0 +1,107 @@
+version: '2.1'
+services:
+    es0:
+        image: docker.elastic.co/elasticsearch/elasticsearch:5.3.0
+        container_name: es0
+        environment:
+            cluster.name: "docker-es"
+            bootstrap-memory_lock: "true"
+            ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+            network.host: "0.0.0.0"
+            http.host: "0.0.0.0"
+            transport.host: "0.0.0.0"
+            xpack.security.enabled: "false"
+            xpack.monitoring.enabled: "false"
+            xpack.graph.enabled: "false"
+            xpack.watcher.enabled: "false"
+            discovery.zen.minimum_master_nodes: 1
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536
+                hard: 65536
+        mem_limit: 1g
+        cap_add:
+            - IPC_LOCK
+        volumes:
+            - esdata0:/data/elasticsearch/data
+        ports:
+            - "9200:9200"
+        expose:
+            - "9300"
+    es1:
+        image: docker.elastic.co/elasticsearch/elasticsearch:5.3.0
+        container_name: es1
+        environment:
+            cluster.name: "docker-es"
+            bootstrap-memory_lock: "true"
+            ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+            network.host: "0.0.0.0"
+            http.host: "0.0.0.0"
+            transport.host: "0.0.0.0"
+            xpack.security.enabled: "false"
+            xpack.monitoring.enabled: "false"
+            xpack.graph.enabled: "false"
+            xpack.watcher.enabled: "false"
+            discovery.zen.ping.unicast.hosts: "es0"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536
+                hard: 65536
+        mem_limit: 1g
+        cap_add:
+            - IPC_LOCK
+        volumes:
+            - esdata1:/data/elasticsearch/data
+        links:
+            - "es0"
+        expose:
+            - "9300"
+    es2:
+        image: docker.elastic.co/elasticsearch/elasticsearch:5.3.0
+        container_name: es2
+        environment:
+            cluster.name: "docker-es"
+            bootstrap-memory_lock: "true"
+            ES_JAVA_OPTS: "-Xms512m -Xmx512m"
+            network.host: "0.0.0.0"
+            http.host: "0.0.0.0"
+            transport.host: "0.0.0.0"
+            xpack.security.enabled: "false"
+            xpack.monitoring.enabled: "false"
+            xpack.graph.enabled: "false"
+            xpack.watcher.enabled: "false"
+            discovery.zen.ping.unicast.hosts: "es0"
+        ulimits:
+            memlock:
+                soft: -1
+                hard: -1
+            nofile:
+                soft: 65536
+                hard: 65536
+        mem_limit: 1g
+        cap_add:
+            - IPC_LOCK
+        volumes:
+            - esdata2:/data/elasticsearch/data
+        links:
+            - "es0"
+        expose:
+            - "9300"
+    es-head:
+        image: mobz/elasticsearch-head:5
+        container_name: es-head
+        links:
+            - "es0"
+        ports:
+            - "9100:9100"
+
+volumes:
+    esdata0:
+    esdata1:
+    esdata2:
