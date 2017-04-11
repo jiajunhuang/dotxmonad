@@ -1,4 +1,5 @@
 import Control.Monad
+import Data.Ratio ((%))
 import Graphics.X11.ExtraTypes.XF86
 import System.Environment
 import System.Exit
@@ -12,7 +13,10 @@ import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.SetWMName
+import XMonad.Layout.Grid
+import XMonad.Layout.IM
 import XMonad.Layout.NoBorders
+import XMonad.Layout.PerWorkspace
 import XMonad.Prompt
 import XMonad.Prompt.Shell
 import XMonad.Util.EZConfig (additionalKeys)
@@ -27,8 +31,9 @@ myManageHook = composeAll [
     isDialog --> doCenterFloat,
     appName =? "desktop_window" --> doIgnore,
     className =? "panel" --> doIgnore, -- panel/trayer
-    className =? "Thunderbird" --> doShift "8:mail",
-    className =? "mysql-workbench-bin" --> doShift "7:sql"
+    className =? "Pidgin" --> doShift "6-chat",
+    className =? "mysql-workbench-bin" --> doShift "7:sql",
+    className =? "Thunderbird" --> doShift "8:mail"
     ]
 
 -- Define StartupHook
@@ -49,11 +54,12 @@ myWorkspaces = ["1-docs", "2-code", "3-code", "4-test", "5-test", "6-chat", "7:s
 myTerminal = "sakura"
 
 -- Define Layout
-myLayout =  tiled ||| Mirror tiled ||| Full
+myLayout =  avoidStruts $ onWorkspace "6-chat" pidginLayout $ tiled ||| Mirror tiled ||| Full
     where tiled = Tall nmaster delta ratio
           nmaster = 1 -- default number of windows in master screen
           delta = 3/100 -- default percent of resizing panes
           ratio = 3/5 -- default proportion of screen occupied by master pane
+          pidginLayout = withIM (1/5) (Role "buddy_list") Grid
 
 -- Define Border
 myNormalBorderColor = "#353945"
