@@ -27,10 +27,7 @@ myManageHook = composeAll [
     isFullscreen --> (doF W.focusDown <+> doFullFloat),
     isDialog --> doCenterFloat,
     appName =? "desktop_window" --> doIgnore,
-    className =? "panel" --> doIgnore, -- panel/trayer
-    className =? "bearychat_v2" --> doShift "6-chat",
-    className =? "mysql-workbench-bin" --> doShift "7:sql",
-    className =? "Thunderbird" --> doShift "8:mail"
+    className =? "panel" --> doIgnore -- panel/trayer
     ]
 
 -- Define StartupHook
@@ -46,7 +43,7 @@ myStartupHook = do
     spawnOnce "bearychat"
 
 -- Define the names of all workspaces
-myWorkspaces = ["1-docs", "2-code", "3-code", "4-test", "5-test", "6-chat", "7:sql", "8:mail", "9:vm"]
+myWorkspaces = ["1-docs", "2-code", "3-code", "4-term", "5-term", "6-sql", "7-chat", "8-mail", "9-vm"]
 
 -- Define Terminal
 myTerminal = "sakura"
