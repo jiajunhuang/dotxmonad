@@ -57,8 +57,7 @@ if s:LINUX()
     Plug 'Valloric/YouCompleteMe'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin'  } | Plug 'junegunn/fzf.vim'
     Plug 'easymotion/vim-easymotion'
-    Plug 'scrooloose/nerdtree'
-
+    "
     " language specific
     Plug 'vim-jp/vim-go-extra'
 
@@ -178,9 +177,7 @@ if s:LINUX()
     nnoremap <Leader>b :Buffers<CR>
     nnoremap <Leader>m :Marks<CR>
     nnoremap <Leader>a :Ag<CR>
-
-    " NERDTree
-    nnoremap <F3> :NERDTreeTabsToggle<CR>
+    nnoremap ff :BLines<CR>
 
     "easymotion
     let g:EasyMotion_do_mapping = 0 " Disable default mappings
