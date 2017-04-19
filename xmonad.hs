@@ -27,7 +27,8 @@ myManageHook = composeAll [
     isFullscreen --> (doF W.focusDown <+> doFullFloat),
     isDialog --> doCenterFloat,
     appName =? "desktop_window" --> doIgnore,
-    className =? "panel" --> doIgnore -- panel/trayer
+    className =? "bearychat_v2" --> doShift "7-chat",
+    manageDocks
     ]
 
 -- Define StartupHook
