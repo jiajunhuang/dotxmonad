@@ -30,7 +30,7 @@ call plug#begin(VIM_PLUG_HOME)
 " language specific: syntax, or indent or something else
 Plug 'hdima/python-syntax'
 Plug 'hynek/vim-python-pep8-indent'
-Plug 'jiajunhuang/vim-cython'
+Plug 'tshirtman/vim-cython'
 Plug 'neovimhaskell/haskell-vim'
 
 " utils
