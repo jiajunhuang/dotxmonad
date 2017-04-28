@@ -123,7 +123,7 @@ set number
 set showcmd
 set showmode
 set cursorline cursorcolumn
-set cc=80
+set cc=120
 set wrap
 set textwidth=0
 
