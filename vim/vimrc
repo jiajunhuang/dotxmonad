@@ -54,6 +54,7 @@ Plug 'sickill/vim-monokai'
 " Linux only
 if s:LINUX()
     " utils
+    Plug 'ludovicchabant/vim-gutentags'
     Plug 'Valloric/YouCompleteMe'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin'  } | Plug 'junegunn/fzf.vim'
     Plug 'easymotion/vim-easymotion'
