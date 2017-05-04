@@ -1,4 +1,3 @@
-# system
 neovim
 xmonad
 xmobar
@@ -9,8 +8,16 @@ trayer
 fcitx
 sogou
 network-manager
-
-# app
 httpie
 autojump
-nylas mail
+tig
+ctags
+godef
+gocode
+gotags
+mycli
+pgcli
+htop
+cloc
+tree
+byobu
