@@ -27,7 +27,6 @@ myManageHook = composeAll [
     isFullscreen --> (doF W.focusDown <+> doFullFloat),
     isDialog --> doCenterFloat,
     appName =? "desktop_window" --> doIgnore,
-    className =? "bearychat_v2" --> doShift "7-chat",
     manageDocks
     ]
 
@@ -41,7 +40,6 @@ myStartupHook = do
     spawnOnce "udiskie -aN"
     spawnOnce "nm-applet"
     spawnOnce "sogou-qimpanel"
-    spawnOnce "bearychat"
     spawnOnce "dropbox start"
 
 -- Define the names of all workspaces
