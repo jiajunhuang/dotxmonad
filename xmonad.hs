@@ -74,7 +74,7 @@ myXmonadPromptConfig = def {
 
 -- Define ShortCuts
 myShortCuts = [
-    ((mod4Mask, xK_l), spawn "slock"),
+    ((mod4Mask, xK_l), spawn "dm-tool lock"),
     ((0, xF86XK_MonBrightnessUp), spawn "xbacklight +20"),
     ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -20"),
     ((mod4Mask, xK_c), spawn "google-chrome"),
