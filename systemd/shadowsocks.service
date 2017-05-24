@@ -1,0 +1,11 @@
+[Unit]
+Description=Shadowsocks Client
+After=network.target
+
+[Service]
+ExecStart=/usr/local/bin/shadowsocks-local -c /etc/shadowsocks.json
+Restart=on-abort
+User=nobody
+
+[Install]
+WantedBy=multi-user.target

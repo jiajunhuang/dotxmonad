@@ -17,12 +17,6 @@ if [ -f $AUTO_JUMP ]; then
     source $AUTO_JUMP
 fi
 
-# extern bash configuration for diffrent computer
-EXTRC=~/.xmonad/bash/extrc.sh
-if [ -f $EXTRC ]; then
-    source $EXTRC
-fi
-
 # git completion
 GIT_COMPLETE=~/.xmonad/bash/git-completion.sh
 if [ -f $GIT_COMPLETE ]; then
@@ -35,10 +29,10 @@ if [ -f $GIT_PROMPT ]; then
     source $GIT_PROMPT
 fi
 
-# bash aliases
-BASH_ALIASES=~/.xmonad/bash/bash_aliases.sh
-if [ -f $BASH_ALIASES ]; then
-    source $BASH_ALIASES
+# extend rc
+EXTRC=~/.bash_extrc
+if [ -f $EXTRC ]; then
+    source $EXTRC
 fi
 
 # golang
@@ -57,3 +51,71 @@ if which tmux >/dev/null 2>&1; then
         tmux attach || tmux new-session
     fi
 fi
+
+# aliases
+
+#ls
+alias ls='ls --color=auto'
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+#grep
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+#git
+if [ -n `which git` ]; then
+    alias gf='git diff'
+    alias gs='git status'
+    alias gc='git commit'
+    alias gp='git push'
+    alias gck='git checkout'
+    alias gcp='git cherry-pick'
+    alias grb='git rebase'
+    __git_complete gf _git_diff
+    __git_complete gc _git_commit
+    __git_complete gp _git_push
+    __git_complete gck _git_checkout
+    __git_complete gcp _git_cherry_pick
+fi
+
+#proxychains
+alias pc='proxychains'
+alias pcq='proxychains -q'
+
+# rm
+alias rm='rm -I'
+
+# cd
+alias ..='cd ../'
+
+# free
+alias free='free -h'
+
+# work
+alias gweeklog='git log origin/master --author `git config --get user.name` --since "5 days ago" --oneline | tac | sed "s/^\w*\ *//''" | cut -d " " -f2-'
+
+# pandoc
+alias topdf='pandoc --latex-engine=xelatex --template=$HOME/.xmonad/latex/cn_tpl.tex'
+
+# ydcv
+alias y='ydcv'
+
+# vim
+alias e='nvim'  # e means edit
+
+# go use proxy by default
+alias go='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 go'
+
+# rsync
+function syncto {
+    if [ $# -eq 0 ]
+    then
+        echo "Usage: syncto [from] [to]"
+        echo "Example: syncto . root@my_remote_host:/tmp/"
+    else
+        rsync -a --delete $@
+    fi
+}
