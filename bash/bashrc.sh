@@ -74,11 +74,13 @@ if [ -n `which git` ]; then
     alias gck='git checkout'
     alias gcp='git cherry-pick'
     alias grb='git rebase'
-    __git_complete gf _git_diff
-    __git_complete gc _git_commit
-    __git_complete gp _git_push
-    __git_complete gck _git_checkout
-    __git_complete gcp _git_cherry_pick
+    if [ -f $GIT_COMPLETE ]; then
+        __git_complete gf _git_diff
+        __git_complete gc _git_commit
+        __git_complete gp _git_push
+        __git_complete gck _git_checkout
+        __git_complete gcp _git_cherry_pick
+    fi
 fi
 
 #proxychains
