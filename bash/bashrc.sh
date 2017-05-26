@@ -44,14 +44,6 @@ export TERM=xterm-256color
 export EDITOR=vim
 export PS1='\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;11m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;6m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]$(__git_ps1 " (%s)"): \[$(tput sgr0)\]'
 
-# tmux
-if which tmux >/dev/null 2>&1; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    if [[ -z $TMUX ]] && [[ $SSH_CONNECTION != "" ]]; then
-        tmux attach || tmux new-session
-    fi
-fi
-
 # aliases
 
 #ls
