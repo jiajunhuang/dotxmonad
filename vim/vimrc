@@ -36,7 +36,6 @@ Plug 'tshirtman/vim-cython'
 " utils
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
-Plug 'danro/rename.vim'
 Plug 'houtsnip/vim-emacscommandline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'othree/eregex.vim'
