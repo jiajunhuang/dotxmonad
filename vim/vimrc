@@ -34,16 +34,19 @@ Plug 'neovimhaskell/haskell-vim'
 Plug 'tshirtman/vim-cython'
 
 " utils
-Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'danro/rename.vim'
+Plug 'houtsnip/vim-emacscommandline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'othree/eregex.vim'
+Plug 'roxma/vim-paste-easy'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 
 " look and feel
