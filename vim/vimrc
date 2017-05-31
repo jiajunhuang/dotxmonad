@@ -47,7 +47,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " look and feel
-Plug 'Yggdroot/indentLine'
 Plug 'itchyny/lightline.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
@@ -138,9 +137,6 @@ inoremap <C-b> <Left>
 " plugin settings
 " Rainbow
 let g:rainbow_active = 1
-
-" IndentLine
-autocmd Filetype json let g:indentLine_setConceal = 0
 
 " Linux only
 if s:LINUX()
