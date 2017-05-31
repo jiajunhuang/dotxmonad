@@ -28,10 +28,8 @@ call plug#begin(VIM_PLUG_HOME)
 
 " plugins
 " language specific: syntax, or indent or something else
-Plug 'hdima/python-syntax'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'neovimhaskell/haskell-vim'
-Plug 'tshirtman/vim-cython'
 
 " utils
 Plug 'airblade/vim-gitgutter'
@@ -43,7 +41,6 @@ Plug 'othree/eregex.vim'
 Plug 'roxma/vim-paste-easy'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
@@ -61,6 +58,7 @@ if s:LINUX()
     " utils
     Plug 'Valloric/YouCompleteMe'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin'  } | Plug 'junegunn/fzf.vim'
+    Plug 'tpope/vim-eunuch'
 
     " language specific
     Plug 'vim-jp/vim-go-extra'
@@ -130,11 +128,13 @@ inoremap <F4> <C-O>:set invnumber<CR>
 set mouse=c
 
 " emacs key bindings for vim insert mode
-inoremap <C-d> <Del>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-f> <Right>
-inoremap <C-b> <Left>
+inoremap <C-D> <Del>
+inoremap <C-A> <Home>
+inoremap <C-B> <Left>
+inoremap <C-E> <End>
+inoremap <C-F> <Right>
+inoremap <C-K> <Esc>lDa
+inoremap <C-U> <Esc>d^i
 
 " preview substitute
 set inccommand=nosplit
