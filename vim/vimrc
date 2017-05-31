@@ -38,6 +38,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'houtsnip/vim-emacscommandline'
 Plug 'jiangmiao/auto-pairs'
+Plug 'justinmk/vim-sneak'
 Plug 'othree/eregex.vim'
 Plug 'roxma/vim-paste-easy'
 Plug 'scrooloose/nerdcommenter'
@@ -59,7 +60,6 @@ Plug 'sickill/vim-monokai'
 if s:LINUX()
     " utils
     Plug 'Valloric/YouCompleteMe'
-    Plug 'easymotion/vim-easymotion'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin'  } | Plug 'junegunn/fzf.vim'
 
     " language specific
@@ -136,6 +136,9 @@ inoremap <C-e> <End>
 inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 
+" preview substitute
+set inccommand=nosplit
+
 " plugin settings
 " Rainbow
 let g:rainbow_active = 1
@@ -149,15 +152,13 @@ if s:LINUX()
     nnoremap <Leader>a :Ag<CR>
     nnoremap ff :BLines<CR>
 
-    "easymotion
-    let g:EasyMotion_do_mapping = 0 " Disable default mappings
-    nmap s <Plug>(easymotion-bd-f)
-    nmap S <Plug>(easymotion-overwin-line)
-
     " YouCompleteMe
     let g:ycm_seed_identifiers_with_syntax = 1
     let g:ycm_autoclose_preview_window_after_insertion = 1
     nnoremap <leader>\ :YcmCompleter GoTo<CR>
+
+    " vim-sneak
+    let g:sneak#label = 1
 
     if s:ASYNC()
         nmap <leader>p <Plug>(ale_previous_wrap)
