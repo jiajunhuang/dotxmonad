@@ -38,7 +38,6 @@ Plug 'houtsnip/vim-emacscommandline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'othree/eregex.vim'
-Plug 'roxma/vim-paste-easy'
 Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
@@ -136,8 +135,26 @@ inoremap <C-F> <Right>
 inoremap <C-K> <Esc>lDa
 inoremap <C-U> <Esc>d^i
 
+" use Ctrl + hjkl to move left, down, up, right
+nnoremap <C-H> <C-W>h
+nnoremap <C-L> <C-W>l
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+
+" resize
+nnoremap <Up> <C-W>-2
+nnoremap <Down> <C-W>+2
+nnoremap <Left> <C-W><2
+nnoremap <Right> <C-W>>2
+
 " preview substitute
 set inccommand=nosplit
+
+" abbreviations
+iabbrev jiajun Jiajun Huang<gansteed@gmail.com>
+
+" python
+nnoremap <leader>d Oimport pdb; pdb.set_trace()<Esc>
 
 " plugin settings
 " Rainbow
@@ -147,15 +164,21 @@ let g:rainbow_active = 1
 if s:LINUX()
     " fzf
     nnoremap <C-p> :Files<CR>
-    nnoremap <Leader>b :Buffers<CR>
-    nnoremap <Leader>m :Marks<CR>
-    nnoremap <Leader>a :Ag<CR>
+    nnoremap <leader>b :Buffers<CR>
+    nnoremap <leader>m :Marks<CR>
+    nnoremap <leader>a :Ag<CR>
     nnoremap ff :BLines<CR>
 
     " YouCompleteMe
     let g:ycm_seed_identifiers_with_syntax = 1
     let g:ycm_autoclose_preview_window_after_insertion = 1
     nnoremap <leader>\ :YcmCompleter GoTo<CR>
+
+    if s:NVIM()
+        " terminal
+        nnoremap <leader>t :vsplit term://bash<CR>
+        nnoremap <leader>T :split term://bash<CR>
+    endif
 
     " vim-sneak
     let g:sneak#label = 1
