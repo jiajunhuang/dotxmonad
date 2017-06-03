@@ -1,5 +1,6 @@
 import Control.Monad
 import Graphics.X11.ExtraTypes.XF86
+import System.Taffybar.Hooks.PagerHints (pagerHints)
 import System.Environment
 import System.Exit
 import System.IO
@@ -33,8 +34,8 @@ myManageHook = composeAll [
 -- Define StartupHook
 myStartupHook = do
     setWMName "LG3D"
+    spawnOnce "taffybar"
     spawnOnce "xcompmgr"
-    spawnOnce "trayer --edge top --align right --widthtype percent --width 11 --tint 0x353945 --height 21 --transparent true --alpha 0"
     spawnOnce "volumeicon"
     spawnOnce "fcitx"
     spawnOnce "udiskie -aN"
@@ -84,24 +85,15 @@ myShortCuts = [
     ((mod1Mask, xK_p), shellPrompt myXmonadPromptConfig)
     ]
 
--- Define LogHook
-myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
-    ppOutput = hPutStrLn xmproc,
-    ppTitle = xmobarColor myXmobarColorfg myXmobarColorbg . shorten 60,
-    ppLayout = const "" -- to disable the layout info on xmobar
-}
-
 
 main = do
     spawn "feh --bg-scale ~/.xmonad/background.jpg"
-    xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc.hs"
-    xmonad $ desktopConfig {
+    xmonad $ ewmh $ pagerHints $ desktopConfig {
         manageHook = myManageHook <+> manageDocks <+> manageHook desktopConfig,
         handleEventHook = docksEventHook <+> handleEventHook desktopConfig,
         layoutHook = avoidStruts $ smartBorders myLayout,
         terminal = myTerminal,
         startupHook = myStartupHook,
-        logHook = myLogHook xmproc,
         borderWidth = myBorderWidth,
         workspaces = myWorkspaces,
         normalBorderColor = myNormalBorderColor,
