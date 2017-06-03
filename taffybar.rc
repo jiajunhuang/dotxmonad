@@ -1,0 +1,26 @@
+style "taffybar-default" {
+  color["gray"] = "#272822"
+  color["white"] = "#ffffff"
+  color["green"] = "#a6e22e"
+  color["red"]   = "#66d9ef"
+
+  bg[NORMAL]   = @gray
+  fg[NORMAL]   = @white
+  text[NORMAL] = @white
+  fg[PRELIGHT] = @green
+  bg[PRELIGHT] = @gray
+}
+
+style "taffybar-active-window" = "taffybar-default" {
+  fg[NORMAL] = @green
+}
+
+style "taffybar-notification-button" = "taffybar-default" {
+  text[NORMAL] = @red
+  fg[NORMAL]   = @red
+}
+
+widget "Taffybar*" style "taffybar-default"
+widget "Taffybar*WindowSwitcher*label" style "taffybar-active-window"
+widget "*NotificationCloseButton" style "taffybar-notification-button"
+gtk-font-name="Consolas Regular 13"
