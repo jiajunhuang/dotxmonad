@@ -75,11 +75,11 @@ myXmonadPromptConfig = def {
 
 -- Define ShortCuts
 myShortCuts = [
-    ((mod4Mask, xK_l), spawn "dm-tool lock"),
+    ((mod4Mask, xK_l), spawn "slock"),
     ((0, xF86XK_MonBrightnessUp), spawn "xbacklight +20"),
     ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -20"),
     ((mod4Mask, xK_c), spawn "google-chrome"),
-    ((mod4Mask, xK_a), spawn "gnome-screenshot --interactive"),
+    ((mod4Mask, xK_a), spawn "sleep 0.2; scrot -s -e 'mv $f /data/samba/shots/'"),
     ((mod4Mask, xK_b), sendMessage ToggleStruts),
     ((mod1Mask, xK_Tab), goToSelected def),
     ((mod1Mask, xK_p), shellPrompt myXmonadPromptConfig)
