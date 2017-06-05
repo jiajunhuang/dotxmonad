@@ -153,10 +153,6 @@ if s:NVIM()
     set inccommand=nosplit
 endif
 
-" abbreviations
-inoreabbrev jiajun Jiajun Huang<gansteed@gmail.com>
-cnoreabbrev Ack Ack!
-
 " python
 nnoremap <leader>d Oimport pdb; pdb.set_trace()<Esc>
 
