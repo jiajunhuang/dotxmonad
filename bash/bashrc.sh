@@ -113,3 +113,6 @@ function syncto {
         rsync -a --delete $@
     fi
 }
+
+# python
+alias python=python3
