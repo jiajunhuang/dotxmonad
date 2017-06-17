@@ -34,7 +34,6 @@ Plug 'itchyny/vim-haskell-indent'
 " utils
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
-Plug 'houtsnip/vim-emacscommandline'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'mileszs/ack.vim'
@@ -43,6 +42,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 
@@ -126,15 +126,6 @@ inoremap <F4> <C-O>:set invnumber<CR>
 
 " make mouse only works on command line mode
 set mouse=c
-
-" emacs key bindings for vim insert mode
-inoremap <C-D> <Del>
-inoremap <C-A> <Home>
-inoremap <C-B> <Left>
-inoremap <C-E> <End>
-inoremap <C-F> <Right>
-inoremap <C-K> <Esc>lDa
-inoremap <C-U> <Esc>d^i
 
 " use Ctrl + hjkl to move left, down, up, right
 nnoremap <C-H> <C-W>h
