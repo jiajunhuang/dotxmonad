@@ -52,6 +52,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sickill/vim-monokai'
+Plug 'stephpy/vim-yaml'
 
 " Linux only
 if s:LINUX()
