@@ -21,3 +21,5 @@ htop
 cloc
 tree
 tmux
+jq
+fzf

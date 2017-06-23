@@ -58,7 +58,7 @@ Plug 'stephpy/vim-yaml'
 if s:LINUX()
     " utils
     Plug 'Valloric/YouCompleteMe'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin'  } | Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
     Plug 'tpope/vim-eunuch'
 
     " language specific
