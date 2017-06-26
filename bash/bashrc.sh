@@ -35,6 +35,10 @@ if [ -f $EXTRC ]; then
     source $EXTRC
 fi
 
+# unlimited history
+export HISTFILESIZE=
+export HISTSIZE=
+
 # golang
 export GOPATH=$HOME/golang
 export PATH=$GOPATH/bin:/usr/local/openresty/bin:$PATH
