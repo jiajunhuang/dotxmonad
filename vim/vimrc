@@ -150,7 +150,7 @@ endif
 nnoremap <leader>d Oimport pdb; pdb.set_trace()<Esc>
 
 " persistent
-set undodir=~/.vimundo/
+set undodir=~/.cache/vimundo/
 set undofile
 
 " plugin settings
