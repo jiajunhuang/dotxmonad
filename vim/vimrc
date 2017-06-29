@@ -28,15 +28,16 @@ call plug#begin(VIM_PLUG_HOME)
 
 " plugins
 " language specific: syntax, or indent or something else
+Plug 'editorconfig/editorconfig-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'itchyny/vim-haskell-indent'
-Plug 'editorconfig/editorconfig-vim'
 
 " utils
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
+Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'othree/eregex.vim'
 Plug 'scrooloose/nerdcommenter'
@@ -147,6 +148,10 @@ endif
 
 " python
 nnoremap <leader>d Oimport pdb; pdb.set_trace()<Esc>
+
+" persistent
+set undodir=~/.vimundo/
+set undofile
 
 " plugin settings
 " Rainbow
