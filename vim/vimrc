@@ -30,6 +30,7 @@ call plug#begin(VIM_PLUG_HOME)
 " language specific: syntax, or indent or something else
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'itchyny/vim-haskell-indent'
+Plug 'editorconfig/editorconfig-vim'
 
 " utils
 Plug 'airblade/vim-gitgutter'
@@ -52,7 +53,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sickill/vim-monokai'
-Plug 'stephpy/vim-yaml'
 
 " Linux only
 if s:LINUX()
