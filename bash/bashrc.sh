@@ -118,6 +118,8 @@ function syncto {
     fi
 }
 
+# python
 alias python=python3
+alias bp=bpython
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
