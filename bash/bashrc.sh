@@ -123,6 +123,8 @@ alias python=python3
 alias bp=bpython
 
 # pandoc
-alias tohtml='pandoc -s -S --toc --highlight-style pygments --css common.css -t html $@ > /data/doc/$@.html'
+function tohtml() {
+    pandoc -s -S --toc --highlight-style pygments --css common.css -t html $@ > /data/doc/$@.html
+}
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
