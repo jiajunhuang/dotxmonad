@@ -35,6 +35,9 @@ if [ -f $EXTRC ]; then
     source $EXTRC
 fi
 
+# QT5 look and feel
+export QT_STYLE_OVERRIDE='Arc-Darker'
+
 # unlimited history
 export HISTFILESIZE=
 export HISTSIZE=
