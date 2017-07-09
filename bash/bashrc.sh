@@ -107,6 +107,10 @@ alias e='nvim'  # e means edit
 # go use proxy by default
 alias go='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 go'
 
+# python
+alias python=python3
+alias bp=bpython
+
 # rsync
 function syncto {
     if [ $# -eq 0 ]
@@ -117,7 +121,5 @@ function syncto {
         rsync -a --delete $@
     fi
 }
-
-alias python=python3
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
