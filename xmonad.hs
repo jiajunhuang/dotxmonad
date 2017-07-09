@@ -78,10 +78,16 @@ myShortCuts = [
     ((mod4Mask, xK_l), spawn "slock"),
     ((0, xF86XK_MonBrightnessUp), spawn "xbacklight +20"),
     ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -20"),
+    -- browser: google chrome
     ((mod4Mask, xK_c), spawn "google-chrome"),
+    -- MySQL: mysql-workbentch
     ((mod4Mask, xK_m), spawn "mysql-workbench"),
+    -- E-Mail: thunderbird
     ((mod4Mask, xK_t), spawn "thunderbird"),
+    -- Screenshort: scrot
     ((mod4Mask, xK_a), spawn "sleep 0.2; scrot -s -e 'mv $f /data/samba/shots/'"),
+    -- DocViewer: zeal
+    ((mod4Mask, xK_d), spawn "zeal"),
     ((mod4Mask, xK_b), sendMessage ToggleStruts),
     ((mod1Mask, xK_Tab), goToSelected def),
     ((mod1Mask, xK_p), shellPrompt myXmonadPromptConfig)

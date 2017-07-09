@@ -35,6 +35,9 @@ if [ -f $EXTRC ]; then
     source $EXTRC
 fi
 
+# QT5 look and feel
+export QT_STYLE_OVERRIDE='Arc-Darker'
+
 # unlimited history
 export HISTFILESIZE=
 export HISTSIZE=
@@ -104,6 +107,9 @@ alias y='ydcv'
 # vim
 alias e='nvim'  # e means edit
 
+# tmux
+alias tt='tmux attach || tmux new'
+
 # go use proxy by default
 alias go='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 go'
 
@@ -120,6 +126,11 @@ function syncto {
     else
         rsync -a --delete $@
     fi
+}
+
+# pandoc
+function tohtml() {
+    pandoc -s -S --toc --highlight-style pygments --css common.css -t html $@ > /data/doc/$@.html
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
