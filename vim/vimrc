@@ -28,9 +28,9 @@ call plug#begin(VIM_PLUG_HOME)
 
 " plugins
 " language specific: syntax, or indent or something else
-Plug 'editorconfig/editorconfig-vim'
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'itchyny/vim-haskell-indent'
+Plug 'pearofducks/ansible-vim'
 
 " utils
 Plug 'airblade/vim-gitgutter'
