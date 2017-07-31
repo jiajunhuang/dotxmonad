@@ -118,7 +118,7 @@ alias python=python3
 alias bp=bpython
 
 # antlr4
-export CLASSPATH=".:/usr/local/lib/antlr-complete.jar:$CLASSPATH"
+export CLASSPATH=".:/usr/share/java/antlr-complete.jar:/usr/local/lib/antlr-complete.jar:$CLASSPATH"
 alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
 alias grun='java org.antlr.v4.gui.TestRig'
 
