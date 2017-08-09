@@ -125,6 +125,9 @@ alias grun='java org.antlr.v4.gui.TestRig'
 # lastpass
 alias lpass='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 lpass'
 
+# readline wrapper
+alias luajit='rlwrap luajit'
+
 # rsync
 function syncto {
     if [ $# -eq 0 ]
