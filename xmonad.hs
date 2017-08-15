@@ -82,8 +82,8 @@ myShortCuts = [
     ((mod4Mask, xK_c), spawn "google-chrome"),
     -- MySQL: mysql-workbentch
     ((mod4Mask, xK_m), spawn "mysql-workbench"),
-    -- E-Mail: geary
-    ((mod4Mask, xK_t), spawn "geary"),
+    -- E-Mail: thunderbird
+    ((mod4Mask, xK_t), spawn "thunderbird"),
     -- Screenshort: scrot
     ((mod4Mask, xK_a), spawn "sleep 0.2; scrot -s -e 'mv $f /data/samba/shots/'"),
     -- DocViewer: zeal
