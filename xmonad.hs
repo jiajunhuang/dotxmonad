@@ -1,6 +1,5 @@
 import Control.Monad
 import Graphics.X11.ExtraTypes.XF86
-import System.Taffybar.Hooks.PagerHints (pagerHints)
 import System.Environment
 import System.Exit
 import System.IO
@@ -93,15 +92,23 @@ myShortCuts = [
     ((mod1Mask, xK_p), shellPrompt myXmonadPromptConfig)
     ]
 
+-- Define LogHook
+myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
+    ppOutput = hPutStrLn xmproc,
+    ppTitle = xmobarColor myXmobarColorfg myXmobarColorbg . shorten 60,
+    ppLayout = const "" -- to disable the layout info on xmobar
+}
 
 main = do
     spawn "feh --bg-scale ~/.xmonad/background.jpg"
-    xmonad $ ewmh $ pagerHints $ desktopConfig {
+    xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc.hs"
+    xmonad $ ewmh $ desktopConfig {
         manageHook = myManageHook <+> manageDocks <+> manageHook desktopConfig,
         handleEventHook = docksEventHook <+> handleEventHook desktopConfig,
         layoutHook = avoidStruts $ smartBorders myLayout,
         terminal = myTerminal,
         startupHook = myStartupHook,
+        logHook = myLogHook xmproc,
         borderWidth = myBorderWidth,
         workspaces = myWorkspaces,
         normalBorderColor = myNormalBorderColor,
