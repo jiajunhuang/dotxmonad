@@ -107,6 +107,9 @@ alias y='ydcv'
 # vim
 alias e='nvim'  # e means edit
 
+# autojump
+alias j='autojump'
+
 # tmux
 alias tt='tmux attach || tmux new'
 
