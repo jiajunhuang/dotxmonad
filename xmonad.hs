@@ -95,7 +95,7 @@ myShortCuts = [
 
 
 main = do
-    spawn "feh --bg-scale ~/.xmonad/background.jpg"
+    spawn "feh --bg-fill ~/.xmonad/background.jpg"
     xmonad $ ewmh $ pagerHints $ desktopConfig {
         manageHook = myManageHook <+> manageDocks <+> manageHook desktopConfig,
         handleEventHook = docksEventHook <+> handleEventHook desktopConfig,
