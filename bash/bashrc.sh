@@ -144,7 +144,7 @@ function syncto {
 
 # pandoc
 function tohtml() {
-    pandoc -s -S --toc --highlight-style pygments --css common.css -t html $@ > /data/doc/$@.html
+    pandoc -s -S --toc --highlight-style pygments --css common.css -t html $@ > /data/documents/$@.html
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
