@@ -12,7 +12,7 @@ if [ -f $BASH_COMPLETION ]; then
 fi
 
 # autojump
-AUTO_JUMP=/usr/share/autojump/autojump.sh
+AUTO_JUMP=/etc/profile.d/autojump.sh
 if [ -f $AUTO_JUMP ]; then
     source $AUTO_JUMP
 fi
