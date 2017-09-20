@@ -1,6 +1,5 @@
 import Control.Monad
 import Graphics.X11.ExtraTypes.XF86
-import System.Taffybar.Hooks.PagerHints (pagerHints)
 import System.Environment
 import System.Exit
 import System.IO
@@ -34,7 +33,7 @@ myManageHook = composeAll [
 -- Define StartupHook
 myStartupHook = do
     setWMName "LG3D"
-    spawnOnce "taffybar"
+    spawnOnce "tint2"
     spawnOnce "xcompmgr"
     spawnOnce "volumeicon"
     spawnOnce "fcitx"
@@ -47,7 +46,7 @@ myStartupHook = do
 myWorkspaces = ["1-docs", "2-code", "3-code", "4-term", "5-term", "6-sql", "7-chat", "8-mail", "9-vm"]
 
 -- Define Terminal
-myTerminal = "gnome-terminal"
+myTerminal = "sakura"
 
 -- Define Layout
 myLayout =  avoidStruts $ tiled ||| Mirror tiled ||| Full
@@ -95,8 +94,8 @@ myShortCuts = [
 
 
 main = do
-    spawn "feh --bg-fill ~/.xmonad/background.jpg"
-    xmonad $ ewmh $ pagerHints $ desktopConfig {
+    spawn "feh --bg-scale ~/.xmonad/background.jpg"
+    xmonad $ ewmh $ desktopConfig {
         manageHook = myManageHook <+> manageDocks <+> manageHook desktopConfig,
         handleEventHook = docksEventHook <+> handleEventHook desktopConfig,
         layoutHook = avoidStruts $ smartBorders myLayout,
