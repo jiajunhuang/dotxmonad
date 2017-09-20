@@ -30,6 +30,7 @@ call plug#begin(VIM_PLUG_HOME)
 " language specific: syntax, or indent or something else
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'itchyny/vim-haskell-indent'
+Plug 'solarnz/thrift.vim'
 Plug 'stephpy/vim-yaml'
 
 " utils
