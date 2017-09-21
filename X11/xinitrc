@@ -1,11 +1,9 @@
 #!/bin/bash
-export $(dbus-launch)
-tint2&
+tint2 &
 xcompmgr &
 volumeicon &
 fcitx &
 udiskie -aN &
 nm-applet &
-sogou-qimpanel &
 dropbox start &
 exec xmonad
