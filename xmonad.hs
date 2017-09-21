@@ -17,8 +17,6 @@ import XMonad.Layout.PerWorkspace
 import XMonad.Prompt
 import XMonad.Prompt.Shell
 import XMonad.Util.EZConfig (additionalKeys)
-import XMonad.Util.Run (spawnPipe)
-import XMonad.Util.SpawnOnce
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
@@ -88,7 +86,7 @@ myShortCuts = [
 main = do
     spawn "feh --bg-scale ~/.xmonad/background.jpg"
     xmonad $ ewmh $ desktopConfig {
-        manageHook = myManageHook <+> manageDocks <+> manageHook desktopConfig,
+        manageHook = myManageHook <+> manageHook desktopConfig,
         handleEventHook = docksEventHook <+> handleEventHook desktopConfig,
         layoutHook = avoidStruts $ smartBorders myLayout,
         terminal = myTerminal,
