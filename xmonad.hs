@@ -26,7 +26,8 @@ import qualified XMonad.StackSet as W
 myManageHook = composeAll [
     isFullscreen --> (doF W.focusDown <+> doFullFloat),
     isDialog --> doCenterFloat,
-    appName =? "desktop_window" --> doIgnore
+    appName =? "desktop_window" --> doIgnore,
+    manageDocks
     ]
 
 -- Define StartupHook
