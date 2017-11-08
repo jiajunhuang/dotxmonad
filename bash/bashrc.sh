@@ -103,7 +103,7 @@ alias free='free -h'
 alias gweeklog='git log origin/master --author `git config --get user.name` --since "5 days ago" --oneline | tac | sed "s/^\w*\ *//''" | cut -d " " -f2-'
 
 # pandoc
-alias topdf='pandoc --latex-engine=xelatex --template=$HOME/.xmonad/latex/cn_tpl.tex'
+alias topdf='pandoc --latex-engine=xelatex -V CJKmainfont="Source Han Serif CN"'
 
 # ydcv
 alias y='ydcv'
