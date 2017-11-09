@@ -102,9 +102,6 @@ alias free='free -h'
 # work
 alias gweeklog='git log origin/master --author `git config --get user.name` --since "5 days ago" --oneline | tac | sed "s/^\w*\ *//''" | cut -d " " -f2-'
 
-# pandoc
-alias topdf='pandoc --latex-engine=xelatex -V CJKmainfont="Source Han Serif CN"'
-
 # ydcv
 alias y='ydcv'
 
@@ -146,6 +143,9 @@ function syncto {
 # pandoc
 function tohtml() {
     pandoc -s -S --toc --highlight-style pygments --css common.css -t html $@ > /data/doc/$@.html
+}
+function topdf() {
+    pandoc --latex-engine=xelatex -V CJKmainfont="Source Han Serif CN" $@ -o $@.pdf
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
