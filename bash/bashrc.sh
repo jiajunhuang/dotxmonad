@@ -142,10 +142,10 @@ function syncto {
 
 # pandoc
 function tohtml() {
-    pandoc -s -S --toc --highlight-style pygments --css common.css -t html $@ > /data/doc/$@.html
+    pandoc -s -S --toc --highlight-style pygments --css common.css -t html $@ -o /data/doc/$@.html
 }
 function topdf() {
-    pandoc --latex-engine=xelatex -V CJKmainfont="Source Han Serif CN" $@ -o $@.pdf
+    pandoc --latex-engine=xelatex -V CJKmainfont="Source Han Serif CN" $@ -o /data/doc/$@.pdf
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
