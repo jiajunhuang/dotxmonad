@@ -74,7 +74,7 @@ myShortCuts = [
     -- E-Mail: thunderbird
     ((mod4Mask, xK_t), spawn "thunderbird"),
     -- Screenshort: scrot
-    ((mod4Mask, xK_a), spawn "sleep 0.2; scrot -s -e 'mv $f /data/samba/shots/'"),
+    ((mod4Mask, xK_a), spawn "sleep 0.2; scrot -s -e 'mv $f /data/share/shots/'"),
     -- DocViewer: zeal
     ((mod4Mask, xK_d), spawn "zeal"),
     ((mod4Mask, xK_b), sendMessage ToggleStruts),
