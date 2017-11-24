@@ -148,4 +148,10 @@ function topdf() {
     pandoc --latex-engine=xelatex -V CJKmainfont="Source Han Serif CN" $@ -o /data/doc/$@.pdf
 }
 
+# logbook
+function lb() {
+    # learn from: https://routley.io/tech/2017/11/23/logbook.html
+    vim ~/logbook/$(date '+%Y-%m-%d').md
+}
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
