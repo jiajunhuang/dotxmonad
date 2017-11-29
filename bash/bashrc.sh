@@ -145,7 +145,7 @@ function tohtml() {
     pandoc -s -S --toc --highlight-style pygments --css common.css -t html $@ -o /data/doc/$@.html
 }
 function topdf() {
-    pandoc --latex-engine=xelatex -V CJKmainfont="Source Han Serif CN" $@ -o /data/doc/$@.pdf
+    pandoc --pdf-engine=xelatex -V CJKmainfont="Source Han Serif CN" $@ -o /data/doc/$@.pdf
 }
 
 # logbook
