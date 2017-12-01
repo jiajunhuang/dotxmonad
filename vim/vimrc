@@ -38,10 +38,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
+Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'othree/eregex.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -127,6 +129,12 @@ set pastetoggle=<F2>
 " toggle number
 noremap <F4> :set invnumber<CR>
 inoremap <F4> <C-O>:set invnumber<CR>
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" nerdtree
+nmap <F3> :NERDTreeToggle<CR>
 
 " make mouse only works on command line mode
 set mouse=c
