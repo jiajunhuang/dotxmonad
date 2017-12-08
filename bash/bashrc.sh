@@ -48,7 +48,7 @@ export HISTSIZE=
 
 # golang
 export GOPATH=$HOME/golang
-export PATH=$PATH:/usr/local/openresty/bin:$HOME/.py3k/bin:$GOPATH/bin:$HOME/bin
+export PATH=$HOME/.py3k/bin:$GOPATH/bin:$HOME/bin:/usr/local/openresty/bin:$PATH
 
 # set default enviroment
 export TERM=xterm-256color
