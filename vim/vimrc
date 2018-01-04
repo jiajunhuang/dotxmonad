@@ -67,7 +67,7 @@ if s:LINUX()
     Plug 'tpope/vim-eunuch'
 
     " language specific
-    Plug 'vim-jp/vim-go-extra'
+    Plug 'fatih/vim-go'
 
     " syntax check
     if s:ASYNC()
