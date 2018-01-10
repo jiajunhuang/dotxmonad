@@ -5,8 +5,8 @@
         name: neovim
         state: latest
 
-    - name: link neovim to vim
-      shell: ln -s `which nvim` /usr/local/bin/vim
+    - name: symbol link neovim
+      shell: rm -f /usr/local/bin/vim && ln -s `which nvim` /usr/local/bin/vim
       become: true
 
     - name: install latest version of xmonad
@@ -104,3 +104,21 @@
       package:
         name: zathura
         state: latest
+
+    - name: symbo link bashrc
+      shell: rm -f ~/.bashrc && ln -s ~/.xmonad/bash/bashrc.sh ~/.bashrc
+
+    - name: symbo link bash_profile
+      shell: rm -f ~/.bash_profile && ln -s ~/.xmonad/bash/bash_profile.sh ~/.bash_profile
+
+    - name: symbo link tmux.conf
+      shell: rm -f ~/.tmux.conf && ln -s ~/.xmonad/tmux/tmux.conf ~/.tmux.conf
+
+    - name: symbo link vimrc
+      shell: rm -f ~/.vimrc && ln -s ~/.xmonad/vim/vimrc ~/.vimrc
+
+    - name: symbo link zathurarc
+      shell: rm -f ~/.config/zathura/zathurarc && ln -s ~/.xmonad/zathura.conf ~/.config/zathura/zathurarc
+
+    - name: symbo link sakura
+      shell: rm -f ~/.config/sakura/sakura.conf && ln -s ~/.xmonad/sakura.conf ~/.config/sakura/sakura.conf
