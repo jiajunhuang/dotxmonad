@@ -1,6 +1,7 @@
 *.o
 *.hi
 *.errors
+*.retry
 xmonad-x86_64-linux
 bash/extrc.sh
 tags

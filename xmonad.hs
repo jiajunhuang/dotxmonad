@@ -77,6 +77,8 @@ myShortCuts = [
     ((mod4Mask, xK_a), spawn "sleep 0.2; scrot -s -e 'mv $f /data/share/shots/'"),
     -- DocViewer: zeal
     ((mod4Mask, xK_d), spawn "zeal"),
+    -- E-Book: zathura
+    ((mod4Mask, xK_e), spawn "zathura"),
     ((mod4Mask, xK_b), sendMessage ToggleStruts),
     ((mod1Mask, xK_Tab), goToSelected def),
     ((mod1Mask, xK_p), shellPrompt myXmonadPromptConfig)

@@ -1,0 +1,106 @@
+- hosts: localhost
+  tasks:
+    - name: install latest version of neovim
+      package:
+        name: neovim
+        state: latest
+
+    - name: link neovim to vim
+      shell: ln -s `which nvim` /usr/local/bin/vim
+      become: true
+
+    - name: install latest version of xmonad
+      package:
+        name: xmonad
+        state: latest
+
+    - name: install latest version of xmonad-contrib
+      package:
+        name: xmonad
+        state: latest
+      ignore_errors: yes
+
+    - name: install latest version of tint2
+      package:
+        name: tint2
+        state: latest
+
+    - name: install latest version of feh
+      package:
+        name: feh
+        state: latest
+
+    - name: install latest version of udiskie
+      package:
+        name: udiskie
+        state: latest
+
+    - name: install latest version of xcompmgr
+      package:
+        name: xcompmgr
+        state: latest
+
+    - name: install latest version of trayer
+      package:
+        name: trayer
+        state: latest
+
+    - name: install latest version of fcitx
+      package:
+        name: fcitx
+        state: latest
+
+    - name: install latest version of network-manager
+      package:
+        name: network-manager
+        state: latest
+
+    - name: install latest version of httpie
+      package:
+        name: httpie
+        state: latest
+
+    - name: install latest version of autojump
+      package:
+        name: autojump
+        state: latest
+
+    - name: install latest version of ctags
+      package:
+        name: ctags
+        state: latest
+
+    - name: install latest version of htop
+      package:
+        name: htop
+        state: latest
+
+    - name: install latest version of cloc
+      package:
+        name: cloc
+        state: latest
+
+    - name: install latest version of tree
+      package:
+        name: tree
+        state: latest
+
+    - name: install latest version of tmux
+      package:
+        name: tmux
+        state: latest
+
+    - name: install latest version of jq
+      package:
+        name: jq
+        state: latest
+
+    - name: install latest version of rlwrap
+      package:
+        name: rlwrap
+        state: latest
+
+    - name: install latest version of zathura
+      package:
+        name: zathura
+        state: latest
