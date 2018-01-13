@@ -4,6 +4,7 @@
       package:
         name: neovim
         state: latest
+      become: true
 
     - name: symbol link neovim
       shell: rm -f /usr/local/bin/vim && ln -s `which nvim` /usr/local/bin/vim
@@ -13,97 +14,104 @@
       package:
         name: xmonad
         state: latest
+      become: true
 
     - name: install latest version of xmonad-contrib
       package:
         name: xmonad
         state: latest
+      become: true
       ignore_errors: yes
 
     - name: install latest version of tint2
       package:
         name: tint2
         state: latest
+      become: true
 
     - name: install latest version of feh
       package:
         name: feh
         state: latest
+      become: true
 
     - name: install latest version of udiskie
       package:
         name: udiskie
         state: latest
+      become: true
 
     - name: install latest version of xcompmgr
       package:
         name: xcompmgr
         state: latest
-
-    - name: install latest version of trayer
-      package:
-        name: trayer
-        state: latest
+      become: true
 
     - name: install latest version of fcitx
       package:
         name: fcitx
         state: latest
-
-    - name: install latest version of network-manager
-      package:
-        name: network-manager
-        state: latest
+      become: true
 
     - name: install latest version of httpie
       package:
         name: httpie
         state: latest
+      become: true
 
     - name: install latest version of autojump
       package:
         name: autojump
         state: latest
+      become: true
 
     - name: install latest version of ctags
       package:
         name: ctags
         state: latest
+      become: true
 
     - name: install latest version of htop
       package:
         name: htop
         state: latest
+      become: true
 
     - name: install latest version of cloc
       package:
         name: cloc
         state: latest
+      become: true
 
     - name: install latest version of tree
       package:
         name: tree
         state: latest
+      become: true
 
     - name: install latest version of tmux
       package:
         name: tmux
         state: latest
+      become: true
 
     - name: install latest version of jq
       package:
         name: jq
         state: latest
+      become: true
 
     - name: install latest version of rlwrap
       package:
         name: rlwrap
         state: latest
+      become: true
 
     - name: install latest version of zathura
       package:
         name: zathura
         state: latest
+      become: true
 
     - name: symbo link bashrc
       shell: rm -f ~/.bashrc && ln -s ~/.xmonad/bash/bashrc.sh ~/.bashrc
