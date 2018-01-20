@@ -113,6 +113,12 @@
         state: latest
       become: true
 
+    - name: install latest version of xbacklight
+      package:
+        name: xorg-xbacklight
+        state: latest
+      become: true
+
     - name: symbo link bashrc
       shell: rm -f ~/.bashrc && ln -s ~/.xmonad/bash/bashrc.sh ~/.bashrc
 
