@@ -112,7 +112,9 @@ alias e='nvim'  # e means edit
 alias tt='tmux attach || tmux new'
 
 # go use proxy by default
-alias go='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 go'
+PROXY='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123'
+alias go="$PROXY go"
+alias dep="$PROXY dep"
 
 # python
 alias python=python3
