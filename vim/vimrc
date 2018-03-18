@@ -32,7 +32,6 @@ Plug 'hynek/vim-python-pep8-indent'
 Plug 'itchyny/vim-haskell-indent'
 Plug 'solarnz/thrift.vim'
 Plug 'stephpy/vim-yaml'
-Plug 'udalov/kotlin-vim'
 
 " utils
 Plug 'airblade/vim-gitgutter'
