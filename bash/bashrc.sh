@@ -125,6 +125,9 @@ export CLASSPATH=".:/usr/share/java/antlr-complete.jar:/usr/local/lib/antlr-comp
 alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
 alias grun='java org.antlr.v4.gui.TestRig'
 
+# vim
+alias vimdiff='nvim -d'
+
 # lastpass
 alias lpass='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 lpass'
 
