@@ -27,6 +27,12 @@ if [ -f $GIT_COMPLETE ]; then
     source $GIT_COMPLETE
 fi
 
+# kubectl completion
+KUBE_COMPLETE=~/.xmonad/bash/kubectl.sh
+if [ -f $KUBE_COMPLETE ]; then
+    source $KUBE_COMPLETE
+fi
+
 # git prompt
 GIT_PROMPT=~/.xmonad/bash/git-prompt.sh
 if [ -f $GIT_PROMPT ]; then
