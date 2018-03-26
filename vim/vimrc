@@ -51,6 +51,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'rhysd/clever-f.vim'
 
 " look and feel
 Plug 'itchyny/lightline.vim'
@@ -205,7 +206,7 @@ if s:LINUX()
     nnoremap <leader>b :Buffers<CR>
     nnoremap <leader>m :Marks<CR>
     nnoremap <leader>a :Ag<CR>
-    nnoremap ff :BLines<CR>
+    nnoremap <leader>f :BLines<CR>
 
     " YouCompleteMe
     let g:ycm_seed_identifiers_with_syntax = 1
