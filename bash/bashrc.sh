@@ -76,6 +76,7 @@ alias egrep='egrep --color=auto'
 
 #git
 if [ -n `which git` ]; then
+    alias gpu='git push --set-upstream origin `git rev-parse --abbrev-ref HEAD`'
     alias gf='git diff'
     alias gs='git status'
     alias gc='git commit'
