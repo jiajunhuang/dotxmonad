@@ -160,6 +160,19 @@ function topdf() {
     pandoc --pdf-engine=xelatex -V CJKmainfont="Source Han Serif CN" $@ -o /data/doc/$@.pdf
 }
 
+# proxy
+function proxyon() {
+    export http_proxy="http://127.0.0.1:8123/"
+    export https_proxy=$http_proxy HTTP_PROXY=$http_proxy HTTPS_PROXY=$http_proxy
+    export no_proxy="localhost,127.0.0.1,localaddress,.localdomain.com"
+    echo "proxy on: " $http_proxy
+}
+
+function proxyoff() {
+    unset http_proxy https_proxy no_proxy HTTP_PROXY HTTPS_PROXY
+    echo "done"
+}
+
 # logbook
 function lb() {
     # learn from: https://routley.io/tech/2017/11/23/logbook.html
