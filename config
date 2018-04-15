@@ -31,6 +31,7 @@ font pango:Incosolata 12
 floating_modifier $mod
 
 # start a terminal
+bindsym $mod+Shift+Return exec i3-sensible-terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
@@ -106,16 +107,16 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10"
+set $ws1 "1-docs"
+set $ws2 "2-code"
+set $ws3 "3-code"
+set $ws4 "4-term"
+set $ws5 "5-term"
+set $ws6 "6-sql"
+set $ws7 "7-chat"
+set $ws8 "8-mail"
+set $ws9 "9-vm"
+set $ws10 "10-music"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -146,7 +147,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+q exec i3-msg exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

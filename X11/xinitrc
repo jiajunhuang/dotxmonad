@@ -1,9 +1,9 @@
 #!/bin/bash
-#tint2 &
-#xcompmgr &
-#volumeicon &
-#fcitx &
-#udiskie -aN &
-#nm-applet &
-#dropbox start &
+xcompmgr &
+volumeicon &
+fcitx &
+udiskie -aN &
+nm-applet &
+dropbox start &
+feh --bg-scale ~/.i3/background.jpg &
 exec i3
