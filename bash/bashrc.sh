@@ -58,6 +58,7 @@ export PATH=$HOME/.py3k/bin:$GOPATH/bin:$HOME/bin:/usr/local/openresty/bin:$PATH
 
 # set default enviroment
 export TERM=xterm-256color
+export TERMINAL=/usr/bin/sakura
 export EDITOR=vim
 export PS1='\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;11m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;6m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]$(__git_ps1 " (%s)"): \[$(tput sgr0)\]'
 

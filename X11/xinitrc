@@ -1,9 +1,9 @@
 #!/bin/bash
-tint2 &
-xcompmgr &
-volumeicon &
-fcitx &
-udiskie -aN &
-nm-applet &
-dropbox start &
-exec xmonad
+#tint2 &
+#xcompmgr &
+#volumeicon &
+#fcitx &
+#udiskie -aN &
+#nm-applet &
+#dropbox start &
+exec i3
