@@ -41,7 +41,7 @@ bindsym $mod+Shift+c kill
 bindsym $mod+p exec dmenu_run
 bindsym $win+c exec chromium
 bindsym $win+e exec evince
-bindsym $win+l exec i3lock
+bindsym $win+l exec i3lock -i ~/.i3/win7.png -t -p win -f
 bindsym $win+m exec mysql-workbench
 bindsym $win+t exec thunderbird
 bindsym $win+a exec "sleep 0.2; scrot -s -e 'mv $f /data/share/shots/'"
