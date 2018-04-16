@@ -185,3 +185,14 @@ bar {
     position top
     tray_output primary
 }
+
+# auto putting clients to specific workspace
+assign [class="Thunderbird"] $ws8
+assign [class="Virt-manager"] $ws9
+assign [class="Mysql-workbench-bin"] $ws6
+
+# auto starting applications on i3
+exec thunderbird
+exec virt-manager
+exec chromium
+exec mysql-workbench
