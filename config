@@ -195,3 +195,7 @@ exec thunderbird
 exec virt-manager
 exec chromium
 exec mysql-workbench
+
+# hide i3bar
+for_window [class="^.*"] border pixel 2
+default_border pixel
