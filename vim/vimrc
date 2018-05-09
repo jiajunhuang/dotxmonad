@@ -50,6 +50,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'uber/prototool', {'rtp':'vim/prototool'}
 
 " look and feel
 Plug 'itchyny/lightline.vim'
@@ -223,5 +224,7 @@ if s:LINUX()
     if s:ASYNC()
         nmap <leader>p <Plug>(ale_previous_wrap)
         nmap <leader>n <Plug>(ale_next_wrap)
+
+        let g:ale_linters = {'proto': ['prototool']}
     endif
 endif
