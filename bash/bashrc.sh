@@ -141,6 +141,7 @@ alias lpass='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 
 
 # readline wrapper
 alias luajit='rlwrap luajit'
+alias mit-scheme='rlwrap mit-scheme'
 
 # rsync
 function syncto {
