@@ -51,7 +51,6 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'uber/prototool', {'rtp':'vim/prototool'}
-Plug 'rust-lang/rust.vim'
 
 " look and feel
 Plug 'itchyny/lightline.vim'
