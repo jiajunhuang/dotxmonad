@@ -18,6 +18,7 @@ import XMonad.Prompt
 import XMonad.Prompt.Shell
 import XMonad.Util.EZConfig (additionalKeys)
 import XMonad.Util.Run (spawnPipe)
+import XMonad.Util.SpawnOnce
 import qualified Data.Map as M
 import qualified XMonad.StackSet as W
 
@@ -32,6 +33,14 @@ myManageHook = composeAll [
 -- Define StartupHook
 myStartupHook = do
     setWMName "LG3D"
+    spawnOnce "xcompmgr"
+    spawnOnce "feh --bg-scale ~/.xmonad/background.jpg"
+    spawnOnce "stalonetray"
+    spawnOnce "dropbox start"
+    spawnOnce "fcitx"
+    spawnOnce "volumeicon"
+    spawnOnce "udiskie -aN"
+    spawnOnce "nm-applet"
 
 -- Define the names of all workspaces
 myWorkspaces = ["1-docs", "2-code", "3-code", "4-term", "5-term", "6-sql", "7-chat", "8-mail", "9-vm"]
@@ -93,7 +102,6 @@ myShortCuts = [
 
 
 main = do
-    spawn "feh --bg-scale ~/.xmonad/background.jpg"
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
     xmonad $ ewmh $ desktopConfig {
         manageHook = myManageHook <+> manageHook desktopConfig,
