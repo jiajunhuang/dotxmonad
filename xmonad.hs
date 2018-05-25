@@ -35,7 +35,7 @@ myStartupHook = do
     setWMName "LG3D"
     spawnOnce "xcompmgr"
     spawnOnce "feh --bg-scale ~/.xmonad/background.jpg"
-    spawnOnce "stalonetray"
+    spawnOnce "stalonetray -c ~/.xmonad/stalonetrayrc"
     spawnOnce "dropbox start"
     spawnOnce "fcitx"
     spawnOnce "volumeicon"
