@@ -2,8 +2,8 @@ silent function! s:WINDOWS()
     return (has("win32") || has("win64"))
 endfunction
 
-silent function! s:LINUX()
-    return (has('unix') && !has('macunix') && !has('win32unix'))
+silent function! s:UNIX()
+    return (has('unix'))
 endfunction
 
 silent function! s:NVIM()
@@ -14,7 +14,7 @@ silent function! s:ASYNC()
     return ((v:version >= 800) || s:NVIM())
 endfunction
 
-if s:LINUX()
+if s:UNIX()
     if s:NVIM()
         let VIM_PLUG_HOME = '~/.config/nvim/plugged'
     else
@@ -30,7 +30,6 @@ call plug#begin(VIM_PLUG_HOME)
 " language specific: syntax, or indent or something else
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'itchyny/vim-haskell-indent'
-Plug 'stephpy/vim-yaml'
 
 " utils
 Plug 'airblade/vim-gitgutter'
@@ -59,8 +58,8 @@ Plug 'luochen1990/rainbow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sickill/vim-monokai'
 
-" Linux only
-if s:LINUX()
+" UNIX only
+if s:UNIX()
     " utils
     Plug 'Valloric/YouCompleteMe'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
@@ -198,8 +197,8 @@ set undofile
 " Rainbow
 let g:rainbow_active = 1
 
-" Linux only
-if s:LINUX()
+" UNIX only
+if s:UNIX()
     " fzf
     nnoremap <C-p> :Files<CR>
     nnoremap <leader>b :Buffers<CR>
