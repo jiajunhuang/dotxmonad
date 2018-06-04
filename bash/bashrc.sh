@@ -14,6 +14,8 @@ fi
 # autojump
 if [ -f "/etc/arch-release" ]; then
     AUTO_JUMP=/etc/profile.d/autojump.bash
+elif [ -f '/usr/local/etc/autojump.sh' ]; then
+    AUTO_JUMP=/usr/local/etc/autojump.sh
 else
     AUTO_JUMP=/usr/share/autojump/autojump.sh
 fi
@@ -63,6 +65,9 @@ export EDITOR=vim
 export PS1='\[\033[38;5;2m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;11m\]\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;6m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]$(__git_ps1 " (%s)"): \[$(tput sgr0)\]'
 
 # aliases
+
+# neovim
+alias vim='nvim'
 
 #ls
 alias ls='ls --color=auto'
@@ -120,9 +125,9 @@ alias e='nvim'  # e means edit
 alias tt='tmux attach || tmux new'
 
 # go use proxy by default
-PROXY='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123'
-alias go="$PROXY go"
-alias dep="$PROXY dep"
+#PROXY='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123'
+#alias go="$PROXY go"
+#alias dep="$PROXY dep"
 
 # python
 alias python=python3
