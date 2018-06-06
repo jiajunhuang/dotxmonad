@@ -6,7 +6,11 @@
 [[ $- != *i* ]] && return
 
 # bash completion
-BASH_COMPLETION=/usr/share/bash-completion/bash_completion
+if [[ `uname` == 'Darwin' ]]; then
+    BASH_COMPLETION=/usr/local/share/bash-completion/bash_completion
+else
+    BASH_COMPLETION=/usr/share/bash-completion/bash_completion
+fi
 if [ -f $BASH_COMPLETION ]; then
     source $BASH_COMPLETION
 fi
@@ -56,7 +60,7 @@ export HISTSIZE=
 
 # golang
 export GOPATH=$HOME/golang
-export PATH=$HOME/.py3k/bin:$GOPATH/bin:$HOME/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH=$HOME/.py3k/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 
 # set default enviroment
 export TERM=xterm-256color
