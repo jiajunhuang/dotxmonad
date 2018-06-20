@@ -2,6 +2,9 @@
 # ~/.bashrc
 #
 
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
