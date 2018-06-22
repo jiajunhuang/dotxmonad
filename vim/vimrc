@@ -30,7 +30,6 @@ call plug#begin(VIM_PLUG_HOME)
 " language specific: syntax, or indent or something else
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'itchyny/vim-haskell-indent'
-Plug 'rust-lang/rust.vim'
 Plug 'stephpy/vim-yaml'
 
 " utils
@@ -51,7 +50,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'uber/prototool', {'rtp':'vim/prototool'}
 
 " look and feel
 Plug 'itchyny/lightline.vim'
