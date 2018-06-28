@@ -1,40 +1,21 @@
-silent function! s:WINDOWS()
-    return (has("win32") || has("win64"))
-endfunction
-
-silent function! s:UNIX()
-    return (has('unix'))
-endfunction
-
-silent function! s:NVIM()
-    return (has('nvim'))
-endfunction
-
-silent function! s:ASYNC()
-    return ((v:version >= 800) || s:NVIM())
-endfunction
-
-if s:UNIX()
-    if s:NVIM()
-        let VIM_PLUG_HOME = '~/.config/nvim/plugged'
-    else
-        let VIM_PLUG_HOME = '~/.vim/plugged'
-    endif
-else
-    let VIM_PLUG_HOME = '~\vimfiles\plugged'
-endif
+let VIM_PLUG_HOME = '~/.config/nvim/plugged'
 
 call plug#begin(VIM_PLUG_HOME)
 
 " plugins
 " language specific: syntax, or indent or something else
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'itchyny/vim-haskell-indent'
 Plug 'stephpy/vim-yaml'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-jedi'
 
 " utils
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
+Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'justinmk/vim-sneak'
 Plug 'majutsushi/tagbar'
@@ -58,29 +39,16 @@ Plug 'luochen1990/rainbow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sickill/vim-monokai'
 
-" UNIX only
-if s:UNIX()
-    " utils
-    Plug 'Valloric/YouCompleteMe'
-    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
-    Plug 'tpope/vim-eunuch'
+" utils
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-eunuch'
 
-    " language specific
-    Plug 'vim-jp/vim-go-extra'
+" language specific
+Plug 'vim-jp/vim-go-extra'
 
-    " syntax check
-    if s:ASYNC()
-        " Go: golint(https://github.com/golang/lint)
-        Plug 'w0rp/ale'
-    else
-        Plug 'vim-syntastic/syntastic'
-    endif
-endif
-
-if s:WINDOWS()
-    Plug 'mhinz/vim-startify'
-    Plug 'jiajunhuang/gvim.vim'
-endif
+" syntax check
+" Go: golint(https://github.com/golang/lint)
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -133,32 +101,32 @@ inoremap <F4> <C-O>:set invnumber<CR>
 nmap <F8> :TagbarToggle<CR>
 " install `gotags` frist
 let g:tagbar_type_go = {
-	\ 'ctagstype' : 'go',
-	\ 'kinds'     : [
-		\ 'p:package',
-		\ 'i:imports:1',
-		\ 'c:constants',
-		\ 'v:variables',
-		\ 't:types',
-		\ 'n:interfaces',
-		\ 'w:fields',
-		\ 'e:embedded',
-		\ 'm:methods',
-		\ 'r:constructor',
-		\ 'f:functions'
-	\ ],
-	\ 'sro' : '.',
-	\ 'kind2scope' : {
-		\ 't' : 'ctype',
-		\ 'n' : 'ntype'
-	\ },
-	\ 'scope2kind' : {
-		\ 'ctype' : 't',
-		\ 'ntype' : 'n'
-	\ },
-	\ 'ctagsbin'  : 'gotags',
-	\ 'ctagsargs' : '-sort -silent'
-\ }
+            \ 'ctagstype' : 'go',
+            \ 'kinds'     : [
+            \ 'p:package',
+            \ 'i:imports:1',
+            \ 'c:constants',
+            \ 'v:variables',
+            \ 't:types',
+            \ 'n:interfaces',
+            \ 'w:fields',
+            \ 'e:embedded',
+            \ 'm:methods',
+            \ 'r:constructor',
+            \ 'f:functions'
+            \ ],
+            \ 'sro' : '.',
+            \ 'kind2scope' : {
+            \ 't' : 'ctype',
+            \ 'n' : 'ntype'
+            \ },
+            \ 'scope2kind' : {
+            \ 'ctype' : 't',
+            \ 'ntype' : 'n'
+            \ },
+            \ 'ctagsbin'  : 'gotags',
+            \ 'ctagsargs' : '-sort -silent'
+            \ }
 
 " nerdtree
 nmap <F3> :NERDTreeToggle<CR>
@@ -179,12 +147,10 @@ nnoremap <Left> <C-W><2
 nnoremap <Right> <C-W>>2
 
 " preview substitute
-if s:NVIM()
-    set inccommand=nosplit
-    tnoremap <Esc> <C-\><C-n>
-    nnoremap <C-s> <Esc>:vsplit term://bash<CR>A
-    nnoremap <C-x> <Esc>:split term://bash<CR>A
-endif
+set inccommand=nosplit
+tnoremap <Esc> <C-\><C-n>
+nnoremap <C-s> <Esc>:vsplit term://bash<CR>A
+nnoremap <C-x> <Esc>:split term://bash<CR>A
 
 " python
 nnoremap <leader>d Oimport pdb; pdb.set_trace()<Esc>
@@ -197,34 +163,37 @@ set undofile
 " Rainbow
 let g:rainbow_active = 1
 
-" UNIX only
-if s:UNIX()
-    " fzf
-    nnoremap <C-p> :Files<CR>
-    nnoremap <leader>b :Buffers<CR>
-    nnoremap <leader>m :Marks<CR>
-    nnoremap <leader>a :Ag<CR>
-    nnoremap <leader>c :Commits<CR>
-    nnoremap ff :BLines<CR>
+" fzf
+nnoremap <C-p> :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>m :Marks<CR>
+nnoremap <leader>a :Ag<CR>
+nnoremap <leader>c :Commits<CR>
+nnoremap ff :BLines<CR>
 
-    " YouCompleteMe
-    let g:ycm_seed_identifiers_with_syntax = 1
-    let g:ycm_autoclose_preview_window_after_insertion = 1
-    nnoremap <leader>\ :YcmCompleter GoTo<CR>
+" terminal
+nnoremap <leader>t :vsplit term://bash<CR>
+nnoremap <leader>T :split term://bash<CR>
 
-    if s:NVIM()
-        " terminal
-        nnoremap <leader>t :vsplit term://bash<CR>
-        nnoremap <leader>T :split term://bash<CR>
-    endif
+" vim-sneak
+let g:sneak#label = 1
 
-    " vim-sneak
-    let g:sneak#label = 1
+nmap <leader>p <Plug>(ale_previous_wrap)
+nmap <leader>n <Plug>(ale_next_wrap)
 
-    if s:ASYNC()
-        nmap <leader>p <Plug>(ale_previous_wrap)
-        nmap <leader>n <Plug>(ale_next_wrap)
+let g:ale_linters = {'proto': ['prototool']}
 
-        let g:ale_linters = {'proto': ['prototool']}
-    endif
-endif
+" deoplete
+let g:deoplete#enable_at_startup = 1
+set hidden
+" languange server: http://langserver.org/
+let g:LanguageClient_serverCommands = {
+            \ 'python': ['pyls'],
+            \ 'go': ['go-langserver'],
+            \ }
+nnoremap <leader>\ :call LanguageClient#textDocument_definition()<CR>
+nnoremap <leader>k :call LanguageClient#textDocument_hover()<CR>
+nnoremap <leader>r :call LanguageClient#textDocument_rename()<CR>
+
+" supertab
+let g:SuperTabDefaultCompletionType = "<c-n>"
