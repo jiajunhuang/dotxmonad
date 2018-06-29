@@ -11,6 +11,7 @@ Plug 'itchyny/vim-haskell-indent'
 Plug 'stephpy/vim-yaml'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/neco-syntax'
 
 " utils
 Plug 'airblade/vim-gitgutter'
