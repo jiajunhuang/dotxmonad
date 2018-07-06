@@ -63,12 +63,19 @@ export HISTSIZE=
 
 # golang
 export GOPATH=$HOME/golang
-export PATH=$HOME/.py3k/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+
+# path
+export PATH=/usr/local/opt/gnu-getopt/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman/:$MANPATH
+
+# pyenv
+eval "$(pyenv init -)"
 
 # set default enviroment
 export TERM=xterm-256color
 export TERMINAL=/usr/bin/sakura
 export EDITOR=vim
+
 # get current branch in git repo
 function parse_git_branch() {
 	BRANCH=`git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'`
