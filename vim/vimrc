@@ -12,6 +12,7 @@ Plug 'stephpy/vim-yaml'
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/neco-syntax'
+Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 
 " utils
 Plug 'airblade/vim-gitgutter'

@@ -190,10 +190,6 @@ alias tt='tmux attach || tmux new'
 #alias go="$PROXY go"
 #alias dep="$PROXY dep"
 
-# python
-alias python=python3
-alias bp=bpython
-
 # antlr4
 export CLASSPATH=".:/usr/share/java/antlr-complete.jar:/usr/local/lib/antlr-complete.jar:$CLASSPATH"
 alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
