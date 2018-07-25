@@ -65,7 +65,7 @@ export HISTSIZE=
 export GOPATH=$HOME/golang
 
 # path
-export PATH=/usr/local/opt/gnu-getopt/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/usr/local/opt/gnu-getopt/bin:$GOPATH/bin:$HOME/bin:/usr/local/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman/:$MANPATH
 
 # pyenv
