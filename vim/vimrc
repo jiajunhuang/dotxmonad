@@ -189,9 +189,13 @@ let g:ale_linters = {'proto': ['prototool']}
 let g:deoplete#enable_at_startup = 1
 set hidden
 " languange server: http://langserver.org/
+" pip install python-language-server
+" go get -u github.com/sourcegraph/go-langserver
+" https://github.com/haskell/haskell-ide-engine#installation
 let g:LanguageClient_serverCommands = {
             \ 'python': ['pyls'],
             \ 'go': ['go-langserver'],
+            \ 'haskell': ['hie-wrapper'],
             \ }
 nnoremap <leader>\ :call LanguageClient#textDocument_definition()<CR>
 nnoremap <leader>k :call LanguageClient#textDocument_hover()<CR>
