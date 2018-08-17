@@ -5,20 +5,21 @@ call plug#begin(VIM_PLUG_HOME)
 " plugins
 " language specific: syntax, or indent or something else
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neco-syntax'
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'itchyny/vim-haskell-indent'
 Plug 'stephpy/vim-yaml'
+Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'zchee/deoplete-jedi'
-Plug 'Shougo/neco-syntax'
-Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 
 " utils
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'majutsushi/tagbar'
 Plug 'mbbill/undotree'
@@ -27,12 +28,14 @@ Plug 'othree/eregex.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
+Plug 'yuratomo/w3m.vim'
 
 " look and feel
 Plug 'itchyny/lightline.vim'
@@ -41,15 +44,12 @@ Plug 'luochen1990/rainbow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sickill/vim-monokai'
 
-" utils
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-eunuch'
-
 " language specific
 Plug 'vim-jp/vim-go-extra'
 
 " syntax check
 " Go: golint(https://github.com/golang/lint)
+" Python: flake8
 Plug 'w0rp/ale'
 
 call plug#end()
