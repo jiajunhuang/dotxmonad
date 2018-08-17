@@ -203,3 +203,6 @@ nnoremap <leader>r :call LanguageClient#textDocument_rename()<CR>
 
 " supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" vim better whitespace
+let g:better_whitespace_filetypes_blacklist=["w3m"]
