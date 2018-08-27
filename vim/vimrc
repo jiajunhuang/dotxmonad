@@ -4,15 +4,12 @@ call plug#begin(VIM_PLUG_HOME)
 
 " plugins
 " language specific: syntax, or indent or something else
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-syntax'
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'hynek/vim-python-pep8-indent'
 Plug 'itchyny/vim-haskell-indent'
 Plug 'stephpy/vim-yaml'
 Plug 'uber/prototool', { 'rtp':'vim/prototool' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'zchee/deoplete-jedi'
+Plug 'Valloric/YouCompleteMe'
 
 " utils
 Plug 'airblade/vim-gitgutter'
@@ -185,24 +182,13 @@ nmap <leader>n <Plug>(ale_next_wrap)
 
 let g:ale_linters = {'proto': ['prototool']}
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
-set hidden
-" languange server: http://langserver.org/
-" pip install python-language-server
-" go get -u github.com/sourcegraph/go-langserver
-" https://github.com/haskell/haskell-ide-engine#installation
-let g:LanguageClient_serverCommands = {
-            \ 'python': ['pyls'],
-            \ 'go': ['go-langserver'],
-            \ 'haskell': ['hie-wrapper'],
-            \ }
-nnoremap <leader>\ :call LanguageClient#textDocument_definition()<CR>
-nnoremap <leader>k :call LanguageClient#textDocument_hover()<CR>
-nnoremap <leader>r :call LanguageClient#textDocument_rename()<CR>
-
 " supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " vim better whitespace
 let g:better_whitespace_filetypes_blacklist=["w3m"]
+
+" YouCompleteMe
+let g:ycm_seed_identifiers_with_syntax = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+nnoremap <leader>\ :YcmCompleter GoTo<CR>
