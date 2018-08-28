@@ -10,6 +10,7 @@ Plug 'itchyny/vim-haskell-indent'
 Plug 'stephpy/vim-yaml'
 Plug 'uber/prototool', { 'rtp':'vim/prototool' }
 Plug 'Valloric/YouCompleteMe'
+Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular'
 
 " utils
 Plug 'airblade/vim-gitgutter'
