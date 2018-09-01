@@ -5,12 +5,13 @@ call plug#begin(VIM_PLUG_HOME)
 " plugins
 " language specific: syntax, or indent or something else
 Plug 'Shougo/neco-syntax'
-Plug 'hynek/vim-python-pep8-indent'
-Plug 'itchyny/vim-haskell-indent'
-Plug 'stephpy/vim-yaml'
-Plug 'uber/prototool', { 'rtp':'vim/prototool' }
-Plug 'Valloric/YouCompleteMe'
-Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular'
+Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
+Plug 'uber/prototool', { 'rtp':'vim/prototool', 'for': 'proto' }
+Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'go'] }
+Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
+Plug 'vim-jp/vim-go-extra', { 'for': 'go' }
 
 " utils
 Plug 'airblade/vim-gitgutter'
@@ -41,9 +42,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sickill/vim-monokai'
-
-" language specific
-Plug 'vim-jp/vim-go-extra'
 
 " syntax check
 " Go: golint(https://github.com/golang/lint)
