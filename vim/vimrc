@@ -12,6 +12,7 @@ Plug 'uber/prototool', { 'rtp':'vim/prototool', 'for': 'proto' }
 Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'go'] }
 Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'vim-jp/vim-go-extra', { 'for': 'go' }
+Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 
 " utils
 Plug 'airblade/vim-gitgutter'
