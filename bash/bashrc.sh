@@ -69,7 +69,9 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/us
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman/:$MANPATH
 
 # pyenv
-eval "$(pyenv init -)"
+if type pyenv 2>&1 > /dev/null; then
+    eval "$(pyenv init -)"
+fi
 
 # set default enviroment
 export TERM=xterm-256color
