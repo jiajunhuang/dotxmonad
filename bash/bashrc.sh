@@ -69,7 +69,8 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/us
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman/:$MANPATH
 
 # pyenv
-if type pyenv 2>&1 > /dev/null; then
+which pyenv 2>&1 > /dev/null
+if [ "$?" -eq "0" ]; then
     eval "$(pyenv init -)"
 fi
 
