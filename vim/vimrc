@@ -190,8 +190,10 @@ let g:better_whitespace_filetypes_blacklist=["w3m"]
 
 " LSP
 " go get -u github.com/sourcegraph/go-langserver
+" pip install python-language-server
 let g:LanguageClient_serverCommands = {
-    \ 'go': ['go-langserver']
+    \ 'go': ['go-langserver'],
+    \ 'python': ['pyls'],
     \ }
 nnoremap <leader>\ :call LanguageClient#textDocument_definition()<CR>
 nnoremap <leader>k :call LanguageClient#textDocument_hover()<CR>
