@@ -13,6 +13,9 @@ Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'vim-jp/vim-go-extra', { 'for': 'go' }
 Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
+Plug 'Shougo/deoplete.nvim'
+Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go'}
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
 " utils
 Plug 'airblade/vim-gitgutter'
@@ -201,3 +204,6 @@ nnoremap <leader>r :call LanguageClient#textDocument_rename()<CR>
 
 " vim markdown
 let g:vim_markdown_folding_disabled = 1
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
