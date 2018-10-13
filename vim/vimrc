@@ -73,6 +73,9 @@ set textwidth=0
 "display pairs
 set showmatch
 
+" clipboard
+set clipboard=unnamed
+
 "indent
 set expandtab
 set shiftwidth=4
