@@ -200,7 +200,6 @@ let g:better_whitespace_filetypes_blacklist=["w3m"]
 let g:LanguageClient_serverCommands = {
     \ 'go': ['go-langserver'],
     \ 'python': ['pyls'],
-    \ 'rust': ['rls'],
     \ }
 nnoremap <leader>\ :call LanguageClient#textDocument_definition()<CR>
 nnoremap <leader>k :call LanguageClient#textDocument_hover()<CR>
