@@ -12,10 +12,7 @@ Plug 'uber/prototool', { 'rtp':'vim/prototool', 'for': 'proto' }
 Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'vim-jp/vim-go-extra', { 'for': 'go' }
 Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
-Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
-Plug 'Shougo/deoplete.nvim'
-Plug 'zchee/deoplete-go', { 'do': 'make', 'for': 'go'}
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+Plug 'Valloric/YouCompleteMe', {'for': ['python', 'go', 'c']}
 
 " utils
 Plug 'airblade/vim-gitgutter'
@@ -194,19 +191,11 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " vim better whitespace
 let g:better_whitespace_filetypes_blacklist=["w3m"]
 
-" LSP
-" go get -u github.com/sourcegraph/go-langserver
-" pip install python-language-server
-let g:LanguageClient_serverCommands = {
-    \ 'go': ['go-langserver'],
-    \ 'python': ['pyls'],
-    \ }
-nnoremap <leader>\ :call LanguageClient#textDocument_definition()<CR>
-nnoremap <leader>k :call LanguageClient#textDocument_hover()<CR>
-nnoremap <leader>r :call LanguageClient#textDocument_rename()<CR>
+" YouCompleteMe
+nnoremap <leader>\ :YcmCompleter GoTo<CR>
 
 " vim markdown
 let g:vim_markdown_folding_disabled = 1
 
-" deoplete
-let g:deoplete#enable_at_startup = 1
+" Use jj as <Esc>
+inoremap jj <Esc>
