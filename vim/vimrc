@@ -193,6 +193,7 @@ let g:better_whitespace_filetypes_blacklist=["w3m"]
 
 " YouCompleteMe
 nnoremap <leader>\ :YcmCompleter GoTo<CR>
+let g:ycm_global_ycm_extra_conf = '~/.xmonad/ycm_extra_conf.py'
 
 " vim markdown
 let g:vim_markdown_folding_disabled = 1
