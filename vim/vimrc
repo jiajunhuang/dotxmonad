@@ -197,6 +197,3 @@ let g:ycm_global_ycm_extra_conf = '~/.xmonad/ycm_extra_conf.py'
 
 " vim markdown
 let g:vim_markdown_folding_disabled = 1
-
-" Use jj as <Esc>
-inoremap jj <Esc>
