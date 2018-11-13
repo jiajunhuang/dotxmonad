@@ -65,7 +65,7 @@ export HISTSIZE=
 export GOPATH=$HOME/golang
 
 # path
-export PATH="$GOPATH/bin:$HOME/bin:/usr/local/opt/gnu-getopt/bin:/usr/local/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$HOME/.pyenv/bin:$GOPATH/bin:$HOME/bin:/usr/local/opt/gnu-getopt/bin:/usr/local/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:$MANPATH"
 
 # pyenv
