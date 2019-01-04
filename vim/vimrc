@@ -5,14 +5,14 @@ call plug#begin(VIM_PLUG_HOME)
 " plugins
 " language specific: syntax, or indent or something else
 Plug 'Shougo/neco-syntax'
+Plug 'Valloric/YouCompleteMe', {'for': ['python', 'go', 'c']}
+Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go']}
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
+Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
+Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'uber/prototool', { 'rtp':'vim/prototool', 'for': 'proto' }
-Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
-Plug 'vim-jp/vim-go-extra', { 'for': 'go' }
-Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
-Plug 'Valloric/YouCompleteMe', {'for': ['python', 'go', 'c']}
 
 " utils
 Plug 'airblade/vim-gitgutter'
