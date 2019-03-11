@@ -5,7 +5,7 @@ call plug#begin(VIM_PLUG_HOME)
 " plugins
 " language specific: syntax, or indent or something else
 Plug 'Shougo/neco-syntax'
-Plug 'Valloric/YouCompleteMe', {'for': ['python', 'go', 'c']}
+Plug 'Valloric/YouCompleteMe'
 Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go']}
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
