@@ -12,7 +12,6 @@ Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
-Plug 'uber/prototool', { 'rtp':'vim/prototool', 'for': 'proto' }
 
 " utils
 Plug 'airblade/vim-gitgutter'
