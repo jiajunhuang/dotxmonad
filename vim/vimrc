@@ -25,7 +25,6 @@ Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'othree/eregex.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
@@ -98,39 +97,8 @@ set pastetoggle=<F2>
 noremap <F4> :set invnumber<CR>
 inoremap <F4> <C-O>:set invnumber<CR>
 
-" tagbar
-nmap <F8> :TagbarToggle<CR>
-" install `gotags` frist
-let g:tagbar_type_go = {
-            \ 'ctagstype' : 'go',
-            \ 'kinds'     : [
-            \ 'p:package',
-            \ 'i:imports:1',
-            \ 'c:constants',
-            \ 'v:variables',
-            \ 't:types',
-            \ 'n:interfaces',
-            \ 'w:fields',
-            \ 'e:embedded',
-            \ 'm:methods',
-            \ 'r:constructor',
-            \ 'f:functions'
-            \ ],
-            \ 'sro' : '.',
-            \ 'kind2scope' : {
-            \ 't' : 'ctype',
-            \ 'n' : 'ntype'
-            \ },
-            \ 'scope2kind' : {
-            \ 'ctype' : 't',
-            \ 'ntype' : 'n'
-            \ },
-            \ 'ctagsbin'  : 'gotags',
-            \ 'ctagsargs' : '-sort -silent'
-            \ }
-
-" nerdtree
-nmap <F3> :NERDTreeToggle<CR>
+" vim file explore
+nmap <F3> :Explore<CR>
 
 " make mouse only works on command line mode
 set mouse=c
@@ -160,7 +128,8 @@ nnoremap <leader>d Oimport pdb; pdb.set_trace()<Esc>
 set undodir=~/.cache/vimundo/
 set undofile
 
-" plugin settings
+" Plugin Settings
+
 " Rainbow
 let g:rainbow_active = 1
 
@@ -208,3 +177,34 @@ augroup autoformat_settings
   autocmd FileType java AutoFormatBuffer google-java-format
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
 augroup END
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>
+" install `gotags` frist
+let g:tagbar_type_go = {
+            \ 'ctagstype' : 'go',
+            \ 'kinds'     : [
+            \ 'p:package',
+            \ 'i:imports:1',
+            \ 'c:constants',
+            \ 'v:variables',
+            \ 't:types',
+            \ 'n:interfaces',
+            \ 'w:fields',
+            \ 'e:embedded',
+            \ 'm:methods',
+            \ 'r:constructor',
+            \ 'f:functions'
+            \ ],
+            \ 'sro' : '.',
+            \ 'kind2scope' : {
+            \ 't' : 'ctype',
+            \ 'n' : 'ntype'
+            \ },
+            \ 'scope2kind' : {
+            \ 'ctype' : 't',
+            \ 'ntype' : 'n'
+            \ },
+            \ 'ctagsbin'  : 'gotags',
+            \ 'ctagsargs' : '-sort -silent'
+            \ }
