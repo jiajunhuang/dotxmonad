@@ -33,7 +33,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'yuratomo/w3m.vim'
 
 " look and feel
 Plug 'itchyny/lightline.vim'
@@ -155,9 +154,6 @@ let g:ale_linters = {'proto': ['prototool']}
 
 " supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
-
-" vim better whitespace
-let g:better_whitespace_filetypes_blacklist=["w3m"]
 
 " YouCompleteMe
 nnoremap <leader>\ :YcmCompleter GoTo<CR>
