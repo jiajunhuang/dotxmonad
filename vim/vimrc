@@ -6,12 +6,13 @@ call plug#begin(VIM_PLUG_HOME)
 " language specific: syntax, or indent or something else
 Plug 'Shougo/neco-syntax'
 Plug 'Valloric/YouCompleteMe'
-Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go']}
+Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go', 'dart']}
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
+Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
 
 " utils
 Plug 'airblade/vim-gitgutter'
@@ -164,13 +165,13 @@ let g:vim_markdown_folding_disabled = 1
 
 " code format
 augroup autoformat_settings
-  autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  " autocmd FileType bzl AutoFormatBuffer buildifier
+  " autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
   autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
-  autocmd FileType gn AutoFormatBuffer gn
-  autocmd FileType html,css,json AutoFormatBuffer js-beautify
-  autocmd FileType java AutoFormatBuffer google-java-format
+  " autocmd FileType gn AutoFormatBuffer gn
+  " autocmd FileType html,css,json AutoFormatBuffer js-beautify
+  " autocmd FileType java AutoFormatBuffer google-java-format
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
 augroup END
 
