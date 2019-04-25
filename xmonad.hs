@@ -41,6 +41,7 @@ myStartupHook = do
     spawnOnce "volumeicon"
     spawnOnce "udiskie -aN"
     spawnOnce "nm-applet"
+    spawnOnce "redshift"
 
 -- Define the names of all workspaces
 myWorkspaces = ["1-docs", "2-code", "3-code", "4-term", "5-term", "6-sql", "7-chat", "8-mail", "9-vm"]
