@@ -1,5 +1,5 @@
 Config {
-    font = "xft:WenQuanYi Micro Hei:size=10",
+    font = "xft:Noto Sans Mono CJK SC:size=10",
     additionalFonts = [],
     borderColor = "black",
     border = TopB,
