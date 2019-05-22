@@ -64,8 +64,14 @@ export HISTSIZE=
 # golang
 export GOPATH=$HOME/golang
 
+# nodejs
+export NODEPATH=$HOME/.node/global/bin
+
+# pyenv
+export PYPATH=$HOME/.pyenv/bin
+
 # path
-export PATH="$HOME/.pyenv/bin:$GOPATH/bin:$HOME/bin:/usr/local/opt/gnu-getopt/bin:/usr/local/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$NODEPATH:$PYPATH:$GOPATH/bin:$HOME/bin:/usr/local/opt/gnu-getopt/bin:/usr/local/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:$MANPATH"
 
 # pyenv
