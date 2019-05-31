@@ -8,15 +8,6 @@ export LC_ALL=en_US.UTF-8
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# close screen if lid is close
-if grep "closed" /proc/acpi/button/lid/LID0/state >> /dev/zero; then
-    if [ ! -z "$DISPLAY" ] && [[ $(xrandr -d :0 -q | grep ' connected ' | wc -l) = 2 ]]; then
-        DISPLAY=:0 xrandr --output LVDS-0 --off
-        DISPLAY=:0 feh --bg-scale ~/.xmonad/background.jpg
-        echo "internal output is off as lid is closed"
-    fi
-fi
-
 # bash completion
 if [[ `uname` == 'Darwin' ]]; then
     BASH_COMPLETION=/usr/local/share/bash-completion/bash_completion

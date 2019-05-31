@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+# close screen if lid is close
+if grep "closed" /proc/acpi/button/lid/LID0/state >> /dev/zero; then
+    if [ ! -z "$DISPLAY" ] && [[ $(xrandr -d :0 -q | grep ' connected ' | wc -l) = 2 ]]; then
+        DISPLAY=:0 xrandr --output LVDS-0 --off
+        DISPLAY=:0 feh --bg-scale ~/.xmonad/background.jpg
+    fi
+fi
