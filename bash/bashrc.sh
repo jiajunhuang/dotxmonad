@@ -8,6 +8,15 @@ export LC_ALL=en_US.UTF-8
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# close screen if lid is close
+if grep "closed" /proc/acpi/button/lid/LID0/state >> /dev/zero; then
+    if [ ! -z "$DISPLAY" ] && [[ $(xrandr -d :0 -q | grep ' connected ' | wc -l) = 2 ]]; then
+        DISPLAY=:0 xrandr --output LVDS-0 --off
+        DISPLAY=:0 feh --bg-scale ~/.xmonad/background.jpg
+        echo "internal output is off as lid is closed"
+    fi
+fi
+
 # bash completion
 if [[ `uname` == 'Darwin' ]]; then
     BASH_COMPLETION=/usr/local/share/bash-completion/bash_completion
@@ -194,25 +203,11 @@ alias e='nvim'  # e means edit
 # tmux
 alias tt='tmux attach || tmux new'
 
-# go use proxy by default
-#PROXY='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123'
-#alias go="$PROXY go"
-#alias dep="$PROXY dep"
-
-# antlr4
-export CLASSPATH=".:/usr/share/java/antlr-complete.jar:/usr/local/lib/antlr-complete.jar:$CLASSPATH"
-alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
-alias grun='java org.antlr.v4.gui.TestRig'
-
 # vim
 alias vimdiff='nvim -d'
 
 # lastpass
 alias lpass='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 lpass'
-
-# readline wrapper
-alias luajit='rlwrap luajit'
-alias mit-scheme='rlwrap mit-scheme'
 
 # rsync
 function syncto {
@@ -244,12 +239,6 @@ function proxyon() {
 function proxyoff() {
     unset http_proxy https_proxy no_proxy HTTP_PROXY HTTPS_PROXY
     echo "done"
-}
-
-# logbook
-function lb() {
-    # learn from: https://routley.io/tech/2017/11/23/logbook.html
-    vim ~/logbook/$(date '+%Y-%m-%d').md
 }
 
 # ccat
