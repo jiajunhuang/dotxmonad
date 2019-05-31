@@ -86,6 +86,8 @@ myShortCuts = [
     ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -20"),
     -- browser: chromium
     ((mod4Mask, xK_c), spawn "chromium"),
+    -- browser: firefox
+    ((mod4Mask, xK_f), spawn "firefox"),
     -- MySQL: mysql-workbentch
     ((mod4Mask, xK_m), spawn "mysql-workbench"),
     -- E-Mail: thunderbird
