@@ -183,6 +183,7 @@ focus_follows_mouse no
 # executing applications
 bindsym $mod+c exec firefox
 bindsym $mod+z exec zathura
+bindsym --release $mod+a exec scrot -s -e 'mv $f ~/Images/shots/'
 
 # hide title bar by default
 for_window [class="^.*"] border pixel 1
