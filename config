@@ -183,3 +183,6 @@ bindsym $mod+z exec zathura
 
 # hide title bar by default
 for_window [class="^.*"] border pixel 1
+
+# i3lock
+bindsym Mod4+l exec i3lock
