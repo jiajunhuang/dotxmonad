@@ -7,13 +7,13 @@ case $1 in
     "neovim")
         curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
             https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        ln -s ~/.xmonad/vim/vimrc ~/.config/nvim/init.vim
+        ln -s ~/.i3/vim/vimrc ~/.config/nvim/init.vim
     ;;
 
     "vim")
         curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
             https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        ln -s ~/.xmonad/vim/vimrc ~/.vimrc
+        ln -s ~/.i3/vim/vimrc ~/.vimrc
     ;;
 
     *)

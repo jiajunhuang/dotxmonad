@@ -10,22 +10,22 @@
       shell: rm -f /usr/local/bin/vim && ln -s `which nvim` /usr/local/bin/vim
       become: true
 
-    - name: install latest version of xmonad
+    - name: install latest version of i3-wm
       package:
-        name: xmonad
+        name: i3-wm
         state: latest
       become: true
 
-    - name: install latest version of xmonad-contrib
+    - name: install latest version of i3status
       package:
-        name: xmonad
+        name: i3status
         state: latest
       become: true
       ignore_errors: yes
 
-    - name: install latest version of tint2
+    - name: install latest version of i3lock
       package:
-        name: tint2
+        name: i3lock
         state: latest
       become: true
 
@@ -120,19 +120,19 @@
       become: true
 
     - name: symbo link bashrc
-      shell: rm -f ~/.bashrc && ln -s ~/.xmonad/bash/bashrc.sh ~/.bashrc
+      shell: rm -f ~/.bashrc && ln -s ~/.i3/bash/bashrc.sh ~/.bashrc
 
     - name: symbo link bash_profile
-      shell: rm -f ~/.bash_profile && ln -s ~/.xmonad/bash/bash_profile.sh ~/.bash_profile
+      shell: rm -f ~/.bash_profile && ln -s ~/.i3/bash/bash_profile.sh ~/.bash_profile
 
     - name: symbo link tmux.conf
-      shell: rm -f ~/.tmux.conf && ln -s ~/.xmonad/tmux/tmux.conf ~/.tmux.conf
+      shell: rm -f ~/.tmux.conf && ln -s ~/.i3/tmux/tmux.conf ~/.tmux.conf
 
     - name: symbo link vimrc
-      shell: rm -f ~/.vimrc && ln -s ~/.xmonad/vim/vimrc ~/.vimrc
+      shell: rm -f ~/.vimrc && ln -s ~/.i3/vim/vimrc ~/.vimrc
 
     - name: symbo link zathurarc
-      shell: rm -f ~/.config/zathura/zathurarc && ln -s ~/.xmonad/zathura.conf ~/.config/zathura/zathurarc
+      shell: rm -f ~/.config/zathura/zathurarc && ln -s ~/.i3/zathura.conf ~/.config/zathura/zathurarc
 
     - name: symbo link sakura
-      shell: rm -f ~/.config/sakura/sakura.conf && ln -s ~/.xmonad/sakura.conf ~/.config/sakura/sakura.conf
+      shell: rm -f ~/.config/sakura/sakura.conf && ln -s ~/.i3/sakura.conf ~/.config/sakura/sakura.conf

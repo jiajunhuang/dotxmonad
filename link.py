@@ -1,6 +1,6 @@
 import os
 
-PREFIX = "~/.xmonad/"
+PREFIX = "~/.i3/"
 
 MAPPER = {
     "bash/bashrc.sh": "~/.bashrc",

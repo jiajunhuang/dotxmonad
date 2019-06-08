@@ -31,19 +31,19 @@ if [ -f $AUTO_JUMP ]; then
 fi
 
 # git completion
-GIT_COMPLETE=~/.xmonad/bash/git-completion.sh
+GIT_COMPLETE=~/.i3/bash/git-completion.sh
 if [ -f $GIT_COMPLETE ]; then
     source $GIT_COMPLETE
 fi
 
 # kubectl completion
-KUBE_COMPLETE=~/.xmonad/bash/kubectl.sh
+KUBE_COMPLETE=~/.i3/bash/kubectl.sh
 if [ -f $KUBE_COMPLETE ]; then
     source $KUBE_COMPLETE
 fi
 
 # git prompt
-GIT_PROMPT=~/.xmonad/bash/git-prompt.sh
+GIT_PROMPT=~/.i3/bash/git-prompt.sh
 if [ -f $GIT_PROMPT ]; then
     source $GIT_PROMPT
 fi
