@@ -74,9 +74,9 @@ bindsym $mod+v split toggle
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+s layout stacking # s means, stack
+bindsym $mod+t layout tabbed # t means,  tab
+bindsym $mod+d layout toggle split # d means, default
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -180,3 +180,6 @@ focus_follows_mouse no
 # executing applications
 bindsym $mod+c exec firefox
 bindsym $mod+z exec zathura
+
+# hide title bar by default
+for_window [class="^.*"] border pixel 1
