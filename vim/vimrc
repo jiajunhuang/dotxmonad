@@ -5,7 +5,6 @@ call plug#begin(VIM_PLUG_HOME)
 " plugins
 " language specific: syntax, or indent or something else
 Plug 'Shougo/neco-syntax'
-Plug 'Valloric/YouCompleteMe'
 Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go']}
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
@@ -13,11 +12,12 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'jvirtanen/vim-hcl'
+" LSP
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 
 " utils
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
-Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
@@ -41,11 +41,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'luochen1990/rainbow'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'sickill/vim-monokai'
-
-" syntax check
-" Go: golint(https://github.com/golang/lint)
-" Python: flake8
-Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -121,9 +116,6 @@ tnoremap <Esc> <C-\><C-n>
 nnoremap <C-s> <Esc>:vsplit term://bash<CR>A
 nnoremap <C-x> <Esc>:split term://bash<CR>A
 
-" python
-nnoremap <leader>d Oimport pdb; pdb.set_trace()<Esc>
-
 " persistent
 set undodir=~/.cache/vimundo/
 set undofile
@@ -135,8 +127,6 @@ let g:rainbow_active = 1
 
 " fzf
 nnoremap <C-p> :Files<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>m :Marks<CR>
 nnoremap <leader>a :Ag<CR>
 nnoremap <leader>c :Commits<CR>
 nnoremap ff :BLines<CR>
@@ -147,18 +137,6 @@ nnoremap <leader>T :split term://bash<CR>
 
 " vim-sneak
 let g:sneak#label = 1
-
-nmap <leader>p <Plug>(ale_previous_wrap)
-nmap <leader>n <Plug>(ale_next_wrap)
-
-let g:ale_linters = {'proto': ['prototool']}
-
-" supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
-" YouCompleteMe
-nnoremap <leader>\ :YcmCompleter GoTo<CR>
-let g:ycm_global_ycm_extra_conf = '~/.i3/ycm_extra_conf.py'
 
 " vim markdown
 let g:vim_markdown_folding_disabled = 1
@@ -177,30 +155,41 @@ augroup END
 " tagbar
 nmap <F8> :TagbarToggle<CR>
 " install `gotags` frist
-let g:tagbar_type_go = {
-            \ 'ctagstype' : 'go',
-            \ 'kinds'     : [
-            \ 'p:package',
-            \ 'i:imports:1',
-            \ 'c:constants',
-            \ 'v:variables',
-            \ 't:types',
-            \ 'n:interfaces',
-            \ 'w:fields',
-            \ 'e:embedded',
-            \ 'm:methods',
-            \ 'r:constructor',
-            \ 'f:functions'
-            \ ],
+let g:tagbar_type_go = {'ctagstype': 'go',
+            \ 'kinds': [
+            \ 'p:package','i:imports:1','c:constants','v:variables','t:types','n:interfaces','w:fields',
+            \ 'e:embedded','m:methods','r:constructor','f:functions'],
             \ 'sro' : '.',
-            \ 'kind2scope' : {
-            \ 't' : 'ctype',
-            \ 'n' : 'ntype'
-            \ },
-            \ 'scope2kind' : {
-            \ 'ctype' : 't',
-            \ 'ntype' : 'n'
-            \ },
+            \ 'kind2scope' : {'t' : 'ctype','n' : 'ntype'},
+            \ 'scope2kind' : {'ctype' : 't','ntype' : 'n'},
             \ 'ctagsbin'  : 'gotags',
             \ 'ctagsargs' : '-sort -silent'
             \ }
+
+" LSP
+" ref: https://github.com/neoclide/coc.nvim#example-vim-configuration
+"
+" for python, run pip install python-language-server first
+" for go, run go get -u golang.org/x/tools/cmd/gopls first
+"
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>": <SID>check_back_space() ? "\<Tab>": coc#refresh()
+
+" key map
+nmap <leader>\ <Plug>(coc-definition)
+nmap <leader>r <Plug>(coc-rename)
+nmap <leader>p <Plug>(coc-diagnostic-prev)
+nmap <leader>n <Plug>(coc-diagnostic-next)
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
