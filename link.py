@@ -7,7 +7,6 @@ MAPPER = {
     "bash/bash_profile.sh": "~/.bash_profile",
     "ack/ackrc": "~/.ackrc",
     "vim/vimrc": "~/.config/nvim/init.vim",
-    "vim/coc-settings.json", "~/.config/nvim/coc-settings.json",
 }
 
 for k, v in MAPPER.items():

@@ -7,13 +7,15 @@ call plug#begin(VIM_PLUG_HOME)
 Plug 'Shougo/neco-syntax'
 Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go']}
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
-Plug 'itchyny/vim-haskell-indent', { 'for': 'haskell' }
 Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'jvirtanen/vim-hcl'
-" LSP
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+Plug 'ervandew/supertab'
+Plug 'Valloric/YouCompleteMe'
+" Go: golint(https://github.com/golang/lint)
+" Python: flake8
+Plug 'w0rp/ale'
 
 " utils
 Plug 'airblade/vim-gitgutter'
@@ -166,30 +168,9 @@ let g:tagbar_type_go = {'ctagstype': 'go',
             \ 'ctagsargs' : '-sort -silent'
             \ }
 
-" LSP
-" ref: https://github.com/neoclide/coc.nvim#example-vim-configuration
-"
-" for python, run pip install python-language-server first
-" for go, run go get -u golang.org/x/tools/cmd/gopls first
-"
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>": <SID>check_back_space() ? "\<Tab>": coc#refresh()
+" YCM
+nnoremap <leader>\ :YcmCompleter GoTo<CR>
 
-" key map
-nmap <leader>\ <Plug>(coc-definition)
-nmap <leader>r <Plug>(coc-rename)
-nmap <leader>p <Plug>(coc-diagnostic-prev)
-nmap <leader>n <Plug>(coc-diagnostic-next)
-" Use K to show documentation in preview window
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+" ALE
+nmap <leader>p <Plug>(ale_previous_wrap)
+nmap <leader>n <Plug>(ale_next_wrap)
