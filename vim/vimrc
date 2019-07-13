@@ -11,6 +11,7 @@ Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
 Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'leafgarland/typescript-vim'
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'jvirtanen/vim-hcl'
 Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe'
