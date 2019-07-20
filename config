@@ -182,7 +182,7 @@ focus_follows_mouse no
 
 # executing applications
 bindsym $mod+c exec firefox
-bindsym $mod+z exec zathura
+bindsym $mod+e exec evince
 bindsym --release $mod+a exec scrot -s -e 'mv $f ~/Images/shots/'
 
 # hide title bar by default
