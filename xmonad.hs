@@ -67,15 +67,6 @@ myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
     ppLayout = const "" -- to disable the layout info on xmobar
 }
 
-
--- Define Xmonad.Prompt
-myXmonadPromptConfig = def {
-    position = Top,
-    alwaysHighlight = True,
-    promptBorderWidth = 0,
-    font = "xft:monospace:size=12"
-}
-
 -- Define ShortCuts
 myShortCuts = [
     ((mod4Mask, xK_l), spawn "slock"),
@@ -94,8 +85,8 @@ myShortCuts = [
     -- E-Book: evince
     ((mod4Mask, xK_e), spawn "evince"),
     ((mod4Mask, xK_b), sendMessage ToggleStruts),
-    ((mod1Mask, xK_Tab), goToSelected def),
-    ((mod1Mask, xK_p), shellPrompt myXmonadPromptConfig)
+    ((mod1Mask, xK_Tab), goToSelected def)
+    -- alt+p, use dmenu
     ]
 
 
