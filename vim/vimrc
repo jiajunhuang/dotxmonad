@@ -23,6 +23,7 @@ Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'cohama/agit.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 Plug 'justinmk/vim-sneak'
 Plug 'majutsushi/tagbar'
@@ -67,8 +68,8 @@ set textwidth=0
 "display pairs
 set showmatch
 
-" clipboard
-set clipboard=unnamed
+" clipboard, remember to install xclip first
+set clipboard=unnamedplus
 
 "indent
 set expandtab
