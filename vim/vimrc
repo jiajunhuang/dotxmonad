@@ -15,7 +15,7 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'jvirtanen/vim-hcl'
 Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe'
-Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
 " Go: golint(https://github.com/golang/lint)
 " Python: flake8
 Plug 'w0rp/ale'
