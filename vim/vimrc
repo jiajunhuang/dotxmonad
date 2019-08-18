@@ -7,8 +7,8 @@ call plug#begin(VIM_PLUG_HOME)
 Plug 'Shougo/neco-syntax'
 Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go']}
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
-Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
-Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
+"Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
+"Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'leafgarland/typescript-vim'
 Plug 'cakebaker/scss-syntax.vim'
