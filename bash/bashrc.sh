@@ -61,18 +61,12 @@ export QT_STYLE_OVERRIDE='Arc-Darker'
 export HISTFILESIZE=
 export HISTSIZE=
 
-# golang
+# PATH
 export GOPATH=$HOME/golang
-
-# nodejs
-export NODEPATH=$HOME/.node/global/bin
-
-# pyenv
 export PYPATH=$HOME/.pyenv/bin
-
-# path
-export PATH="$NODEPATH:$PYPATH:$GOPATH/bin:$HOME/bin:/usr/local/opt/gnu-getopt/bin:/usr/local/bin:/usr/local/openresty/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman/:$MANPATH"
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH="$PYPATH:$GOPATH/bin:$HOME/bin:/usr/local/bin:$PATH"
+export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 # pyenv
 which pyenv 2>&1 > /dev/null
