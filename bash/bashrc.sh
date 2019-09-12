@@ -239,3 +239,8 @@ function ccat() {
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# start tmux
+if [[ -z "$TMUX"  ]] && [ "$SSH_CONNECTION" != ""  ]; then
+    tmux attach || tmux new
+fi
