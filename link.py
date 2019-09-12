@@ -7,7 +7,7 @@ MAPPER = {
     "bash/bash_profile.sh": "~/.bash_profile",
     "ack/ackrc": "~/.ackrc",
     "vim/vimrc": "~/.config/nvim/init.vim",
-    "tmux/tmux.conf": "~/.byobu/keybindings.tmux",
+    "tmux/tmux.conf": "~/.tmux.conf",
 }
 
 for k, v in MAPPER.items():
