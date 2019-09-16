@@ -64,9 +64,7 @@ export HISTSIZE=
 # PATH
 export GOPATH=$HOME/golang
 export PYPATH=$HOME/.pyenv/bin
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH="$PYPATH:$GOPATH/bin:$HOME/bin:/usr/local/bin:$PATH"
-export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+export PATH="$PYPATH:$GOPATH/bin:$HOME/bin:$PATH"
 
 # pyenv
 which pyenv 2>&1 > /dev/null
