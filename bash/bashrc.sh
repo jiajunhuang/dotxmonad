@@ -240,5 +240,5 @@ function ccat() {
 
 # start tmux
 if [[ -z "$TMUX"  ]] && [ "$SSH_CONNECTION" != ""  ]; then
-    tmux attach || tmux new
+    exec ~/.xmonad/bash/tmux.py
 fi
