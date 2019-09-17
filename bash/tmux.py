@@ -5,9 +5,6 @@ import sys
 import subprocess
 
 
-SHELL = os.getenv("SHELL", "/bin/bash")
-
-
 def get_sessions():
     sessions = []
 
