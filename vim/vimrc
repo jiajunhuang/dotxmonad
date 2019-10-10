@@ -178,3 +178,6 @@ nnoremap <leader>\ :YcmCompleter GoTo<CR>
 " ALE
 nmap <leader>p <Plug>(ale_previous_wrap)
 nmap <leader>n <Plug>(ale_next_wrap)
+
+" indent line
+autocmd Filetype json let g:indentLine_enabled = 0
