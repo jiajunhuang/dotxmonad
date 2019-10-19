@@ -10,6 +10,11 @@ MAPPER = {
     "tmux/tmux.conf": "~/.tmux.conf",
 }
 
+os.system(
+    "curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs "
+    "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+)
+
 for k, v in MAPPER.items():
     print("unlink", v)
     os.system("rm -f {}".format(v))
