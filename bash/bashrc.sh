@@ -9,8 +9,8 @@ export LC_ALL=en_US.UTF-8
 [[ $- != *i* ]] && return
 
 # bash completion
-if [[ `uname` == 'Darwin' ]]; then
-    BASH_COMPLETION=/usr/local/share/bash-completion/bash_completion
+if [[ `uname` == 'FreeBSD' ]]; then
+    BASH_COMPLETION=/usr/local/share/bash-completion/bash_completion.sh
 else
     BASH_COMPLETION=/usr/share/bash-completion/bash_completion
 fi
