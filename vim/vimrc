@@ -7,14 +7,11 @@ call plug#begin(VIM_PLUG_HOME)
 Plug 'Shougo/neco-syntax'
 Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go']}
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
-"Plug 'mzlogin/vim-markdown-toc', { 'for': 'markdown' }
-"Plug 'plasticboy/vim-markdown' | Plug 'godlygeek/tabular', { 'for': 'markdown' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'leafgarland/typescript-vim'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'jvirtanen/vim-hcl'
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'go', 'c', 'cpp', 'haskell'] }
 Plug 'maxmellon/vim-jsx-pretty'
 " Go: golint(https://github.com/golang/lint)
 " Python: flake8
@@ -181,3 +178,4 @@ nmap <leader>n <Plug>(ale_next_wrap)
 
 " indent line
 autocmd Filetype json let g:indentLine_enabled = 0
+autocmd Filetype markdown let g:indentLine_enabled = 0
