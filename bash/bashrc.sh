@@ -62,8 +62,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 # PATH
-export PYPATH=$HOME/.pyenv/bin
-export PATH="$PYPATH:$HOME/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$HOME/flutter/bin:$HOME/bin:$PATH"
 
 # pyenv
 which pyenv 2>&1 > /dev/null
