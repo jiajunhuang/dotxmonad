@@ -11,11 +11,12 @@ Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'leafgarland/typescript-vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'go', 'c', 'cpp', 'haskell'] }
+Plug 'Valloric/YouCompleteMe', { 'for': ['python', 'go', 'c', 'cpp', 'haskell', 'dart'] }
 Plug 'maxmellon/vim-jsx-pretty'
 " Go: golint(https://github.com/golang/lint)
 " Python: flake8
 Plug 'w0rp/ale'
+Plug 'dart-lang/dart-vim-plugin'
 
 " utils
 Plug 'airblade/vim-gitgutter'
