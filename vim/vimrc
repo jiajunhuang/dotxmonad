@@ -16,21 +16,14 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'w0rp/ale'
 
 " utils
-Plug 'airblade/vim-gitgutter'
-Plug 'cohama/agit.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'Yggdroot/indentLine'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
-Plug 'majutsushi/tagbar'
-Plug 'mbbill/undotree'
 Plug 'mileszs/ack.vim'
 Plug 'othree/eregex.vim'
 Plug 'scrooloose/nerdcommenter'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 
 " look and feel
@@ -148,27 +141,12 @@ augroup autoformat_settings
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
 augroup END
 
-" tagbar
-nmap <F8> :TagbarToggle<CR>
-" install `gotags` frist
-let g:tagbar_type_go = {'ctagstype': 'go',
-            \ 'kinds': [
-            \ 'p:package','i:imports:1','c:constants','v:variables','t:types','n:interfaces','w:fields',
-            \ 'e:embedded','m:methods','r:constructor','f:functions'],
-            \ 'sro' : '.',
-            \ 'kind2scope' : {'t' : 'ctype','n' : 'ntype'},
-            \ 'scope2kind' : {'ctype' : 't','ntype' : 'n'},
-            \ 'ctagsbin'  : 'gotags',
-            \ 'ctagsargs' : '-sort -silent'
-            \ }
-
 " YCM
 nnoremap <leader>\ :YcmCompleter GoTo<CR>
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_autoclose_preview_window_after_completion = 0
 
 " ALE
 nmap <leader>p <Plug>(ale_previous_wrap)
 nmap <leader>n <Plug>(ale_next_wrap)
-
-" indent line
-autocmd Filetype json let g:indentLine_enabled = 0
-autocmd Filetype markdown let g:indentLine_enabled = 0
