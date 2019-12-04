@@ -146,6 +146,13 @@ nnoremap <leader>\ :YcmCompleter GoTo<CR>
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 0
+let g:ycm_language_server = [
+  \   {
+  \     'name': 'dart',
+  \     'cmdline': ['dart', '/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot', '--lsp'],
+  \     'filetypes': [ 'dart' ],
+  \   },
+  \ ]
 
 " ALE
 nmap <leader>p <Plug>(ale_previous_wrap)
