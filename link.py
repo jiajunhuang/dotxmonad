@@ -3,13 +3,13 @@ import os
 PREFIX = "~/.xmonad/"
 
 MAPPER = {
-    "bash/bashrc.sh": "~/.bashrc",
-    "bash/bash_profile.sh": "~/.bash_profile",
-    "ack/ackrc": "~/.ackrc",
-    "vim/vimrc": "~/.config/nvim/init.vim",
-    "tmux/tmux.conf": "~/.tmux.conf",
-    "zathura/zathurarc": "~/.config/zathura/zathurarc",
-    "sakura/sakura.conf": "~/.config/sakura/sakura.conf",
+    "conf/bashrc.sh": "~/.bashrc",
+    "conf/bash_profile.sh": "~/.bash_profile",
+    "conf/ackrc": "~/.ackrc",
+    "conf/vimrc": "~/.config/nvim/init.vim",
+    "conf/tmux.conf": "~/.tmux.conf",
+    "conf/zathurarc": "~/.config/zathura/zathurarc",
+    "conf/sakura.conf": "~/.config/sakura/sakura.conf",
 }
 
 os.system(
