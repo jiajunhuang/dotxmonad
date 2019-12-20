@@ -9,6 +9,7 @@ MAPPER = {
     "vim/vimrc": "~/.config/nvim/init.vim",
     "tmux/tmux.conf": "~/.tmux.conf",
     "zathura/zathurarc": "~/.config/zathura/zathurarc",
+    "sakura/sakura.conf": "~/.config/sakura/sakura.conf",
 }
 
 os.system(
