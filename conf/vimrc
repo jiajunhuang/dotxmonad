@@ -17,6 +17,7 @@ Plug 'w0rp/ale'
 
 " utils
 Plug 'jiangmiao/auto-pairs'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'othree/eregex.vim'
