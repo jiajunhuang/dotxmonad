@@ -84,6 +84,9 @@ set pastetoggle=<F2>
 noremap <F4> :set invnumber<CR>
 inoremap <F4> <C-O>:set invnumber<CR>
 
+" use jk instead of Esc
+inoremap jk <Esc>
+
 " vim file explore
 nmap <F3> :Explore<CR>
 
