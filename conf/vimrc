@@ -153,7 +153,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_language_server = [
   \   {
   \     'name': 'dart',
-  \     'cmdline': ['dart', '/opt/dart-sdk/bin/snapshots/analysis_server.dart.snapshot', '--lsp'],
+  \     'cmdline': ['dart', expand('$HOME/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot'), '--lsp'],
   \     'filetypes': [ 'dart' ],
   \   },
   \ ]
