@@ -233,4 +233,6 @@ function ccat() {
     fi
 }
 
+[ -f ~/.drone.env.bash ] && source ~/.drone.env.bash
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
