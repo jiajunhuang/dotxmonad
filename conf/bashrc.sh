@@ -17,6 +17,8 @@ fi
 if [ -f $BASH_COMPLETION ]; then
     source $BASH_COMPLETION
 fi
+# heroku
+HEROKU_AC_BASH_SETUP_PATH=$HOME/.cache/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
 
 # autojump
 if [ -f "/etc/arch-release" ]; then
