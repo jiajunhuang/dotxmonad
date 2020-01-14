@@ -233,6 +233,8 @@ function ccat() {
     fi
 }
 
-[ -f ~/.drone.env.bash ] && source ~/.drone.env.bash
+[ -f ~/.custmize.env.bash ] && source ~/.custmize.env.bash
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[ -f /usr/local/bin/nomad ] && complete -C /usr/local/bin/nomad nomad
