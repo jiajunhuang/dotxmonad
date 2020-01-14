@@ -238,5 +238,3 @@ function ccat() {
 [ -f ~/.custmize.env.bash ] && source ~/.custmize.env.bash
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-[ -f /usr/local/bin/nomad ] && complete -C /usr/local/bin/nomad nomad
