@@ -35,7 +35,6 @@ myStartupHook = do
     setWMName "LG3D"
     spawnOnce "xcompmgr"
     spawnOnce "feh --bg-scale ~/.xmonad/background.jpg"
-    spawnOnce "fcitx"
     spawnOnce "volumeicon"
     spawnOnce "nm-applet"
     spawnOnce "redshift"
