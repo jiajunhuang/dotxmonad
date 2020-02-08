@@ -10,7 +10,6 @@ Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'ervandew/supertab'
 Plug 'Valloric/YouCompleteMe'
-Plug 'dart-lang/dart-vim-plugin'
 " Go: golint(https://github.com/golang/lint)
 " Python: flake8
 Plug 'w0rp/ale'
@@ -137,7 +136,7 @@ let g:vim_markdown_folding_disabled = 1
 augroup autoformat_settings
   " autocmd FileType bzl AutoFormatBuffer buildifier
   " autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
-  autocmd FileType dart AutoFormatBuffer dartfmt
+  " autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
   " autocmd FileType gn AutoFormatBuffer gn
   " autocmd FileType html,css,json AutoFormatBuffer js-beautify
@@ -150,13 +149,6 @@ nnoremap <leader>\ :YcmCompleter GoTo<CR>
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_language_server = [
-  \   {
-  \     'name': 'dart',
-  \     'cmdline': ['dart', expand('$HOME/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot'), '--lsp'],
-  \     'filetypes': [ 'dart' ],
-  \   },
-  \ ]
 
 " ALE
 nmap <leader>p <Plug>(ale_previous_wrap)
