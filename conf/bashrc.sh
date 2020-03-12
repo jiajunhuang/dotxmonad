@@ -64,7 +64,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 # PATH
-export PATH="$HOME/.pyenv/bin:$HOME/bin:$HOME/go/bin:/snap/bin:$PATH"
+export PATH="$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/.pyenv/bin:$HOME/bin:$HOME/go/bin:/snap/bin:$PATH"
 
 # pyenv
 which pyenv 2>&1 > /dev/null
