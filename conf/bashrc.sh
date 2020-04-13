@@ -17,8 +17,6 @@ fi
 if [ -f $BASH_COMPLETION ]; then
     source $BASH_COMPLETION
 fi
-# heroku
-HEROKU_AC_BASH_SETUP_PATH=$HOME/.cache/heroku/autocomplete/bash_setup && test -f $HEROKU_AC_BASH_SETUP_PATH && source $HEROKU_AC_BASH_SETUP_PATH;
 
 # autojump
 if [ -f "/etc/arch-release" ]; then
@@ -64,7 +62,7 @@ export HISTFILESIZE=
 export HISTSIZE=
 
 # PATH
-export PATH="$HOME/flutter/bin:$HOME/flutter/bin/cache/dart-sdk/bin:$HOME/.pyenv/bin:$HOME/bin:$HOME/go/bin:/snap/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$HOME/bin:$HOME/go/bin:/snap/bin:$PATH"
 
 # pyenv
 which pyenv 2>&1 > /dev/null
@@ -133,7 +131,11 @@ export PS1="\[\e[33m\]\u\[\e[m\]@\[\e[32m\]\h\[\e[m\] \`parse_git_branch\` \W \\
 alias vim='nvim'
 
 #ls
-alias ls='ls --color=auto'
+if [[ `uname` == 'FreeBSD' ]]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color'
+fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -190,28 +192,6 @@ alias tt='tmux attach || tmux new'
 # vim
 alias vimdiff='nvim -d'
 
-# lastpass
-alias lpass='http_proxy=http://127.0.0.1:8123 https_proxy=http://127.0.0.1:8123 lpass'
-
-# rsync
-function syncto {
-    if [ $# -eq 0 ]
-    then
-        echo "Usage: syncto [from] [to]"
-        echo "Example: syncto . root@my_remote_host:/tmp/"
-    else
-        rsync -a --delete $@
-    fi
-}
-
-# pandoc
-function tohtml() {
-    pandoc -s -S --toc --highlight-style pygments --css common.css -t html $@ -o /data/doc/$@.html
-}
-function topdf() {
-    pandoc --pdf-engine=xelatex -V CJKmainfont="Source Han Serif CN" $@ -o /data/doc/$@.pdf
-}
-
 # proxy
 function proxyon() {
     export http_proxy="http://127.0.0.1:8123/"
@@ -222,19 +202,5 @@ function proxyon() {
 function proxyoff() {
     unset http_proxy https_proxy no_proxy HTTP_PROXY HTTPS_PROXY
 }
-
-# ccat
-function ccat() {
-    local style="monokai"
-    if [ $# -eq 0 ]; then
-        pygmentize -P style=$style -P tabsize=4 -f terminal256 -g
-    else
-        for NAME in $@; do
-            pygmentize -P style=$style -P tabsize=4 -f terminal256 -g "$NAME"
-        done
-    fi
-}
-
-[ -f ~/.custmize.env.bash ] && source ~/.custmize.env.bash
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
