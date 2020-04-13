@@ -5,7 +5,7 @@ call plug#begin(VIM_PLUG_HOME)
 " plugins
 " language specific: syntax, or indent or something else
 Plug 'Shougo/neco-syntax'
-Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go', 'c', 'dart']}
+Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go', 'c']}
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'stephpy/vim-yaml', { 'for': 'yaml' }
 Plug 'ervandew/supertab'
@@ -16,7 +16,6 @@ Plug 'w0rp/ale'
 
 " utils
 Plug 'jiangmiao/auto-pairs'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 Plug 'mileszs/ack.vim'
 Plug 'preservim/nerdtree'
