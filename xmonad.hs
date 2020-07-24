@@ -78,7 +78,7 @@ myShortCuts = [
     -- E-Mail: thunderbird
     ((mod4Mask, xK_t), spawn "thunderbird"),
     -- Screenshort: scrot
-    ((mod4Mask, xK_a), spawn "sleep 0.2; scrot -s -e 'mv $f /data/share/shots/'"),
+    ((mod4Mask, xK_a), spawn "sleep 0.2; scrot -s -e 'xclip -selection clipboard -t \"image/png\" < $f && rm $f'"),
     -- DocViewer: zeal
     ((mod4Mask, xK_d), spawn "zeal"),
     -- E-Book: zathura
