@@ -21,7 +21,7 @@ if output:
 
 
 env = copy.deepcopy(os.environ)
-env.update({"TERM": "xterm-256color", "HOME": "/home/jiajun"})
+env.update({"TERM": "xterm-256color"})
 
 
 if sessions:
