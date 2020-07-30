@@ -43,7 +43,7 @@ myStartupHook = do
 myWorkspaces = ["1-docs", "2-code", "3-code", "4-term", "5-term", "6-sql", "7-chat", "8-mail", "9-vm"]
 
 -- Define Terminal
-myTerminal = "sakura"
+myTerminal = "mate-terminal"
 
 -- Define Layout
 myLayout =  avoidStruts $ tiled ||| Mirror tiled ||| Full
