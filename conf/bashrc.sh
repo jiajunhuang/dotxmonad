@@ -74,7 +74,6 @@ fi
 export TERM=xterm-256color
 export TERMINAL=/usr/bin/sakura
 export EDITOR=vim
-export GOPROXY=https://goproxy.io
 
 # get current branch in git repo
 function parse_git_branch() {
