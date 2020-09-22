@@ -73,10 +73,8 @@ myShortCuts = [
     ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -20"),
     -- browser: chromium
     ((mod4Mask, xK_c), spawn "chromium"),
-    -- MySQL: mysql-workbentch
-    ((mod4Mask, xK_m), spawn "mysql-workbench"),
-    -- E-Mail: thunderbird
-    ((mod4Mask, xK_t), spawn "thunderbird"),
+    -- Mail
+    ((mod4Mask, xK_m), spawn "claws-mail"),
     -- Screenshort: scrot
     ((mod4Mask, xK_a), spawn "sleep 0.2; scrot -s -e 'xclip -selection clipboard -t \"image/png\" < $f && rm $f'"),
     ((mod4Mask, xK_s), spawn "sleep 0.2; scrot -s"),
