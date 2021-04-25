@@ -61,7 +61,8 @@ export QT_STYLE_OVERRIDE='Arc-Darker'
 export HISTFILESIZE=
 export HISTSIZE=
 
-# PATH
+# PATH & GOPATH
+export GOPATH=$HOME/go
 export PATH="$HOME/.krew/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/bin:$HOME/go/bin:/snap/bin:$PATH"
 
 # pyenv
