@@ -18,18 +18,6 @@ if [ -f $BASH_COMPLETION ]; then
     source $BASH_COMPLETION
 fi
 
-# autojump
-if [ -f "/etc/arch-release" ]; then
-    AUTO_JUMP=/etc/profile.d/autojump.bash
-elif [ -f '/usr/local/etc/autojump.sh' ]; then
-    AUTO_JUMP=/usr/local/etc/autojump.sh
-else
-    AUTO_JUMP=/usr/share/autojump/autojump.sh
-fi
-if [ -f $AUTO_JUMP ]; then
-    source $AUTO_JUMP
-fi
-
 # git completion
 GIT_COMPLETE=~/.xmonad/bash/git-completion.sh
 if [ -f $GIT_COMPLETE ]; then
@@ -69,6 +57,13 @@ export PATH="$HOME/.krew/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/bin:$HOME/g
 which pyenv 2>&1 > /dev/null
 if [ "$?" -eq "0" ]; then
     eval "$(pyenv init -)"
+fi
+
+# fasd
+which fasd 2>&1 > /dev/null
+if [ "$?" -eq "0" ]; then
+    eval "$(fasd --init auto)"
+    alias j='fasd_cd -d'
 fi
 
 # set default enviroment
