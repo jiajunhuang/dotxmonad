@@ -34,10 +34,11 @@ myManageHook = composeAll [
 myStartupHook = do
     setWMName "LG3D"
     spawnOnce "xcompmgr"
-    spawnOnce "feh --bg-scale ~/.xmonad/background.jpg"
     spawnOnce "volumeicon"
     spawnOnce "nm-applet"
     spawnOnce "redshift"
+    spawnOnce "ibus-daemon"
+    spawnOnce "feh --bg-scale ~/.xmonad/background.jpg"
 
 -- Define the names of all workspaces
 myWorkspaces = ["1-docs", "2-code", "3-code", "4-term", "5-term", "6-sql", "7-chat", "8-mail", "9-vm"]
