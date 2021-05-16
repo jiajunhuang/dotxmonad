@@ -56,7 +56,9 @@ export PATH="$HOME/.krew/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/bin:$HOME/g
 # pyenv
 which pyenv 2>&1 > /dev/null
 if [ "$?" -eq "0" ]; then
-    eval "$(pyenv init -)"
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init --path)"
 fi
 
 # fasd
