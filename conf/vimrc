@@ -6,14 +6,12 @@ call plug#begin(VIM_PLUG_HOME)
 " language specific: syntax, or indent or something else
 Plug 'Shougo/neco-syntax'
 Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go', 'c']}
-Plug 'ervandew/supertab'
-Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " install coc-json coc-clangd coc-go coc-jedi
 Plug 'sheerun/vim-polyglot'
 Plug 'alvan/vim-closetag'
 " Go: golint(https://github.com/golang/lint)
 " Python: flake8
 Plug 'w0rp/ale'
-"Plug 'tweekmonster/impsort.vim'
 
 " utils
 Plug 'jiangmiao/auto-pairs'
@@ -40,6 +38,7 @@ call plug#end()
 "syntax
 syntax on
 syntax enable
+set encoding=utf-8
 
 " display
 set ignorecase
@@ -142,19 +141,34 @@ augroup autoformat_settings
   " Alternative: autocmd FileType python AutoFormatBuffer autopep8
 augroup END
 
-" YCM
-nnoremap <leader>\ :YcmCompleter GoTo<CR>
-let g:ycm_add_preview_to_completeopt = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-" ALE
-nmap <leader>p <Plug>(ale_previous_wrap)
-nmap <leader>n <Plug>(ale_next_wrap)
-
 " vim-closetag
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx'
 " Shortcut for closing tags, default is '>'
 let g:closetag_shortcut = '>'
+
+" ALE
+nmap <leader>p <Plug>(ale_previous_wrap)
+nmap <leader>n <Plug>(ale_next_wrap)
+
+" CoC
+" GoTo code navigation.
+nmap <silent> <leader>\ <Plug>(coc-definition)
+nmap <silent> <leader>y <Plug>(coc-type-definition)
+nmap <silent> <leader>i <Plug>(coc-implementation)
+nmap <silent> <leader>r <Plug>(coc-references)
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
