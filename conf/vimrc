@@ -41,6 +41,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rsi'
 " Change pairs(parentheses, brackets, quotes, XML tags, and more)
 Plug 'tpope/vim-surround'
+Plug 'yggdroot/indentline'
 
 " look and feel
 " Status line
