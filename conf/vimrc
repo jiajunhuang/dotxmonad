@@ -5,32 +5,53 @@ call plug#begin(VIM_PLUG_HOME)
 " plugins
 " language specific: syntax, or indent or something else
 Plug 'Shougo/neco-syntax'
-Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go', 'c']}
+" code fmt
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+" LSP
 " install coc-json coc-clangd coc-go coc-rust-analyzer coc-pyright coc-tsserver coc-markdownlint
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Synctax highlight
 Plug 'sheerun/vim-polyglot'
+" auto close tag
 Plug 'alvan/vim-closetag'
+" ALE
 " Go: golint(https://github.com/golang/lint)
 " Python: flake8
 Plug 'w0rp/ale'
 
 " utils
+" auto complete brackets
 Plug 'jiangmiao/auto-pairs'
+" FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
+" ACK
 Plug 'mileszs/ack.vim'
+" NERDTree
 Plug 'preservim/nerdtree'
+" REGEX in search
 Plug 'othree/eregex.vim'
+" Comment/uncomment
 Plug 'scrooloose/nerdcommenter'
+" Rename/Delete files...
 Plug 'tpope/vim-eunuch'
+" Git operations
 Plug 'tpope/vim-fugitive'
+" Readline shortcuts in command mode
 Plug 'tpope/vim-rsi'
+" Change pairs(parentheses, brackets, quotes, XML tags, and more)
 Plug 'tpope/vim-surround'
 
 " look and feel
+" Status line
 Plug 'itchyny/lightline.vim'
+" Display marks
 Plug 'kshenoy/vim-signature'
+" Colorful brackets
 Plug 'luochen1990/rainbow'
+" Remove white space
 Plug 'ntpeters/vim-better-whitespace'
+" theme
 Plug 'sickill/vim-monokai'
 
 call plug#end()
@@ -133,15 +154,18 @@ let g:vim_markdown_folding_disabled = 1
 
 " code format
 augroup autoformat_settings
-  " autocmd FileType bzl AutoFormatBuffer buildifier
-  " autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
-  " autocmd FileType dart AutoFormatBuffer dartfmt
+  "autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
+  "autocmd FileType dart AutoFormatBuffer dartfmt
   autocmd FileType go AutoFormatBuffer gofmt
-  " autocmd FileType gn AutoFormatBuffer gn
-  " autocmd FileType html,css,json AutoFormatBuffer js-beautify
-  " autocmd FileType java AutoFormatBuffer google-java-format
-  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  "autocmd FileType gn AutoFormatBuffer gn
+  "autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  "autocmd FileType java AutoFormatBuffer google-java-format
+  "autocmd FileType python AutoFormatBuffer yapf
+  autocmd FileType rust AutoFormatBuffer rustfmt
+  "autocmd FileType vue AutoFormatBuffer prettier
 augroup END
+
 
 " vim-closetag
 " filenames like *.xml, *.html, *.xhtml, ...
