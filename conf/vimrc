@@ -6,7 +6,8 @@ call plug#begin(VIM_PLUG_HOME)
 " language specific: syntax, or indent or something else
 Plug 'Shougo/neco-syntax'
 Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt', {'for': ['python', 'go', 'c']}
-Plug 'neoclide/coc.nvim', {'branch': 'release'} " install coc-json coc-clangd coc-go coc-jedi
+" install coc-json coc-clangd coc-go coc-rust-analyzer coc-pyright coc-tsserver coc-markdownlint
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'alvan/vim-closetag'
 " Go: golint(https://github.com/golang/lint)
@@ -39,6 +40,7 @@ call plug#end()
 syntax on
 syntax enable
 set encoding=utf-8
+set signcolumn=yes
 
 " display
 set ignorecase
