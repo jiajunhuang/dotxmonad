@@ -51,7 +51,7 @@ export HISTSIZE=
 
 # PATH & GOPATH
 export GOPATH=$HOME/go
-export PATH="$HOME/.krew/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/bin:$HOME/go/bin:/snap/bin:$PATH"
+export PATH="$HOME/.krew/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/bin:$HOME/go/bin:/snap/bin:/usr/local/go/bin:$PATH"
 
 # pyenv
 which pyenv 2>&1 > /dev/null
