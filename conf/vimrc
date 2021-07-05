@@ -203,3 +203,6 @@ augroup auto_coc_settings
     " https://github.com/neoclide/coc.nvim/wiki/Using-workspaceFolders
     autocmd FileType python let b:coc_root_patterns = ['.git', '.env']
 augroup END
+
+" ACK
+let g:ackprg = 'ag --vimgrep'
