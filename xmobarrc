@@ -18,7 +18,7 @@ Config {
     position = TopW L 100,
     sepChar = "%", -- delineator between plugin names and straight text
     alignSep = "}{", -- separator between left-right alignment
-    template = "%StdinReader% }{ %battery% | %memory% | %date% ",
+    template = "%StdinReader% }{ %cpu% | %battery% | %memory% | %date% ",
     commands = [
         Run StdinReader, -- read data from xmonad
         Run Memory [
@@ -34,6 +34,7 @@ Config {
             "-t", "<acstatus>: <left>% - <timeleft>",
             "--", --"-c", "charge_full", "-O", "AC",
             "-o", "Bat", "-h", "green", "-l", "red"
-        ] 60
+        ] 60,
+        Run Cpu ["-L","3","-H","50", "--normal","green","--high","red"] 10
     ]
 }
