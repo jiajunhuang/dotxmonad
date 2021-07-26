@@ -72,6 +72,8 @@ myShortCuts = [
     ((mod4Mask, xK_l), spawn "slock"),
     ((0, xF86XK_MonBrightnessUp), spawn "xbacklight +5"),
     ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -5"),
+    -- browser: firefox
+    ((mod4Mask, xK_f), spawn "firefox"),
     -- browser: google-chrome
     ((mod4Mask, xK_c), spawn "google-chrome"),
     -- Mail
