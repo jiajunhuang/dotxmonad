@@ -44,7 +44,8 @@ Plug 'tpope/vim-surround'
 
 " look and feel
 " Status line
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
 " Display marks
 Plug 'kshenoy/vim-signature'
 " Colorful brackets
@@ -206,3 +207,6 @@ augroup END
 
 " ACK
 let g:ackprg = 'ag --vimgrep'
+
+" NERDTree
+nnoremap <C-t> :NERDTreeToggle<CR>
