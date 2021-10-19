@@ -37,6 +37,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-eunuch'
 " Git operations
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 " Readline shortcuts in command mode
 Plug 'tpope/vim-rsi'
 " Change pairs(parentheses, brackets, quotes, XML tags, and more)
