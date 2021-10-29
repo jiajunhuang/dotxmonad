@@ -55,6 +55,8 @@ Plug 'luochen1990/rainbow'
 Plug 'ntpeters/vim-better-whitespace'
 " theme
 Plug 'sickill/vim-monokai'
+" indent line
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -211,3 +213,6 @@ let g:ackprg = 'ag --vimgrep'
 
 " NERDTree
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" indentLine
+autocmd FileType go set list lcs=tab:\┊\ "(last character is a space...)
