@@ -211,3 +211,7 @@ let g:ackprg = 'ag --vimgrep'
 
 " NERDTree
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" fold
+set foldmethod=syntax
+nmap fd zA
