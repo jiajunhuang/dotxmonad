@@ -214,4 +214,5 @@ nnoremap <C-t> :NERDTreeToggle<CR>
 
 " fold
 set foldmethod=syntax
+set nofoldenable
 nmap fd zA
