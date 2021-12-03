@@ -186,6 +186,8 @@ nmap <silent> <leader>\ <Plug>(coc-definition)
 nmap <silent> <leader>y <Plug>(coc-type-definition)
 nmap <silent> <leader>i <Plug>(coc-implementation)
 nmap <silent> <leader>r <Plug>(coc-references)
+nmap <silent> <leader>rf <Plug>(coc-refactor)
+nmap <silent> <leader>rn <Plug>(coc-rename)
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
