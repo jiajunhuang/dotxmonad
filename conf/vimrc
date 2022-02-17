@@ -19,6 +19,9 @@ Plug 'alvan/vim-closetag'
 " Go: golint(https://github.com/golang/lint)
 " Python: flake8
 Plug 'w0rp/ale'
+Plug 'craigemery/vim-autotag'
+Plug 'leafOfTree/vim-vue-plugin'
+Plug 'github/copilot.vim'
 
 " utils
 " auto complete brackets
@@ -63,7 +66,15 @@ call plug#end()
 syntax on
 syntax enable
 set encoding=utf-8
-set signcolumn=yes
+set updatetime=300
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
 
 " display
 set ignorecase
