@@ -61,11 +61,11 @@ if [ "$?" -eq "0" ]; then
     eval "$(pyenv init --path)"
 fi
 
-# fasd
-which fasd 2>&1 > /dev/null
+# zoxide
+which zoxide 2>&1 > /dev/null
 if [ "$?" -eq "0" ]; then
-    eval "$(fasd --init auto)"
-    alias j='fasd_cd -d'
+    eval "$(zoxide init bash)"
+    alias j='z'
 fi
 
 # set default enviroment
