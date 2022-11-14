@@ -231,4 +231,4 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 " leap
-lua require('leap').add_default_mappings()
+"lua require('leap').add_default_mappings()

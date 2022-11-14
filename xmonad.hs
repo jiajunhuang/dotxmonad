@@ -74,8 +74,8 @@ myShortCuts = [
     ((0, xF86XK_MonBrightnessDown), spawn "xbacklight -5"),
     -- browser: firefox
     ((mod4Mask, xK_f), spawn "firefox"),
-    -- browser: google-chrome
-    ((mod4Mask, xK_c), spawn "google-chrome"),
+    -- browser: chromium
+    ((mod4Mask, xK_c), spawn "chromium"),
     -- Mail
     ((mod4Mask, xK_m), spawn "thunderbird"),
     -- Screenshort: scrot
