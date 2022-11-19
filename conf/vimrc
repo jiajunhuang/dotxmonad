@@ -9,7 +9,7 @@ Plug 'Shougo/neco-syntax'
 Plug 'google/vim-maktaba'
 Plug 'google/vim-codefmt'
 " LSP
-" install coc-json coc-clangd coc-go coc-rust-analyzer coc-pyright coc-tsserver coc-markdownlint
+" install coc-json coc-clangd coc-go coc-rust-analyzer coc-pyright coc-tsserver coc-markdownlint coc-vetur
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Synctax highlight
 Plug 'sheerun/vim-polyglot'
