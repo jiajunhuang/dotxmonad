@@ -75,7 +75,7 @@ myShortCuts = [
     -- browser: firefox
     ((mod4Mask, xK_f), spawn "firefox"),
     -- browser: chromium
-    ((mod4Mask, xK_c), spawn "chromium"),
+    ((mod4Mask, xK_c), spawn "google-chrome"),
     -- Mail
     ((mod4Mask, xK_m), spawn "thunderbird"),
     -- Screenshort: scrot
@@ -93,9 +93,9 @@ myShortCuts = [
 
 main = do
     xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
-    xmonad $ ewmh $ desktopConfig {
+    xmonad $ ewmh . docks $ desktopConfig {
         manageHook = myManageHook <+> manageHook desktopConfig,
-        handleEventHook = docksEventHook <+> handleEventHook desktopConfig,
+        handleEventHook = handleEventHook desktopConfig,
         layoutHook = avoidStruts $ smartBorders myLayout,
         terminal = myTerminal,
         startupHook = myStartupHook,
