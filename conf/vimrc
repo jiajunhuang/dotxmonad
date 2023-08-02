@@ -222,7 +222,7 @@ let g:ackprg = 'ag --vimgrep'
 nnoremap <C-t> :NERDTreeToggle<CR>
 
 " fold
-set foldmethod=syntax
+set foldmethod=indent
 set nofoldenable
 nmap fd zA
 
