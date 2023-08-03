@@ -7,8 +7,12 @@ import subprocess
 
 
 sessions = []
+env = copy.deepcopy(os.environ)
+env["TERM"] = "xterm-256color"
+env["PATH"] = ":".join(("/opt/homebrew/bin", "/opt/homebrew/sbin", env["PATH"]))
 
-output = subprocess.Popen(["tmux", "list-sessions"], stdout=subprocess.PIPE).communicate()[0]
+
+output = subprocess.Popen(["tmux", "list-sessions"], stdout=subprocess.PIPE, env=env).communicate()[0]
 if sys.stdout.encoding is None:
     output = output.decode("UTF-8")
 else:
@@ -18,10 +22,6 @@ if output:
         # Ignore hidden sessions (named sessions that start with a "_")
         if s and not s.startswith("_"):
             sessions.append(s.strip())
-
-
-env = copy.deepcopy(os.environ)
-env.update({"TERM": "xterm-256color"})
 
 
 if sessions:
