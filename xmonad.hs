@@ -58,15 +58,6 @@ myNormalBorderColor = "#353945"
 myFocusedBorderColor = "#ffffff"
 myBorderWidth = 1
 
---Define Xmobar color
-myXmobarColorfg = "#fdf6e3"
-myXmobarColorbg = ""
-myLogHook xmproc = dynamicLogWithPP $ xmobarPP {
-    ppOutput = hPutStrLn xmproc,
-    ppTitle = xmobarColor myXmobarColorfg myXmobarColorbg . shorten 60,
-    ppLayout = const "" -- to disable the layout info on xmobar
-}
-
 -- Define ShortCuts
 myShortCuts = [
     ((mod4Mask, xK_l), spawn "slock"),
@@ -92,14 +83,13 @@ myShortCuts = [
 
 
 main = do
-    xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
+    xmproc <- spawnPipe "polybar"
     xmonad $ ewmh . docks $ desktopConfig {
         manageHook = myManageHook <+> manageHook desktopConfig,
         handleEventHook = handleEventHook desktopConfig,
         layoutHook = avoidStruts $ smartBorders myLayout,
         terminal = myTerminal,
         startupHook = myStartupHook,
-        logHook = myLogHook xmproc,
         borderWidth = myBorderWidth,
         workspaces = myWorkspaces,
         normalBorderColor = myNormalBorderColor,

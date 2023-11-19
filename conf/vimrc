@@ -28,7 +28,9 @@ Plug 'posva/vim-vue'
 " auto complete brackets
 Plug 'jiangmiao/auto-pairs'
 " Codeium
-Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
+"Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
+" Github Copilot
+Plug 'github/copilot.vim'
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 " ACK
