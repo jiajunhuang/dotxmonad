@@ -34,6 +34,7 @@ myManageHook = composeAll [
 myStartupHook = do
     setWMName "LG3D"
     spawnOnce "xcompmgr"
+    spawnOnce "polybar"
     spawnOnce "volumeicon"
     spawnOnce "nm-applet"
     spawnOnce "redshift"
@@ -83,7 +84,6 @@ myShortCuts = [
 
 
 main = do
-    xmproc <- spawnPipe "polybar"
     xmonad $ ewmh . docks $ desktopConfig {
         manageHook = myManageHook <+> manageHook desktopConfig,
         handleEventHook = handleEventHook desktopConfig,
