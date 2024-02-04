@@ -5,9 +5,8 @@ call plug#begin(VIM_PLUG_HOME)
 " plugins
 " language specific: syntax, or indent or something else
 Plug 'Shougo/neco-syntax'
-" code fmt
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
+" code format
+Plug 'stevearc/conform.nvim'
 " LSP
 " install coc-json coc-clangd coc-go coc-rust-analyzer coc-pyright coc-tsserver coc-markdownlint coc-vetur
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -27,8 +26,6 @@ Plug 'posva/vim-vue'
 " utils
 " auto complete brackets
 Plug 'jiangmiao/auto-pairs'
-" Codeium
-"Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 " Github Copilot
 Plug 'github/copilot.vim'
 " FZF
@@ -174,21 +171,6 @@ nnoremap <leader>T :split term://bash<CR>
 " vim markdown
 let g:vim_markdown_folding_disabled = 1
 
-" code format
-augroup autoformat_settings
-  "autocmd FileType bzl AutoFormatBuffer buildifier
-  " autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
-  "autocmd FileType dart AutoFormatBuffer dartfmt
-  autocmd FileType go AutoFormatBuffer gofmt
-  "autocmd FileType gn AutoFormatBuffer gn
-  autocmd FileType javascript,html,css,sass,scss,less,json AutoFormatBuffer js-beautify
-  "autocmd FileType java AutoFormatBuffer google-java-format
-  "autocmd FileType python AutoFormatBuffer yapf
-  autocmd FileType rust AutoFormatBuffer rustfmt
-  autocmd FileType vue AutoFormatBuffer prettier
-augroup END
-
-
 " vim-closetag
 " filenames like *.xml, *.html, *.xhtml, ...
 " These are the file extensions where this plugin is enabled.
@@ -284,3 +266,29 @@ EOF
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
 set nofoldenable " Disable folding at startup.
+
+lua << EOF
+require("conform").setup({
+  formatters_by_ft = {
+    lua = { "stylua" },
+    -- Conform will run multiple formatters sequentially
+    python = { "isort", "black" },
+    -- Use a sub-list to run only the first available formatter
+    javascript = { { "prettierd", "prettier" } },
+    go = { "gofmt" },
+  },
+})
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
+})
+require("conform").setup({
+  format_on_save = {
+    -- These options will be passed to conform.format()
+    timeout_ms = 500,
+    lsp_fallback = true,
+  },
+})
+EOF
