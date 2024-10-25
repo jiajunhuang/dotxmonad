@@ -21,13 +21,10 @@ Plug 'w0rp/ale'
 Plug 'craigemery/vim-autotag'
 "Plug 'leafOfTree/vim-vue-plugin'
 Plug 'posva/vim-vue'
-" Plug 'github/copilot.vim'
 
 " utils
 " auto complete brackets
 Plug 'jiangmiao/auto-pairs'
-" Github Copilot
-Plug 'github/copilot.vim'
 " FZF
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  } | Plug 'junegunn/fzf.vim'
 " ACK
