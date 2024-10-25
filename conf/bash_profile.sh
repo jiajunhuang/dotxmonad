@@ -2,9 +2,8 @@
 # ~/.bash_profile
 #
 
-# start tmux
-if [[ -z "$TMUX"  ]] && [ "$SSH_CONNECTION" != "" ] && [ "$TERM_PROGRAM" == "" ]; then
-    exec ~/.xmonad/conf/tmux.py
-fi
-
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+
+if command -v byobu > /dev/null; then
+    _byobu_sourced=1 . /usr/bin/byobu-launch 2>/dev/null || true
+fi
