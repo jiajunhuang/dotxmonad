@@ -21,6 +21,7 @@ Plug 'w0rp/ale'
 Plug 'craigemery/vim-autotag'
 "Plug 'leafOfTree/vim-vue-plugin'
 Plug 'posva/vim-vue'
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 
 " utils
 " auto complete brackets
