@@ -34,18 +34,15 @@ myManageHook = composeAll [
 myStartupHook = do
     setWMName "LG3D"
     spawnOnce "xcompmgr"
-    spawnOnce "polybar"
-    spawnOnce "volumeicon"
-    spawnOnce "nm-applet"
-    spawnOnce "redshift"
-    spawnOnce "ibus-daemon"
-    spawnOnce "feh --bg-scale ~/.xmonad/background.jpg"
+    spawnOnce "xfce4-panel"
+    spawnOnce "xfce4-power-manager"
+    spawnOnce "xfsettingsd"
 
 -- Define the names of all workspaces
 myWorkspaces = ["1-docs", "2-code", "3-code", "4-term", "5-term", "6-sql", "7-chat", "8-mail", "9-vm"]
 
 -- Define Terminal
-myTerminal = "gnome-terminal"
+myTerminal = "xfce4-terminal"
 
 -- Define Layout
 myLayout =  avoidStruts $ tiled ||| Mirror tiled ||| Full
