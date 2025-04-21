@@ -116,9 +116,6 @@ catch /^Vim\%((\a\+)\)\=:E185/
 endtry
 
 " shortcuts
-" paste mode
-set pastetoggle=<F2>
-
 " toggle number
 noremap <F4> :set invnumber<CR>
 inoremap <F4> <C-O>:set invnumber<CR>
