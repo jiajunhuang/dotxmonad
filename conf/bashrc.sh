@@ -51,7 +51,7 @@ export HISTSIZE=
 
 # PATH & GOPATH
 export GOPATH=$HOME/go
-export PATH="/opt/homebrew/opt/openjdk/bin:$HOME/.pulumi/bin:$HOME/.krew/bin:$HOME/.cargo/bin:$HOME/.pyenv/bin:$HOME/bin:$HOME/go/bin:/snap/bin:/usr/local/go/bin:$HOME/flutter/bin:$HOME/.pub-cache/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$HOME/.local/bin:$HOME/.pulumi/bin:$HOME/.krew/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/go/bin:/snap/bin:/usr/local/go/bin:$HOME/flutter/bin:$HOME/.pub-cache/bin:$PATH"
 
 # pyenv
 which pyenv 2>&1 > /dev/null
@@ -205,3 +205,5 @@ function proxyoff() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -s "$HOME/.local/bin/env" ] && \. "$HOME/.local/bin/env"  # This loads uv
