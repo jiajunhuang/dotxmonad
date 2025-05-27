@@ -22,6 +22,12 @@ fi
 GIT_COMPLETE=~/.xmonad/bash/git-completion.sh
 if [ -f $GIT_COMPLETE ]; then
     source $GIT_COMPLETE
+elif [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+    . /usr/local/etc/bash_completion.d/git-completion.bash
+elif [ -f /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash ]; then
+    . /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash
+elif [ -f /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash ]; then
+    .  /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 fi
 
 # kubectl completion
