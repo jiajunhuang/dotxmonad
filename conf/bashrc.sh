@@ -67,13 +67,6 @@ if [ "$?" -eq "0" ]; then
     eval "$(pyenv init --path)"
 fi
 
-# zoxide
-which zoxide 2>&1 > /dev/null
-if [ "$?" -eq "0" ]; then
-    eval "$(zoxide init bash)"
-    alias j='z'
-fi
-
 # set default enviroment
 export TERM=xterm-256color
 export TERMINAL=/usr/bin/sakura
@@ -213,3 +206,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -s "$HOME/.local/bin/env" ] && \. "$HOME/.local/bin/env"  # This loads uv
+
+# zoxide
+which zoxide 2>&1 > /dev/null
+if [ "$?" -eq "0" ]; then
+    eval "$(zoxide init bash)"
+    alias j='z'
+fi
