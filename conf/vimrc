@@ -12,6 +12,7 @@ Plug 'stevearc/conform.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Synctax highlight
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'rust-lang/rust.vim'
 " auto close tag
 Plug 'alvan/vim-closetag'
 " ALE
@@ -21,7 +22,6 @@ Plug 'w0rp/ale'
 Plug 'craigemery/vim-autotag'
 "Plug 'leafOfTree/vim-vue-plugin'
 Plug 'posva/vim-vue'
-Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 
 " utils
 " auto complete brackets
@@ -266,6 +266,7 @@ require("conform").setup({
     -- Use a sub-list to run only the first available formatter
     javascript = { { "prettierd", "prettier" } },
     go = { "gofmt" },
+    rust = { "rustfmt", lsp_format = "fallback" }
   },
 })
 vim.api.nvim_create_autocmd("BufWritePre", {
