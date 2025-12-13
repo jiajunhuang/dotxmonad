@@ -47,8 +47,6 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 " Supertab
 Plug 'ervandew/supertab'
-" leap
-Plug 'ggandor/leap.nvim'
 
 " look and feel
 " Status line
@@ -284,5 +282,3 @@ require("conform").setup({
   },
 })
 EOF
-
-lua require('leap').create_default_mappings()
