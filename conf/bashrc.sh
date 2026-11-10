@@ -57,7 +57,7 @@ export HISTSIZE=
 
 # PATH & GOPATH
 export GOPATH=$HOME/go
-export PATH="/opt/homebrew/opt/openjdk/bin:$HOME/.local/bin:$HOME/.pulumi/bin:$HOME/.krew/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/go/bin:/snap/bin:/usr/local/go/bin:$HOME/flutter/bin:$HOME/.pub-cache/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$HOME/.docker/bin:$HOME/.local/bin:$HOME/.pulumi/bin:$HOME/.krew/bin:$HOME/.cargo/bin:$HOME/bin:$HOME/go/bin:/snap/bin:/usr/local/go/bin:$HOME/flutter/bin:$HOME/.pub-cache/bin:$PATH"
 
 # pyenv
 which pyenv 2>&1 > /dev/null
